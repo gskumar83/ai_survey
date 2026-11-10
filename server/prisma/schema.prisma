@@ -1,0 +1,254 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum question_type {
+  rating
+  single_choice
+  text
+}
+
+enum assignment_status {
+  assigned
+  in_progress
+  completed
+}
+
+enum cycle_status {
+  open
+  closed
+  analyzed
+  reported
+}
+
+enum suggestion_priority {
+  high
+  medium
+  low
+}
+
+enum report_status {
+  draft
+  reviewed
+  sent
+}
+
+model admins {
+  id                          String    @id @default(auto()) @map("_id") @db.ObjectId
+  admin_code                  String?   @unique
+  name                        String   
+  email                       String    @unique 
+  password_hash               String
+  role                        String    @default("org_admin")
+  company_id                  String?   @db.ObjectId
+  is_activated                Boolean   @default(false)
+  activated_at                DateTime?
+  activation_token_hash       String?
+  activation_token_expires_at DateTime?
+  reset_token_hash            String?
+  reset_token_expires_at      DateTime?
+  created_at                  DateTime  @default(now()) 
+
+  company                     companies?  @relation("AssignedOrgAdmin", fields: [company_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  companies                   companies[] @relation("CompanyCreator")
+  reports                     reports[]
+}
+
+model companies {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String   
+  company_code    String?  @unique
+  logo_url        String?
+  official_email  String?
+  contact_number  String?
+  address         String?
+  industry        String?
+  website         String?
+  created_by_admin_id String @db.ObjectId
+  created_at      DateTime @default(now()) 
+  status          String   @default("Active")
+  default_language String   @default("en")
+  supported_languages String[]
+
+  created_by_admin admins   @relation("CompanyCreator", fields: [created_by_admin_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  assigned_admins  admins[] @relation("AssignedOrgAdmin")
+  
+  branches        company_branches[]
+  employees       employees[]
+  questions       questions[]
+  surveys         surveys[]
+  survey_cycles   survey_cycles[]
+  responses       responses[]
+  reports         reports[]
+}
+
+model company_branches {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  company_id   String   @db.ObjectId
+  address_line String?  
+  city         String?  
+  state        String?  
+  country      String?  
+  pincode      String?  
+
+  company      companies @relation(fields: [company_id], references: [id], onDelete: Cascade)
+}
+
+model employees {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  employee_code   String   @unique 
+  name            String   
+  email           String   @unique 
+  phone           String?  
+  department      String?  
+  password_hash   String
+  company_id      String   @db.ObjectId
+  is_first_login  Boolean  @default(false)
+  reset_token_hash String?
+  reset_token_expires_at DateTime?
+  created_at      DateTime @default(now()) 
+
+  company         companies @relation(fields: [company_id], references: [id])
+  
+  survey_assignments survey_assignments[]
+  responses          responses[]
+}
+
+model questions {
+  id            String       @id @default(auto()) @map("_id") @db.ObjectId
+  company_id    String       @db.ObjectId
+  question_text String
+  question_type question_type
+  options_json  Json?
+  translations_json Json?
+  created_at    DateTime     @default(now()) 
+
+  company       companies    @relation(fields: [company_id], references: [id], onDelete: Cascade)
+  
+  survey_questions survey_questions[]
+  response_answers response_answers[]
+}
+
+model surveys {
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  company_id         String   @db.ObjectId
+  title              String   
+  is_enabled         Boolean  @default(false)
+  created_by_admin_id String   @db.ObjectId
+  translations_json   Json?
+  created_at         DateTime @default(now()) 
+
+  company            companies @relation(fields: [company_id], references: [id], onDelete: Cascade)
+  
+  survey_questions   survey_questions[]
+  survey_cycles      survey_cycles[]
+}
+
+model survey_questions {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  survey_id     String   @db.ObjectId
+  question_id   String   @db.ObjectId
+  display_order Int
+
+  survey        surveys   @relation(fields: [survey_id], references: [id], onDelete: Cascade)
+  question      questions @relation(fields: [question_id], references: [id], onDelete: Cascade)
+}
+
+model survey_cycles {
+  id           String       @id @default(auto()) @map("_id") @db.ObjectId
+  company_id   String       @db.ObjectId
+  survey_id    String       @db.ObjectId
+  period_start DateTime     
+  period_end   DateTime     
+  status       cycle_status @default(open)
+
+  company      companies    @relation(fields: [company_id], references: [id])
+  survey       surveys      @relation(fields: [survey_id], references: [id])
+  
+  survey_assignments survey_assignments[]
+  analysis_results   analysis_results[]
+  reports            reports[]
+}
+
+model survey_assignments {
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  survey_cycle_id String            @db.ObjectId
+  employee_id     String            @db.ObjectId
+  status          assignment_status @default(assigned)
+  assigned_at     DateTime          @default(now()) 
+  completed_at    DateTime?         
+
+  survey_cycle    survey_cycles     @relation(fields: [survey_cycle_id], references: [id], onDelete: Cascade)
+  employee        employees         @relation(fields: [employee_id], references: [id], onDelete: Cascade)
+  
+  responses       responses?        
+}
+
+model responses {
+  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
+  survey_assignment_id String   @unique @db.ObjectId
+  employee_id          String   @db.ObjectId
+  company_id           String   @db.ObjectId
+  submitted_at         DateTime @default(now()) 
+
+  survey_assignment    survey_assignments @relation(fields: [survey_assignment_id], references: [id], onDelete: Cascade)
+  employee             employees          @relation(fields: [employee_id], references: [id])
+  company              companies          @relation(fields: [company_id], references: [id])
+  
+  response_answers     response_answers[]
+}
+
+model response_answers {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  response_id  String   @db.ObjectId
+  question_id  String   @db.ObjectId
+  answer_value String?
+
+  response     responses @relation(fields: [response_id], references: [id], onDelete: Cascade)
+  question     questions @relation(fields: [question_id], references: [id])
+}
+
+model analysis_results {
+  id                      String   @id @default(auto()) @map("_id") @db.ObjectId
+  survey_cycle_id         String   @unique @db.ObjectId
+  overall_score           Float?
+  sentiment_breakdown_json Json?
+  theme_summary_json      Json?
+  generated_at            DateTime @default(now()) 
+  generated_by            String?  @default("system") 
+
+  survey_cycle            survey_cycles @relation(fields: [survey_cycle_id], references: [id], onDelete: Cascade)
+  
+  suggestions             suggestions[]
+}
+
+model suggestions {
+  id                 String              @id @default(auto()) @map("_id") @db.ObjectId
+  analysis_result_id String              @db.ObjectId
+  theme              String?             
+  suggestion_text    String?
+  priority           suggestion_priority?
+  is_admin_approved  Boolean             @default(false)
+
+  analysis_result    analysis_results    @relation(fields: [analysis_result_id], references: [id], onDelete: Cascade)
+}
+
+model reports {
+  id              String        @id @default(auto()) @map("_id") @db.ObjectId
+  survey_cycle_id String        @unique @db.ObjectId
+  company_id      String        @db.ObjectId
+  pdf_url         String?
+  status          report_status @default(draft)
+  generated_at    DateTime?     
+  sent_at         DateTime?     
+  sent_by_admin_id String?       @db.ObjectId
+
+  survey_cycle    survey_cycles @relation(fields: [survey_cycle_id], references: [id])
+  company         companies     @relation(fields: [company_id], references: [id])
+  sent_by_admin   admins?       @relation(fields: [sent_by_admin_id], references: [id])
+}

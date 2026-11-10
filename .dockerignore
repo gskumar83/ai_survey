@@ -1,0 +1,16 @@
+node_modules
+.git
+.github
+.vscode
+.env
+.env.local
+.mongodb_data
+.mongodb_data_backup
+backups
+scratch
+dist
+*.log
+*.zip
+*.md
+!README_DEPLOYMENT.md
+!DEPLOYMENT_CHECKLIST.md

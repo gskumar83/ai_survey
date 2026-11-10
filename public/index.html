@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="People & Process Excellence - Visteria Consulting Services Private Limited. Vision Changes Everything.">
+    <title>Sign In | People & Process Excellence</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Dedicated Stylesheets -->
+    <link rel="stylesheet" href="/assets/design-system.css">
+    <link rel="stylesheet" href="/employee/css/landing.css">
+    <link rel="stylesheet" href="/employee/css/employee.css">
+    <link rel="stylesheet" href="/employee/css/i18n.css">
+</head>
+
+<body class="landing-body">
+
+    <!-- Ambient organic wave & data visualization backdrop layer -->
+    <div class="landing-ambient-bg" aria-hidden="true">
+        <div class="landing-ambient-wave"></div>
+
+        <!-- Subtle Enterprise Data Visualization & BI Background Graphics (Right-Aligned) -->
+        <div class="data-viz-background">
+            <!-- 1. Floating Metric Dashboard Preview (Upper Right) -->
+            <div class="viz-card viz-card-analytics">
+                <div class="viz-card-header">
+                    <span class="viz-dot viz-dot-teal"></span>
+                    <span class="viz-card-title">Workplace Sentiment Pulse</span>
+                    <span class="viz-card-badge">+18.4%</span>
+                </div>
+                <div class="viz-chart-line-wrap">
+                    <svg class="viz-svg-line" viewBox="0 0 260 76" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="vizLineGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#0FAEAA" stop-opacity="0.32" />
+                                <stop offset="100%" stop-color="#0FAEAA" stop-opacity="0.0" />
+                            </linearGradient>
+                            <linearGradient id="vizStrokeGrad" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#26C6DA" />
+                                <stop offset="50%" stop-color="#0FAEAA" />
+                                <stop offset="100%" stop-color="#48C78E" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M 0,60 Q 40,50 70,32 T 140,38 T 200,16 T 260,10 L 260,76 L 0,76 Z" fill="url(#vizLineGrad)" />
+                        <path d="M 0,60 Q 40,50 70,32 T 140,38 T 200,16 T 260,10" fill="none" stroke="url(#vizStrokeGrad)" stroke-width="2.2" stroke-linecap="round" />
+                        <circle cx="70" cy="32" r="3" fill="#26C6DA" class="viz-pulse-node" />
+                        <circle cx="140" cy="38" r="3" fill="#0FAEAA" class="viz-pulse-node" />
+                        <circle cx="200" cy="16" r="3.5" fill="#48C78E" class="viz-pulse-node" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- 2. Circular Donut / Sentiment Distribution Graphic (Middle-Right Edge) -->
+            <div class="viz-card viz-card-donut">
+                <svg class="viz-svg-donut" viewBox="0 0 110 110">
+                    <circle cx="55" cy="55" r="42" fill="none" stroke="rgba(15, 174, 170, 0.12)" stroke-width="8" />
+                    <circle cx="55" cy="55" r="42" fill="none" stroke="#0FAEAA" stroke-width="8" stroke-dasharray="118 264" stroke-dashoffset="0" stroke-linecap="round" opacity="0.85" />
+                    <circle cx="55" cy="55" r="42" fill="none" stroke="#26C6DA" stroke-width="8" stroke-dasharray="78 264" stroke-dashoffset="-126" stroke-linecap="round" opacity="0.9" />
+                    <circle cx="55" cy="55" r="42" fill="none" stroke="#48C78E" stroke-width="8" stroke-dasharray="48 264" stroke-dashoffset="-212" stroke-linecap="round" opacity="0.85" />
+                    <circle cx="55" cy="55" r="16" fill="rgba(15, 174, 170, 0.08)" />
+                    <circle cx="55" cy="55" r="5" fill="#0FAEAA" opacity="0.75" />
+                </svg>
+                <div class="viz-donut-meta">
+                    <span class="viz-donut-score">94.2%</span>
+                    <span class="viz-donut-label">Index Score</span>
+                </div>
+            </div>
+
+            <!-- 3. Dynamic Bar Chart & Metric Columns (Bottom-Right) -->
+            <div class="viz-card viz-card-barchart">
+                <div class="viz-bars-row">
+                    <div class="viz-bar-col"><div class="viz-bar-fill" style="height: 44%;"></div><span class="viz-bar-sub">Q1</span></div>
+                    <div class="viz-bar-col"><div class="viz-bar-fill" style="height: 62%;"></div><span class="viz-bar-sub">Q2</span></div>
+                    <div class="viz-bar-col"><div class="viz-bar-fill" style="height: 80%;"></div><span class="viz-bar-sub">Q3</span></div>
+                    <div class="viz-bar-col"><div class="viz-bar-fill viz-bar-active" style="height: 95%;"></div><span class="viz-bar-sub">Q4</span></div>
+                    <div class="viz-bar-col"><div class="viz-bar-fill" style="height: 70%;"></div><span class="viz-bar-sub">FY</span></div>
+                </div>
+                <div class="viz-card-footer-caption">Process Maturity Benchmark</div>
+            </div>
+
+            <!-- 4. Connected Neural BI Data Nodes (Spanning Mesh) -->
+            <svg class="viz-svg-constellation" viewBox="0 0 540 540" fill="none">
+                <path d="M 100,70 L 220,140 L 370,90 L 460,210 L 340,320 L 430,430" stroke="rgba(38, 198, 218, 0.22)" stroke-width="1.2" stroke-dasharray="4 6" />
+                <path d="M 220,140 L 280,260 L 340,320" stroke="rgba(15, 174, 170, 0.22)" stroke-width="1.2" />
+                <path d="M 150,290 L 280,260 L 410,230" stroke="rgba(72, 199, 142, 0.18)" stroke-width="1.2" stroke-dasharray="3 5" />
+                <circle cx="100" cy="70" r="3" fill="#26C6DA" opacity="0.6" />
+                <circle cx="220" cy="140" r="4" fill="#0FAEAA" opacity="0.75" />
+                <circle cx="220" cy="140" r="8" stroke="rgba(15, 174, 170, 0.22)" stroke-width="1" />
+                <circle cx="370" cy="90" r="3.5" fill="#26C6DA" opacity="0.6" />
+                <circle cx="460" cy="210" r="4.5" fill="#48C78E" opacity="0.8" />
+                <circle cx="460" cy="210" r="9.5" stroke="rgba(72, 199, 142, 0.25)" stroke-width="1" />
+                <circle cx="280" cy="260" r="3.5" fill="#0FAEAA" opacity="0.7" />
+                <circle cx="340" cy="320" r="4" fill="#26C6DA" opacity="0.7" />
+                <circle cx="430" cy="430" r="3" fill="#0FAEAA" opacity="0.6" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- =====================================================
+         1. TOP NAVIGATION / HEADER
+    ====================================================== -->
+    <header class="landing-header">
+        <div class="header-inner">
+
+            <!-- Brand Left -->
+            <a href="/" class="brand-link" aria-label="People &amp; Process Excellence">
+                <img src="/assets/visteria-logo.png" alt="Visteria Logo" class="header-bird-logo">
+                <div class="brand-text-block">
+                    <span class="brand-product-title">PEOPLE &amp; PROCESS <span class="title-accent">EXCELLENCE</span></span>
+                    <span class="brand-company-sub">Visteria Consulting Services Private Limited</span>
+                </div>
+            </a>
+
+            <!-- Navigation Right (Theme, Language) -->
+            <nav class="header-nav" aria-label="Portal Navigation">
+                <ul class="nav-list">
+                    <!-- Multilingual Language Selector Slot -->
+                    <li id="langSelectorSlot" class="header-lang-slot"></li>
+
+                    <!-- Clean On/Off Theme Toggle Switch (Sun / Moon) -->
+                    <li>
+                        <button type="button" class="theme-switch-toggle" id="themeToggleBtn" role="switch" aria-checked="false" aria-label="Toggle visual theme" title="Toggle Light / Dark mode">
+                            <span class="theme-switch-track">
+                                <span class="theme-track-icon theme-track-sun" aria-hidden="true">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="5"></circle>
+                                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                    </svg>
+                                </span>
+                                <span class="theme-track-icon theme-track-moon" aria-hidden="true">
+                                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                    </svg>
+                                </span>
+                                <span class="theme-switch-thumb">
+                                    <span class="thumb-icon-sun" aria-hidden="true">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                            <circle cx="12" cy="12" r="5"></circle>
+                                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="thumb-icon-moon" aria-hidden="true">
+                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         2. AUTHENTICATION ROOT WORKSPACE (Two-Panel Composition)
+    ====================================================== -->
+    <main class="auth-main-wrapper">
+        <div class="auth-container">
+
+            <!-- =================================================
+                 LEFT COLUMN: BRAND PANEL + ANIMATED DIGITAL GLOBE
+            ================================================== -->
+            <section class="auth-hero-side" aria-label="People &amp; Process Excellence Brand Experience">
+                <div class="brand-panel-card">
+
+                    <!-- Mandatory Animated Digital Globe Canvas -->
+                    <div class="digital-globe-container" aria-hidden="true">
+                        <canvas id="digitalGlobeCanvas"></canvas>
+                    </div>
+
+                    <!-- Header Content -->
+                    <div class="brand-panel-header">
+                        <div class="brand-panel-eyebrow">
+                            <span class="eyebrow-shield" aria-hidden="true">🛡️</span>
+                            <span data-i18n="nav.enterprise_secured">ENTERPRISE SECURED</span>
+                        </div>
+
+                        <div class="brand-panel-welcome">Welcome to</div>
+
+                        <h1 class="brand-panel-title">
+                            <span>PEOPLE &amp; PROCESS</span>
+                            <span class="brand-title-accent">EXCELLENCE</span>
+                        </h1>
+
+                        <p class="brand-panel-desc" data-i18n="brand.desc">
+                            Empowering organizational growth through authentic employee feedback, intelligent operational synthesis, and leadership excellence.
+                        </p>
+                    </div>
+
+                    <!-- The Three Feature Cards (Section 4 Exact Spec) -->
+                    <div class="brand-features-list">
+
+                        <!-- Card 1: Your Voice, Your Privacy -->
+                        <div class="brand-feature-item" id="featureCard1" tabindex="0" role="region" aria-label="Your Voice, Your Privacy">
+                            <div class="brand-feature-icon-badge icon-badge-teal" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <path d="M9 12h6"></path>
+                                    <path d="M12 9v6"></path>
+                                </svg>
+                            </div>
+                            <div class="brand-feature-text">
+                                <h3 data-i18n="brand.card1_title">Your Voice, Your Privacy</h3>
+                                <p data-i18n="brand.card1_desc">Share honest feedback in a secure environment where your workplace concerns can be heard.</p>
+                            </div>
+                            <div class="brand-feature-arrow" aria-hidden="true">→</div>
+                        </div>
+
+                        <!-- Card 2: Insights That Drive Change -->
+                        <div class="brand-feature-item" id="featureCard2" tabindex="0" role="region" aria-label="Insights That Drive Change">
+                            <div class="brand-feature-icon-badge icon-badge-cyan" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                </svg>
+                            </div>
+                            <div class="brand-feature-text">
+                                <h3 data-i18n="brand.card2_title">Insights That Drive Change</h3>
+                                <p data-i18n="brand.card2_desc">Turn employee feedback into clear insights that help leaders make better decisions and improve the workplace.</p>
+                            </div>
+                            <div class="brand-feature-arrow" aria-hidden="true">→</div>
+                        </div>
+
+                        <!-- Card 3: A Better Workplace, Every Day -->
+                        <div class="brand-feature-item" id="featureCard3" tabindex="0" role="region" aria-label="A Better Workplace, Every Day">
+                            <div class="brand-feature-icon-badge icon-badge-green" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="brand-feature-text">
+                                <h3 data-i18n="brand.card3_title">A Better Workplace, Every Day</h3>
+                                <p data-i18n="brand.card3_desc">Help build a healthier, more supportive workplace where people and teams can grow together.</p>
+                            </div>
+                            <div class="brand-feature-arrow" aria-hidden="true">→</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom Visteria Branding & Tagline -->
+                    <div class="brand-panel-footer">
+                        <div class="brand-company-tag">
+                            <span class="brand-org-label">VISTERIA CONSULTING SERVICES PRIVATE LIMITED</span>
+                            <span class="brand-org-sub">Vision Changes Everything.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- =================================================
+                 RIGHT COLUMN: REFINED GLASS AUTHENTICATION CARD
+            ================================================== -->
+            <section class="auth-card-side" aria-label="Authentication Card">
+                <div class="auth-card" id="authCard">
+
+                    <!-- Top Card Brand -->
+                    <div class="auth-card-topbar">
+                        <div class="auth-card-brand">
+                            <img src="/assets/visteria-logo.png" alt="Visteria Logo" class="auth-card-logo">
+                            <div class="auth-card-title-group">
+                                <span class="auth-card-title-main">PEOPLE &amp; PROCESS</span>
+                                <span class="auth-card-title-sub">EXCELLENCE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Segmented Pill Tabs (Sign In is Active by default) -->
+                    <div class="auth-tabs" role="tablist" aria-label="Authentication Selection">
+                        <!-- SIGN IN - ACTIVE -->
+                        <button type="button" id="tabSignIn" class="auth-tab-btn active" role="tab" aria-selected="true"
+                            aria-controls="panelSignIn" data-i18n="auth.tab_signin">
+                            Sign In
+                        </button>
+
+                        <!-- REGISTER -->
+                        <button type="button" id="tabSignUp" class="auth-tab-btn" role="tab" aria-selected="false"
+                            aria-controls="panelSignUp" data-i18n="auth.tab_signup">
+                            Register
+                        </button>
+
+                        <div class="auth-tab-slider" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- Authentication Forms Viewport -->
+                    <div class="auth-forms-viewport">
+
+                        <!-- =================================================
+                             PANEL 1: SIGN IN (ACTIVE BY DEFAULT)
+                        ================================================== -->
+                        <div id="panelSignIn" class="auth-form-panel active-panel" role="tabpanel" aria-labelledby="tabSignIn">
+
+                            <div class="auth-form-header">
+                                <h2 data-i18n="auth.title_signin">Sign In</h2>
+                                <p data-i18n="auth.subtitle_signin">Access your survey dashboard</p>
+                            </div>
+
+                            <form id="formSignIn" class="auth-form-body" autocomplete="off">
+
+                                <!-- Email Address or Employee ID -->
+                                <div class="input-field-group">
+                                    <label for="signinEmployeeId">
+                                        <span data-i18n="auth.email_label">Email Address or Employee ID</span>
+                                    </label>
+
+                                    <div class="input-inner-wrapper">
+                                        <span class="input-leading-icon" aria-hidden="true">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                                <polyline points="22,6 12,13 2,6"></polyline>
+                                            </svg>
+                                        </span>
+                                        <input type="text" id="signinEmployeeId" name="employeeId" class="auth-input"
+                                            placeholder="Enter your email or employee ID" data-i18n-placeholder="auth.email_placeholder" autocomplete="off" value="" required>
+                                    </div>
+                                </div>
+
+                                <!-- Password with Eye Toggle & Forgot Link -->
+                                <div class="input-field-group">
+                                    <label for="signinPassword">
+                                        <span data-i18n="auth.password_label">Password</span>
+                                        
+                                    </label>
+
+                                    <div class="input-inner-wrapper password-box">
+                                        <span class="input-leading-icon" aria-hidden="true">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                            </svg>
+                                        </span>
+                                        <input type="password" id="signinPassword" name="password" class="auth-input"
+                                            placeholder="Enter your password" data-i18n-placeholder="auth.password_placeholder" autocomplete="new-password" value="" required>
+
+                                        <button type="button" class="btn-toggle-password" data-target="signinPassword"
+                                            aria-label="Toggle password visibility" title="Show password">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Remember Me Checkbox -->
+                                <div class="auth-options-row">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="rememberMe">
+                                        <span data-i18n="auth.remember_me">Remember me</span>
+                                    </label>
+                                </div>
+
+                                <!-- Inline Error Banner -->
+                                <div id="signinInlineError" class="auth-inline-error" style="display:none;margin-bottom:14px;padding:10px 14px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;color:#b91c1c;font-size:13px;line-height:1.4;" role="alert"></div>
+
+                                <!-- Primary Sign In Button -->
+                                <button type="submit" class="btn-primary auth-submit-btn">
+                                    <span data-i18n="auth.btn_signin">Sign In</span>
+                                    <span class="btn-arrow" aria-hidden="true">→</span>
+                                </button>
+
+                                <!-- Switch Prompt -->
+                                <div class="auth-switch-prompt">
+                                    <span data-i18n="auth.new_to_visteria">New to Visteria Survey AI?</span>
+                                    <button type="button" class="auth-switch-action" id="linkToSignUp" data-i18n="auth.signup_action">
+                                        Sign Up
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+                        <!-- =================================================
+                             PANEL 2: REGISTER ACCOUNT
+                        ================================================== -->
+                        <div id="panelSignUp" class="auth-form-panel" role="tabpanel" aria-labelledby="tabSignUp">
+
+                            <div class="auth-form-header">
+                                <h2 data-i18n="auth.create_account_title">Create Your Account</h2>
+                                <p data-i18n="auth.create_account_desc">Register as an employee to begin your workplace survey.</p>
+                            </div>
+
+                            <!-- Registration Already Completed Banner -->
+                            <div id="alreadyRegisteredBanner" class="auth-info-banner" style="display: none;">
+                                <div class="info-banner-icon">ℹ️</div>
+                                <div class="info-banner-content">
+                                    <strong data-i18n="auth.already_registered_title">Registration Already Completed</strong>
+                                    <p>
+                                        <span data-i18n="auth.already_registered_desc">You have already created an account with Employee ID</span>
+                                        <strong id="registeredBannerEmpId"></strong>.
+                                    </p>
+                                    <button type="button" id="registeredBannerSignInBtn" class="info-banner-action" data-i18n="auth.already_registered_signin">
+                                        Proceed to Sign In →
+                                    </button>
+                                </div>
+                            </div>
+
+                            <form id="formSignUp" class="auth-form-body" autocomplete="on" novalidate>
+
+                                <!-- Full Name & Employee ID -->
+                                <div class="form-row-2col">
+                                    <div class="input-field-group">
+                                        <label for="signupName">
+                                            <span data-i18n="auth.full_name">Full Name</span>
+                                            <span class="required-star">*</span>
+                                        </label>
+                                        <div class="input-inner-wrapper">
+                                            <span class="input-leading-icon" aria-hidden="true">
+                                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                    <circle cx="12" cy="7" r="4"></circle>
+                                                </svg>
+                                            </span>
+                                            <input type="text" id="signupName" name="name" class="auth-input"
+                                                placeholder="John Doe" data-i18n-placeholder="auth.full_name_placeholder" autocomplete="name" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Auto-generated Employee ID -->
+                                    <div class="input-field-group">
+                                        <label for="signupEmployeeId">
+                                            <span data-i18n="auth.employee_id">Employee ID</span>
+                                            <span class="badge-autogen" data-i18n="auth.autogen_badge">AUTO-GENERATED</span>
+                                        </label>
+                                        <div class="input-inner-wrapper">
+                                            <span class="input-leading-icon" aria-hidden="true">
+                                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                                                    <circle cx="7" cy="15" r="1.5"></circle>
+                                                </svg>
+                                            </span>
+                                            <input type="text" id="signupEmployeeId" name="employeeId"
+                                                class="auth-input input-autogen" placeholder="Assigned on registration"
+                                                data-i18n-placeholder="auth.autogen_placeholder" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Company & Department Dropdowns -->
+                                <div class="form-row-2col">
+                                    <div class="input-field-group">
+                                        <label for="signupCompany">
+                                            <span data-i18n="auth.company">Company</span>
+                                            <span class="required-star">*</span>
+                                        </label>
+                                        <div class="input-inner-wrapper">
+                                            <span class="input-leading-icon" aria-hidden="true">
+                                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                                    <line x1="9" y1="6" x2="9" y2="6.01"></line>
+                                                    <line x1="15" y1="6" x2="15" y2="6.01"></line>
+                                                    <line x1="9" y1="10" x2="9" y2="10.01"></line>
+                                                    <line x1="15" y1="10" x2="15" y2="10.01"></line>
+                                                    <line x1="9" y1="14" x2="9" y2="14.01"></line>
+                                                    <line x1="15" y1="14" x2="15" y2="14.01"></line>
+                                                </svg>
+                                            </span>
+                                            <select id="signupCompany" name="company" class="auth-input" required>
+                                                <option value="" disabled selected data-i18n="auth.company_select_default">Select your company</option>
+                                                <option value="other" data-i18n="auth.other_option">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-field-group">
+                                        <label for="signupDepartment">
+                                            <span data-i18n="auth.department">Department</span>
+                                            <span class="required-star">*</span>
+                                        </label>
+                                        <div class="input-inner-wrapper">
+                                            <span class="input-leading-icon" aria-hidden="true">
+                                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                                                </svg>
+                                            </span>
+                                            <select id="signupDepartment" name="department" class="auth-input" required>
+                                                <option value="" disabled selected data-i18n="auth.dept_select_default">Select your department</option>
+                                                <option value="HR">HR</option>
+                                                <option value="Sales">Sales</option>
+                                                <option value="Finance">Finance</option>
+                                                <option value="IT">IT</option>
+                                                <option value="Operations">Operations</option>
+                                                <option value="Marketing">Marketing</option>
+                                                <option value="other" data-i18n="auth.other_option">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Other Company / Department Dynamic Inputs -->
+                                <div class="form-row-2col" id="otherFieldsRow" style="display: none;">
+                                    <div class="input-field-group" id="otherCompanyGroup" style="display: none;">
+                                        <label for="signupOtherCompany">
+                                            <span data-i18n="auth.specify_company">Specify Company Name</span>
+                                            <span class="required-star">*</span>
+                                        </label>
+                                        <div class="input-inner-wrapper">
+                                            <input type="text" id="signupOtherCompany" name="otherCompany" class="auth-input"
+                                                placeholder="Enter company name" data-i18n-placeholder="auth.specify_company_placeholder">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-field-group" id="otherDepartmentGroup" style="display: none;">
+                                        <label for="signupOtherDepartment">
+                                            <span data-i18n="auth.specify_dept">Specify Department</span>
+                                            <span class="required-star">*</span>
+                                        </label>
+                                        <div class="input-inner-wrapper">
+                                            <input type="text" id="signupOtherDepartment" name="otherDepartment" class="auth-input"
+                                                placeholder="e.g. Legal, R&D, Support" data-i18n-placeholder="auth.specify_dept_placeholder">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Work Email Address -->
+                                <div class="input-field-group">
+                                    <label for="signupEmail">
+                                        <span data-i18n="auth.work_email">Work Email Address</span>
+                                        <span class="required-star">*</span>
+                                    </label>
+                                    <div class="input-inner-wrapper">
+                                        <span class="input-leading-icon" aria-hidden="true">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                                <polyline points="22,6 12,13 2,6"></polyline>
+                                            </svg>
+                                        </span>
+                                        <input type="email" id="signupEmail" name="email" class="auth-input"
+                                            placeholder="employee@company.com" data-i18n-placeholder="auth.work_email_placeholder" autocomplete="email" required>
+                                    </div>
+                                </div>
+
+                                <!-- Password & Confirm Password -->
+                                <div class="form-row-2col">
+                                    <div class="input-field-group">
+                                        <label for="signupPassword">
+                                            <span data-i18n="auth.password">Password</span>
+                                            <span class="required-star">*</span>
+                                        </label>
+                                        <div class="input-inner-wrapper password-box">
+                                            <span class="input-leading-icon" aria-hidden="true">
+                                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                </svg>
+                                            </span>
+                                            <input type="password" id="signupPassword" name="password" class="auth-input"
+                                                placeholder="Create password" data-i18n-placeholder="auth.password_create_placeholder" autocomplete="new-password" required>
+                                            <button type="button" class="btn-toggle-password" data-target="signupPassword" aria-label="Toggle password visibility">
+                                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-field-group">
+                                        <label for="signupConfirmPassword">
+                                            <span data-i18n="auth.confirm_password">Confirm Password</span>
+                                            <span class="required-star">*</span>
+                                        </label>
+                                        <div class="input-inner-wrapper password-box">
+                                            <span class="input-leading-icon" aria-hidden="true">
+                                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                </svg>
+                                            </span>
+                                            <input type="password" id="signupConfirmPassword" name="confirmPassword" class="auth-input"
+                                                placeholder="Confirm password" data-i18n-placeholder="auth.confirm_password_placeholder" autocomplete="new-password" required>
+                                            <button type="button" class="btn-toggle-password" data-target="signupConfirmPassword" aria-label="Toggle password visibility">
+                                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Terms & Conditions and Privacy Policy Agreement Checkbox -->
+                                <div class="input-field-group legal-agreement-group" style="margin-top: 4px;">
+                                    <label class="checkbox-label" for="signupTerms" style="align-items: flex-start; gap: 8px;">
+                                        <input type="checkbox" id="signupTerms" name="agreedToTerms" required>
+                                        <span class="checkbox-text" style="line-height: 1.45; font-size: 13px;">
+                                            I agree to the <a href="javascript:void(0)" id="openTermsLink" class="legal-link" title="Open Terms &amp; Conditions">Terms &amp; Conditions</a> and <a href="javascript:void(0)" id="openPrivacyLink" class="legal-link" title="Open Privacy Policy">Privacy Policy</a>.
+                                            <span class="required-star">*</span>
+                                        </span>
+                                    </label>
+                                    <div id="termsValidationMsg" class="field-validation-msg" style="display: none; color: #E11D48; font-size: 12px; margin-top: 5px; padding-left: 24px; font-weight: 500;">
+                                        You must accept the Terms &amp; Conditions and Privacy Policy to register.
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" id="submitSignup" class="btn-primary auth-submit-btn">
+                                    <span data-i18n="auth.create_account_btn">Create Employee Account</span>
+                                    <span class="btn-arrow" aria-hidden="true">→</span>
+                                </button>
+
+                                <!-- Switch Prompt -->
+                                <div class="auth-switch-prompt">
+                                    <span data-i18n="auth.already_have_account">Already have an account?</span>
+                                    <button type="button" class="auth-switch-action" id="linkToSignIn" data-i18n="auth.sign_in_action">Sign In</button>
+                                </div>
+
+                            </form>
+
+                            <!-- Registration Success Screen -->
+                            <div id="signupSuccessView" class="auth-success-screen" style="display: none;">
+                                <div class="auth-success-badge">✓</div>
+                                <h2 class="auth-success-title" data-i18n="auth.success_title">Welcome! Account Created</h2>
+                                <p class="auth-success-subtitle" data-i18n="auth.success_subtitle">Your employee account has been registered successfully.</p>
+                                <div class="auth-empid-card">
+                                    <span class="auth-empid-eyebrow" data-i18n="auth.success_empid_eyebrow">YOUR UNIQUE EMPLOYEE ID</span>
+                                    <div class="auth-empid-number" id="generatedEmpId">EMP-2026-0000</div>
+                                    <p class="auth-empid-hint" data-i18n="auth.success_empid_hint">Save this ID. You will use this ID + your password to sign in.</p>
+                                </div>
+                                <button type="button" id="doneSignup" class="btn-primary auth-submit-btn">
+                                    <span data-i18n="auth.continue_to_signin">CONTINUE TO SIGN IN</span>
+                                    <span class="btn-arrow" aria-hidden="true">→</span>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- =================================================
+                             PANEL 3: FORGOT PASSWORD
+                        ================================================== -->
+                        <div id="panelForgot" class="auth-form-panel" role="tabpanel" style="display: none;">
+                            <div class="auth-form-header">
+                                <h2 data-i18n="auth.forgot_title">Password Recovery</h2>
+                                <p data-i18n="auth.forgot_desc">Enter your registered work email to receive a password reset link.</p>
+                            </div>
+                            <form id="formForgot" class="auth-form-body">
+                                <div class="input-field-group">
+                                    <label for="forgotEmail">
+                                        <span data-i18n="auth.work_email">Work Email Address</span>
+                                        <span class="required-star">*</span>
+                                    </label>
+                                    <div class="input-inner-wrapper">
+                                        <span class="input-leading-icon" aria-hidden="true">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                                <polyline points="22,6 12,13 2,6"></polyline>
+                                            </svg>
+                                        </span>
+                                        <input type="email" id="forgotEmail" name="email" class="auth-input" placeholder="name@company.com" data-i18n-placeholder="auth.work_email_placeholder" autocomplete="email" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-primary auth-submit-btn" style="margin-top: 14px;">
+                                    <span data-i18n="auth.forgot_submit">SEND RESET LINK</span>
+                                    <span class="btn-arrow" aria-hidden="true">→</span>
+                                </button>
+                                <div class="auth-switch-prompt" style="margin-top: 20px;">
+                                    <span data-i18n="auth.forgot_remember">Remember your password?</span>
+                                    <button type="button" class="auth-switch-action" id="linkBackToSignIn" data-i18n="auth.sign_in_action">Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- =================================================
+                             PANEL 4: RESET PASSWORD
+                        ================================================== -->
+                        <div id="panelReset" class="auth-form-panel" role="tabpanel" style="display: none;">
+                            <div class="auth-form-header">
+                                <h2 data-i18n="auth.reset_title">Set New Password</h2>
+                                <p data-i18n="auth.reset_desc">Choose a strong password to protect your survey account.</p>
+                            </div>
+                            <form id="formReset" class="auth-form-body">
+                                <div class="input-field-group">
+                                    <label for="resetPassword">
+                                        <span data-i18n="auth.new_password">New Password</span> <span class="required-star">*</span>
+                                    </label>
+                                    <div class="input-inner-wrapper password-box">
+                                        <input type="password" id="resetPassword" name="password" class="auth-input" placeholder="Min. 8 characters" required>
+                                        <button type="button" class="btn-toggle-password" data-target="resetPassword" aria-label="Toggle password visibility">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="input-field-group">
+                                    <label for="resetConfirmPassword">
+                                        <span data-i18n="auth.confirm_new_password">Confirm New Password</span> <span class="required-star">*</span>
+                                    </label>
+                                    <div class="input-inner-wrapper password-box">
+                                        <input type="password" id="resetConfirmPassword" name="confirmPassword" class="auth-input" placeholder="Re-enter password" required>
+                                        <button type="button" class="btn-toggle-password" data-target="resetConfirmPassword" aria-label="Toggle password visibility">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn-primary auth-submit-btn" style="margin-top: 14px;">
+                                    <span data-i18n="auth.reset_submit">UPDATE PASSWORD &amp; SIGN IN</span>
+                                    <span class="btn-arrow" aria-hidden="true">→</span>
+                                </button>
+                                <div class="auth-switch-prompt" style="margin-top: 20px;">
+                                    <button type="button" class="auth-switch-action" id="linkBackToSignInFromReset" data-i18n="auth.reset_back_signin">Back to Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <!-- Security Footnote -->
+                    <div class="auth-card-footer-note">
+                        <span data-i18n="auth.confidential_badge">100% Confidential &amp; Secure Feedback</span>
+                        <span>•</span>
+                        <span>PEOPLE &amp; PROCESS EXCELLENCE</span>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+
+    <!-- =====================================================
+         3. FOOTER
+    ====================================================== -->
+    <footer class="landing-footer">
+        <div class="footer-inner">
+            <div class="footer-brand-side">
+                <img src="/assets/visteria-logo.png" alt="Visteria Logo" class="footer-logo">
+                <div class="footer-brand-meta">
+                    <strong>VISTERIA CONSULTING SERVICES PRIVATE LIMITED</strong>
+                    <span>Vision Changes Everything. • <span data-i18n="brand.product_title">People &amp; Process Excellence</span></span>
+                </div>
+            </div>
+
+            <div class="footer-links-side">
+                <a href="/employee/welcome.html" data-i18n="nav.about_survey">About Survey</a>
+                <span class="footer-dot">•</span>
+                <a href="javascript:void(0)" id="footerTermsLink" class="footer-legal-link">Terms &amp; Conditions</a>
+                <span class="footer-dot">•</span>
+                <a href="javascript:void(0)" id="footerPrivacyLink" class="footer-legal-link">Privacy Policy</a>
+                <span class="footer-dot">•</span>
+                <span data-i18n="footer.wellbeing">Organizational Well-being</span>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            © 2026 Visteria Consulting Services Private Limited. <span data-i18n="footer.rights">All rights reserved.</span>
+        </div>
+    </footer>
+
+
+    <!-- =====================================================
+         LEGAL MODAL: TERMS & CONDITIONS & PRIVACY POLICY
+    ====================================================== -->
+    <div id="legalPolicyModal" class="legal-modal-backdrop" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+        <div class="legal-modal-card">
+            <div class="legal-modal-header">
+                <div class="legal-modal-title-wrap">
+                    <img src="/assets/visteria-logo.png" alt="Visteria" class="legal-modal-logo">
+                    <div>
+                        <h2 id="legalModalTitle" class="legal-modal-title">Terms &amp; Conditions &amp; Privacy Policy</h2>
+                        <span class="legal-modal-subtitle">People &amp; Process Excellence • Visteria Consulting Services Private Limited</span>
+                    </div>
+                </div>
+                <button type="button" id="closeLegalModalBtn" class="legal-modal-close" aria-label="Close dialog">✕</button>
+            </div>
+
+            <!-- Tab Switcher inside Modal -->
+            <div class="legal-modal-tabs" role="tablist">
+                <button type="button" id="legalTabTerms" class="legal-tab-btn active" role="tab" aria-selected="true" data-target="legalContentTerms">Terms &amp; Conditions</button>
+                <button type="button" id="legalTabPrivacy" class="legal-tab-btn" role="tab" aria-selected="false" data-target="legalContentPrivacy">Privacy Policy</button>
+            </div>
+
+            <div class="legal-modal-meta-bar">
+                <span><strong>Effective Date:</strong> October 2026</span>
+                <span>•</span>
+                <span><strong>Last Updated:</strong> October 24, 2026</span>
+                <span>•</span>
+                <span><strong>Policy Version:</strong> v2.4-PPE</span>
+            </div>
+
+            <div class="legal-modal-body">
+                <!-- Section 1: TERMS & CONDITIONS -->
+                <div id="legalContentTerms" class="legal-tab-panel active">
+                    <div class="legal-policy-callout">
+                        <strong>Operational Transparency Notice:</strong> The terms and policies described herein accurately reflect the actual technical architecture, database data flows, and administrative role boundaries of the People &amp; Process Excellence platform. Specific enterprise service level agreements (SLAs), client retention schedules, and organizational policies are subject to confirmation by Visteria management and applicable client corporate agreements.
+                    </div>
+
+                    <section class="legal-sec">
+                        <h3>1. Purpose of the People &amp; Process Excellence Survey</h3>
+                        <p>The People &amp; Process Excellence platform is an enterprise assessment and organizational development solution provided by Visteria Consulting Services Private Limited. Its primary purpose is to collect structured employee feedback regarding workplace culture, operational workflows, leadership effectiveness, process efficiency, and organizational well-being. Collected data is transformed into actionable organizational insights that assist enterprise leaders in fostering continuous workplace improvements.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>2. Employee Participation and Responsibilities</h3>
+                        <p>Participation in scheduled survey cycles is conducted on behalf of your employer in connection with organizational improvement initiatives. As a participant, you agree to:</p>
+                        <ul>
+                            <li>Provide honest, constructive, and accurate feedback reflecting your authentic workplace experience.</li>
+                            <li>Protect the confidentiality of your employee login credentials and survey access links.</li>
+                            <li>Refrain from sharing login codes or submitting survey responses on behalf of other colleagues.</li>
+                            <li>Adhere to your organization's professional code of conduct when providing optional open-ended text commentary.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>3. Confidentiality and Handling of Employee Feedback</h3>
+                        <p>We treat all employee feedback with high confidentiality. Individual survey responses (Likert scale ratings and commentary) are aggregated at the department, branch, and company levels to produce generalized statistical summaries, sentiment trends, and organizational indexes. Reporting dashboards provided to enterprise management do not display raw scores mapped to employee names in executive summaries. Technical access to underlying database records is strictly restricted to authorized system administrators under role-based security controls.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>4. Prohibited Misuse of the Platform</h3>
+                        <p>Users of this platform shall not:</p>
+                        <ul>
+                            <li>Submit intentionally false, defamatory, harassing, or abusive content.</li>
+                            <li>Attempt to probe, scan, bypass, or breach authentication mechanisms or security boundaries.</li>
+                            <li>Reverse engineer, scrape, or extract source data or administrative reports without authorization.</li>
+                            <li>Introduce malicious scripts, automated bots, or interference agents into the survey submission API.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>5. User Consent and Acknowledgement</h3>
+                        <p>By registering an account and checking the agreement checkbox, you explicitly acknowledge that you have read, understood, and agreed to be bound by these Terms &amp; Conditions and the associated Privacy Policy. You understand that your feedback will be processed to generate organizational excellence analytics for your enterprise.</p>
+                    </section>
+                </div>
+
+                <!-- Section 2: PRIVACY POLICY -->
+                <div id="legalContentPrivacy" class="legal-tab-panel" style="display: none;">
+                    <div class="legal-policy-callout">
+                        <strong>Data Protection &amp; Governance Notice:</strong> Visteria Consulting Services Private Limited processes employee information in accordance with applicable data protection principles, including the Digital Personal Data Protection (DPDP) Act 2023 and relevant international privacy standards.
+                    </div>
+
+                    <section class="legal-sec">
+                        <h3>1. Personal Information Collected and Intended Use</h3>
+                        <p>When you register and use the People &amp; Process Excellence portal, the system collects and processes the following categories of data:</p>
+                        <ul>
+                            <li><strong>Identity Data:</strong> Full name, corporate email address, auto-generated employee code, and optional contact number.</li>
+                            <li><strong>Organizational Context:</strong> Company affiliation, branch, department, and assigned survey cycle identifiers.</li>
+                            <li><strong>Feedback Responses:</strong> Likert scale ratings (1–5) across survey categories, open qualitative feedback comments, and post-survey platform ratings.</li>
+                            <li><strong>Authentication &amp; Technical Metadata:</strong> Secure salted password hashes (bcrypt), timestamp of registration, session tokens, and password reset tokens. Plaintext passwords are never stored.</li>
+                        </ul>
+                        <p>This information is used strictly to verify employee eligibility, deliver assigned department-specific survey questionnaires, and synthesize organizational analytics.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>2. Data Storage, Access Permissions, Retention, and Deletion</h3>
+                        <p>All application data is hosted on enterprise cloud infrastructure with database access restricted through authenticated connection pools and network isolation. Access permissions follow least-privilege principles:</p>
+                        <ul>
+                            <li><strong>Super Administrators:</strong> Authorized personnel managing company onboarding, survey question templates, and technical platform reliability.</li>
+                            <li><strong>Company Leadership:</strong> Authorized access limited strictly to their own enterprise’s aggregated reports, department analytics, and AI summaries. Cross-company access is strictly barred.</li>
+                            <li><strong>Retention Period:</strong> Survey records and associated analytics are maintained for the active duration of the evaluation cycle and administrative reporting period as designated by the client contract [Subject to client agreement and legal retention policies].</li>
+                            <li><strong>Account &amp; Data Deletion:</strong> Requests for employee record erasure or department re-assignment may be submitted through designated corporate administrators or Visteria's Data Protection Officer.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>3. Processing of Survey Responses and AI-Generated Insights</h3>
+                        <p>Survey responses are analyzed using structured statistical aggregations and intelligent natural language processing algorithms (including Eagle AI / Gemini API integrations). AI processing is used to:</p>
+                        <ul>
+                            <li>Calculate category-level health scores, engagement distributions, and operational heatmaps.</li>
+                            <li>Synthesize key organizational themes, strengths, and priority areas for leadership focus.</li>
+                            <li>Identify systemic process friction and recommend constructive workplace training frameworks.</li>
+                        </ul>
+                        <p>AI processing does not make automated individual decisions affecting employment or disciplinary action; insights are intended solely for organizational process improvement.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>4. Limitations of Anonymity and Confidentiality</h3>
+                        <p>For absolute transparency: Although responses are aggregated to protect employee confidentiality, this system does not claim complete cryptographic anonymity. Each response record is associated with an employee ID and survey cycle in the database to verify participation, prevent duplicate voting, and support survey cycle tracking. Furthermore, if open-ended text answers contain self-identifying details or urgent disclosures of legal violations, health hazards, or severe workplace harassment, duty-of-care protocols may necessitate appropriate administrative review under enterprise compliance policies.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>5. Applicable Privacy Rights and Legal Obligations</h3>
+                        <p>Depending on your jurisdiction, you may have statutory rights regarding your personal information, including:</p>
+                        <ul>
+                            <li>The right to confirm whether your personal data is being processed.</li>
+                            <li>The right to access and review your basic profile information.</li>
+                            <li>The right to request correction of inaccurate profile attributes.</li>
+                            <li>The right to register a grievance with the data fiduciary or relevant regulatory authority.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>6. Contact Details &amp; Privacy Grievance Process</h3>
+                        <p>If you have questions, concerns, or requests regarding this Privacy Policy, your feedback confidentiality, or data governance practices, please contact:</p>
+                        <div class="legal-contact-card">
+                            <strong>Data Privacy &amp; Compliance Office</strong><br>
+                            Visteria Consulting Services Private Limited<br>
+                            Email: <a href="mailto:info@visteriaconsulting.com" style="color:#0FAEAA;text-decoration:underline;">info@visteriaconsulting.com</a><br>
+                            Corporate Tagline: <em>Vision Changes Everything.</em>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="legal-modal-footer">
+                <button type="button" id="acceptLegalPolicyBtn" class="btn-primary" style="padding: 10px 22px; font-size: 13.5px;">
+                    <span>I Have Read &amp; Accept</span>
+                    <span aria-hidden="true">✓</span>
+                </button>
+                <button type="button" id="closeLegalPolicyModalBtn" class="btn-secondary" style="padding: 10px 18px; font-size: 13.5px;">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         4. TOAST NOTIFICATION POPUP
+    ====================================================== -->
+    <div id="notificationToast" class="notification-toast toast-success" role="alert" aria-live="polite">
+        <div class="toast-icon">✓</div>
+        <div class="toast-content">
+            <strong class="toast-title">Success</strong>
+            <span class="toast-desc">Operation completed successfully.</span>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         5. SCRIPTS
+    ====================================================== -->
+    <script>/* API base auto-detected by api-client.js */</script>
+    <script src="/employee/js/api-client.js"></script> 
+    <script src="/employee/js/i18n.js"></script>
+    <script src="/employee/js/landing.js" defer></script>
+    <script src="/employee/js/employee.js" defer></script>
+
+    <!-- Tab auto-select parameter handler -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const isSignUp = urlParams.get('tab') === 'signup' || window.location.hash === '#signup';
+            if (isSignUp) {
+                const tabSignUp = document.getElementById("tabSignUp");
+                if (tabSignUp) tabSignUp.click();
+            }
+        });
+    </script>
+
+</body>
+</html>

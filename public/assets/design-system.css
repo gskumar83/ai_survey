@@ -1,0 +1,874 @@
+/* ==========================================================================
+   PEOPLE & PROCESS EXCELLENCE — GLOBAL ENTERPRISE DESIGN SYSTEM
+   Visteria Consulting Services Private Limited
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. COLOR SYSTEM (Soft blue-grey backgrounds, glass cards, teal accents, navy text)
+     ------------------------------------------------------------------------ */
+  /* Main background: soft blue-grey & mist blue */
+  --ppe-bg-app: #DCEAF4;
+  --ppe-bg-mist: #C8E0F0;
+  --ppe-bg-app-alt: #E6F1F8;
+  --ppe-bg-gradient: radial-gradient(1200px 700px at 15% 10%, rgba(38, 198, 218, 0.18), transparent 70%),
+                     radial-gradient(1000px 700px at 85% 85%, rgba(15, 174, 170, 0.16), transparent 65%),
+                     linear-gradient(135deg, #DCEAF4 0%, #C8E0F0 45%, #BBD9EB 100%);
+
+  /* Glass surfaces & cards */
+  --ppe-surface-white: #FFFFFF;
+  --ppe-surface-card: rgba(255, 255, 255, 0.88);
+  --ppe-surface-glass: rgba(255, 255, 255, 0.55);
+  --ppe-surface-glass-heavy: rgba(255, 255, 255, 0.72);
+  --ppe-surface-glass-hover: rgba(255, 255, 255, 0.82);
+  --ppe-surface-muted: rgba(240, 246, 250, 0.85);
+  --ppe-surface-subtle: #F0F6FA;
+  --ppe-surface-hover: rgba(240, 246, 250, 0.95);
+  --ppe-surface-input: rgba(240, 246, 250, 0.75);
+
+  /* Deep navy and slate brand typography */
+  --ppe-navy-deep: #102A43;
+  --ppe-navy-brand: #102A43;
+  --ppe-navy-text: #12315B;
+  --ppe-navy-surface: #FFFFFF;
+  --ppe-navy-border: rgba(18, 49, 91, 0.15);
+  --ppe-navy-text-muted: #486581;
+
+  /* Primary buttons and active states: Vibrant Teal #0FAEAA with dark #0D8F8A */
+  --ppe-brand-blue: #0FAEAA;
+  --ppe-cyan: #26C6DA;
+  --ppe-cyan-light: #80DEEA;
+  --ppe-teal: #0FAEAA;
+  --ppe-teal-dark: #0D8F8A;
+  --ppe-teal-glow: rgba(15, 174, 170, 0.35);
+  --ppe-green: #48C78E;
+  --ppe-gradient: linear-gradient(135deg, #0FAEAA 0%, #0D8F8A 100%);
+  --ppe-gradient-hover: linear-gradient(135deg, #14B8A6 0%, #0F766E 100%);
+  --ppe-gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(205, 230, 246, 0.45) 100%);
+
+  /* Typography */
+  --ppe-text-primary: #102A43;      /* Deep navy heading */
+  --ppe-text-secondary: #12315B;    /* Navy body text */
+  --ppe-text-muted: #486581;        /* Muted slate descriptions */
+  --ppe-text-faint: #829AB1;        /* Subtle helper */
+
+  /* Borders: translucent glass and soft blue-grey */
+  --ppe-border-glass: rgba(255, 255, 255, 0.72);
+  --ppe-border-glass-strong: rgba(255, 255, 255, 0.92);
+  --ppe-border-subtle: rgba(18, 49, 91, 0.12);
+  --ppe-border-medium: rgba(18, 49, 91, 0.18);
+  --ppe-border-focus: #0FAEAA;
+
+  /* Status Colors: accessible enterprise indicators */
+  --ppe-success: #0FAEAA;
+  --ppe-success-bg: rgba(15, 174, 170, 0.10);
+  --ppe-success-border: rgba(15, 174, 170, 0.28);
+  --ppe-success-text: #0D8F8A;
+
+  --ppe-warning: #D97706;
+  --ppe-warning-bg: rgba(217, 119, 6, 0.08);
+  --ppe-warning-border: rgba(217, 119, 6, 0.25);
+  --ppe-warning-text: #B45309;
+
+  --ppe-error: #DC2626;
+  --ppe-error-bg: rgba(220, 38, 38, 0.08);
+  --ppe-error-border: rgba(220, 38, 38, 0.25);
+  --ppe-error-text: #B91C1C;
+
+  --ppe-info: #26C6DA;
+  --ppe-info-bg: rgba(38, 198, 218, 0.10);
+  --ppe-info-border: rgba(38, 198, 218, 0.28);
+  --ppe-info-text: #0E7490;
+
+  /* ------------------------------------------------------------------------
+     2. ELEVATION & SHADOWS
+     ------------------------------------------------------------------------ */
+  --ppe-shadow-sm: 0 1px 3px 0 rgba(16, 42, 67, 0.04);
+  --ppe-shadow-card: 0 12px 32px -4px rgba(16, 42, 67, 0.08), 0 4px 12px -2px rgba(16, 42, 67, 0.04);
+  --ppe-shadow-card-hover: 0 20px 45px -4px rgba(16, 42, 67, 0.12), 0 8px 18px -2px rgba(15, 174, 170, 0.15);
+  --ppe-shadow-dropdown: 0 16px 40px -4px rgba(16, 42, 67, 0.14), 0 6px 16px -2px rgba(16, 42, 67, 0.08);
+  --ppe-shadow-btn: 0 4px 14px rgba(15, 174, 170, 0.32);
+  --ppe-shadow-btn-hover: 0 6px 20px rgba(15, 174, 170, 0.45);
+
+  /* ------------------------------------------------------------------------
+     3. SPACING SCALE & DIMENSIONS
+     ------------------------------------------------------------------------ */
+  --ppe-header-height: 68px;
+  --ppe-max-width: 1360px;
+  --ppe-radius-sm: 8px;
+  --ppe-radius-md: 12px;
+  --ppe-radius-lg: 16px;
+  --ppe-radius-xl: 22px;
+  --ppe-radius-2xl: 28px;
+
+  --ppe-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Dark Mode Tokens */
+html.dark,
+body.dark {
+  --ppe-bg-app: #0B1726;
+  --ppe-bg-mist: #102A43;
+  --ppe-bg-app-alt: #08111D;
+  --ppe-bg-gradient: radial-gradient(1200px 700px at 15% 10%, rgba(38, 198, 218, 0.12), transparent 70%),
+                     radial-gradient(1000px 700px at 85% 85%, rgba(15, 174, 170, 0.10), transparent 65%),
+                     linear-gradient(135deg, #0B1726 0%, #102A43 60%, #060D17 100%);
+
+  --ppe-surface-white: #132438;
+  --ppe-surface-card: rgba(19, 36, 56, 0.88);
+  --ppe-surface-glass: rgba(19, 36, 56, 0.65);
+  --ppe-surface-glass-heavy: rgba(19, 36, 56, 0.82);
+  --ppe-surface-glass-hover: rgba(28, 48, 74, 0.85);
+  --ppe-surface-muted: rgba(25, 46, 70, 0.75);
+  --ppe-surface-subtle: #162B42;
+  --ppe-surface-hover: rgba(30, 53, 80, 0.90);
+  --ppe-surface-input: rgba(16, 32, 50, 0.80);
+
+  --ppe-navy-deep: #F0F6FA;
+  --ppe-navy-brand: #E0ECF5;
+  --ppe-navy-text: #D2E4F0;
+  --ppe-navy-surface: #102A43;
+  --ppe-navy-border: rgba(255, 255, 255, 0.12);
+  --ppe-navy-text-muted: #9FB3C8;
+
+  --ppe-text-primary: #F0F6FA;
+  --ppe-text-secondary: #D2E4F0;
+  --ppe-text-muted: #9FB3C8;
+  --ppe-text-faint: #627D98;
+
+  --ppe-border-glass: rgba(255, 255, 255, 0.12);
+  --ppe-border-glass-strong: rgba(255, 255, 255, 0.22);
+  --ppe-border-subtle: rgba(255, 255, 255, 0.08);
+  --ppe-border-medium: rgba(255, 255, 255, 0.16);
+  --ppe-border-focus: #26C6DA;
+
+  --ppe-shadow-card: 0 16px 40px -4px rgba(0, 0, 0, 0.45), 0 4px 16px -2px rgba(0, 0, 0, 0.3);
+  --ppe-shadow-card-hover: 0 24px 50px -4px rgba(0, 0, 0, 0.55), 0 8px 24px -2px rgba(15, 174, 170, 0.25);
+}
+
+/* Base resets & typography */
+html {
+  font-family: var(--ppe-font-sans);
+  font-size: 14px;
+  color: var(--ppe-text-primary);
+  background-color: var(--ppe-bg-app);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   SHARED COMPACT ENTERPRISE HEADER
+   -------------------------------------------------------------------------- */
+.ppe-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--ppe-header-height);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--ppe-border-glass);
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(16, 42, 67, 0.04);
+}
+
+.ppe-header-inner {
+  max-width: var(--ppe-max-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ppe-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--ppe-text-primary);
+}
+
+.ppe-brand-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.ppe-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.ppe-brand-title {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: var(--ppe-navy-deep);
+  line-height: 1.2;
+}
+
+.ppe-brand-title span.ppe-cyan {
+  color: var(--ppe-teal);
+}
+
+.ppe-brand-company {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--ppe-text-muted);
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.ppe-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ppe-nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ppe-text-muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: var(--ppe-radius-sm);
+  transition: all 0.15s ease;
+}
+
+.ppe-nav-link:hover {
+  color: var(--ppe-teal);
+  background: var(--ppe-surface-hover);
+}
+
+.ppe-btn-admin-portal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ppe-teal);
+  background: rgba(15, 174, 170, 0.08);
+  border: 1px solid rgba(15, 174, 170, 0.28);
+  padding: 7px 14px;
+  border-radius: var(--ppe-radius-md);
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+
+.ppe-btn-admin-portal:hover {
+  background: rgba(15, 174, 170, 0.18);
+  border-color: var(--ppe-teal);
+  color: var(--ppe-teal-dark);
+  box-shadow: 0 2px 10px var(--ppe-teal-glow);
+}
+
+.ppe-security-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--ppe-teal);
+  background: rgba(15, 174, 170, 0.08);
+  border: 1px solid rgba(15, 174, 170, 0.28);
+  padding: 6px 12px;
+  border-radius: var(--ppe-radius-md);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   SHARED FOOTER
+   -------------------------------------------------------------------------- */
+.ppe-footer {
+  width: 100%;
+  padding: 24px 32px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--ppe-border-subtle);
+  margin-top: auto;
+}
+
+.ppe-footer-inner {
+  max-width: var(--ppe-max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--ppe-text-muted);
+}
+
+.ppe-footer-brand {
+  font-weight: 600;
+  color: var(--ppe-text-primary);
+}
+
+.ppe-footer-tagline {
+  font-style: italic;
+  color: var(--ppe-text-muted);
+  margin-left: 6px;
+}
+
+.ppe-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ppe-footer-link {
+  color: var(--ppe-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.ppe-footer-link:hover {
+  color: var(--ppe-cyan);
+}
+
+/* Dark/Light footer unified */
+.ppe-footer-dark {
+  background: #FFFFFF;
+  border-top: 1px solid var(--ppe-border-subtle);
+}
+.ppe-footer-dark .ppe-footer-inner {
+  color: var(--ppe-text-muted);
+}
+.ppe-footer-dark .ppe-footer-brand {
+  color: var(--ppe-text-primary);
+}
+.ppe-footer-dark .ppe-footer-link {
+  color: var(--ppe-text-muted);
+}
+.ppe-footer-dark .ppe-footer-link:hover {
+  color: var(--ppe-cyan);
+}
+
+/* --------------------------------------------------------------------------
+   SHARED BUTTONS & FORM CONTROLS
+   -------------------------------------------------------------------------- */
+.ppe-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 22px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--ppe-radius-md);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ppe-btn-primary {
+  background: var(--ppe-gradient);
+  color: #FFFFFF;
+  box-shadow: var(--ppe-shadow-btn);
+}
+
+.ppe-btn-primary:hover {
+  background: var(--ppe-gradient-hover);
+  box-shadow: var(--ppe-shadow-btn-hover);
+  transform: translateY(-1px);
+}
+
+.ppe-btn-primary:active {
+  transform: translateY(0);
+}
+
+.ppe-btn-secondary {
+  background: var(--ppe-surface-subtle);
+  color: var(--ppe-text-primary);
+  border-color: var(--ppe-border-medium);
+}
+
+.ppe-btn-secondary:hover {
+  background: var(--ppe-surface-hover);
+  border-color: var(--ppe-cyan);
+}
+
+.ppe-btn-outline {
+  background: transparent;
+  color: var(--ppe-cyan);
+  border-color: var(--ppe-border-medium);
+}
+
+.ppe-btn-outline:hover {
+  background: rgba(13, 148, 136, 0.08);
+  border-color: var(--ppe-cyan);
+  color: var(--ppe-teal-dark);
+}
+
+/* Form input fields */
+.ppe-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.ppe-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ppe-text-secondary);
+}
+
+.ppe-input,
+.ppe-select,
+.ppe-textarea {
+  height: 46px;
+  padding: 0 14px;
+  font-size: 14px;
+  color: var(--ppe-text-primary);
+  background: var(--ppe-surface-input);
+  border: 1px solid var(--ppe-border-subtle);
+  border-radius: var(--ppe-radius-md);
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.ppe-textarea {
+  height: auto;
+  padding: 12px 14px;
+  min-height: 100px;
+}
+
+.ppe-input:focus,
+.ppe-select:focus,
+.ppe-textarea:focus {
+  border-color: var(--ppe-cyan);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.18);
+}
+
+.ppe-input::placeholder,
+.ppe-textarea::placeholder {
+  color: var(--ppe-text-faint);
+}
+
+/* --------------------------------------------------------------------------
+   SHARED CARD SURFACE
+   -------------------------------------------------------------------------- */
+.ppe-card {
+  background: var(--ppe-surface-card);
+  border: 1px solid var(--ppe-border-subtle);
+  border-radius: var(--ppe-radius-lg);
+  padding: 28px 32px;
+  box-shadow: var(--ppe-shadow-card);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ppe-card:hover {
+  box-shadow: var(--ppe-shadow-card-hover);
+  border-color: var(--ppe-border-medium);
+}
+
+.ppe-card-header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ppe-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ppe-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ppe-text-primary);
+  margin: 0;
+}
+
+.ppe-card-sub {
+  font-size: 13px;
+  color: var(--ppe-text-muted);
+  margin-top: 4px;
+}
+
+/* Responsive queries */
+@media (max-width: 992px) {
+  .ppe-header-inner {
+    padding: 0 20px;
+  }
+  .ppe-card {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ppe-header-inner {
+    padding: 0 16px;
+  }
+  .ppe-brand-company {
+    display: none;
+  }
+  .ppe-nav-link {
+    display: none;
+  }
+  .ppe-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   EAGLE AI FLOATING ASSISTANT DESIGN SYSTEM
+   Consistent, non-intrusive floating assistant for all employee pages
+   ========================================================================== */
+.eagle-widget-wrapper,
+.eagle-avatar-wrapper {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 900 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  user-select: none !important;
+}
+
+.eagle-widget-wrapper.eagle-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(12px) scale(0.95) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Floating Label Pill */
+.eagle-label-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: #030E1A !important;
+  color: #F8FAFC !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
+  pointer-events: none !important;
+  animation: floatEaglePill 3s ease-in-out infinite alternate !important;
+}
+
+.label-pulse-dot {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #10B981 !important;
+  box-shadow: 0 0 8px #10B981 !important;
+  display: inline-block !important;
+}
+
+@keyframes floatEaglePill {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+
+/* Avatar Button */
+.eagle-avatar-btn {
+  position: relative !important;
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #0EA5E9 0%, #14B8A6 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.45), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  outline: none !important;
+  padding: 0 !important;
+}
+
+.eagle-avatar-btn:hover {
+  transform: scale(1.08) translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.6), 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.eagle-avatar-btn:active {
+  transform: scale(0.96) !important;
+}
+
+.eagle-glow-halo {
+  position: absolute !important;
+  inset: -4px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.35) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+  animation: eaglePulseRing 2.5s infinite !important;
+}
+
+@keyframes eaglePulseRing {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 0.2; }
+}
+
+.eagle-mascot-img,
+.eagle-avatar-img {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+.eagle-status-online {
+  position: absolute !important;
+  bottom: 2px !important;
+  right: 2px !important;
+  width: 11px !important;
+  height: 11px !important;
+  border-radius: 50% !important;
+  background: #10B981 !important;
+  border: 2px solid #FFFFFF !important;
+  box-shadow: 0 0 6px #10B981 !important;
+  z-index: 3 !important;
+}
+
+/* Eagle Chat Box (Flyout Drawer) */
+.eagle-chat-box {
+  position: fixed !important;
+  bottom: 90px !important;
+  right: 24px !important;
+  width: 370px !important;
+  max-width: calc(100vw - 32px) !important;
+  height: 520px !important;
+  max-height: calc(100vh - 120px) !important;
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 20px 48px -8px rgba(3, 14, 26, 0.22), 0 0 1px rgba(0, 0, 0, 0.1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(14px) scale(0.96) !important;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  z-index: 950 !important;
+}
+
+.eagle-chat-box.active,
+.eagle-chat-box.chat-open {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Chat Header */
+.eagle-chat-box .chat-header {
+  padding: 14px 18px !important;
+  background: #030E1A !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-shrink: 0 !important;
+}
+
+.eagle-chat-box .chat-header-info,
+.eagle-chat-box .chat-title-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.eagle-chat-box .chat-mini-avatar {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  object-fit: contain !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  padding: 2px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.eagle-chat-box .chat-header strong,
+.eagle-chat-box .chat-title {
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  display: block !important;
+  line-height: 1.2 !important;
+}
+
+.eagle-chat-box .chat-subtitle,
+.eagle-chat-box .chat-sub {
+  font-size: 11px !important;
+  color: #94A3B8 !important;
+  line-height: 1.2 !important;
+  display: block !important;
+}
+
+.eagle-chat-box .chat-close-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #CBD5E1 !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 7px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  transition: all 0.18s ease !important;
+}
+
+.eagle-chat-box .chat-close-btn:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+}
+
+/* Chat Messages */
+.eagle-chat-box .chat-messages {
+  flex: 1 !important;
+  padding: 16px !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  background: #F8FAFC !important;
+}
+
+.eagle-chat-box .chat-bubble {
+  padding: 11px 14px !important;
+  border-radius: 12px !important;
+  font-size: 12.5px !important;
+  line-height: 1.48 !important;
+  max-width: 86% !important;
+  word-break: break-word !important;
+}
+
+.eagle-chat-box .chat-bubble p {
+  margin: 0 !important;
+}
+
+.eagle-chat-box .eagle-bubble {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1px solid #E2E8F0 !important;
+  border-bottom-left-radius: 3px !important;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04) !important;
+  align-self: flex-start !important;
+}
+
+.eagle-chat-box .user-bubble {
+  background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%) !important;
+  color: #FFFFFF !important;
+  border-bottom-right-radius: 3px !important;
+  align-self: flex-end !important;
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.25) !important;
+}
+
+/* Quick Questions Chips */
+.eagle-chat-box .chat-quick-section {
+  padding: 10px 14px !important;
+  background: #FFFFFF !important;
+  border-top: 1px solid #E2E8F0 !important;
+  flex-shrink: 0 !important;
+}
+
+.eagle-chat-box .quick-title {
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  color: #64748B !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+.eagle-chat-box .quick-chips-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+}
+
+.eagle-chat-box .quick-chip {
+  background: #F1F5F9 !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #334155 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  padding: 5px 10px !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  text-align: left !important;
+}
+
+.eagle-chat-box .quick-chip:hover {
+  background: #E0F2FE !important;
+  color: #0284C7 !important;
+  border-color: #BAE6FD !important;
+}
+
+/* Chat Input Bar */
+.eagle-chat-box .chat-input-bar {
+  padding: 10px 14px !important;
+  background: #FFFFFF !important;
+  border-top: 1px solid #E2E8F0 !important;
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.eagle-chat-box .chat-input-bar input,
+.eagle-chat-box #eagleChatInput {
+  flex: 1 !important;
+  height: 38px !important;
+  padding: 0 12px !important;
+  font-family: inherit !important;
+  font-size: 12.5px !important;
+  border: 1.5px solid #CBD5E1 !important;
+  border-radius: 8px !important;
+  outline: none !important;
+  transition: border-color 0.15s ease !important;
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+.eagle-chat-box .chat-input-bar input:focus,
+.eagle-chat-box #eagleChatInput:focus {
+  border-color: #0EA5E9 !important;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.15) !important;
+}
+
+.eagle-chat-box .chat-send-btn {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 8px !important;
+  background: linear-gradient(135deg, #0EA5E9 0%, #14B8A6 100%) !important;
+  border: none !important;
+  color: #FFFFFF !important;
+  font-size: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.18s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.eagle-chat-box .chat-send-btn:hover {
+  filter: brightness(1.08) !important;
+  transform: scale(1.04) !important;
+}
+

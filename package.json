@@ -1,0 +1,31 @@
+{
+  "name": "visteria-ai-survey",
+  "version": "1.0.0",
+  "description": "Visteria People & Process Excellence — Production AI Survey Platform",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "build:server": "npm --prefix server run build",
+    "build:client": "npm --prefix client run build",
+    "start": "npm --prefix server run start",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "set-admin": "node server/scripts/set_admin_credentials.js",
+    "audit-db": "node server/scripts/audit_database.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.9.1",
+    "@tanstack/react-query": "^5.102.8",
+    "axios": "^1.20.0",
+    "lucide-react": "^1.39.0",
+    "react-hook-form": "^7.87.0",
+    "react-router-dom": "^7.18.3",
+    "recharts": "^3.10.1",
+    "zod": "^4.5.4"
+  }
+}

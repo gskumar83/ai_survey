@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Survey Completed - People & Process Excellence. Visteria Consulting Services Private Limited. Vision Changes Everything.">
+    <title>Survey Completed | People & Process Excellence</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Dedicated Stylesheets -->
+    <link rel="stylesheet" href="/assets/design-system.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/i18n.css">
+
+    <style>
+        /* =========================================================
+           PEOPLE & PROCESS EXCELLENCE — FINAL COMPLETION CONFIRMATION
+           Refined light enterprise theme: soft blue-grey, white cards, teal accents, navy text
+        ========================================================= */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --bg-app: var(--ppe-bg-gradient);
+            --card-surface: var(--ppe-surface-card);
+            --border-subtle: var(--ppe-border-glass);
+            --border-medium: rgba(18, 49, 91, 0.16);
+            --text-heading: var(--ppe-navy-deep);
+            --text-body: var(--ppe-navy-text);
+            --text-muted: var(--ppe-navy-text-muted);
+            --cyan-primary: var(--ppe-teal);
+            --teal-accent: var(--ppe-teal);
+            --emerald-accent: var(--ppe-green);
+
+            /* Brand & Token compatibility */
+            --bg-navy-dark: var(--ppe-bg-gradient);
+            --card-glass: var(--ppe-surface-card);
+            --border-cyan: var(--ppe-border-glass);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body.confirm-body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: var(--font-sans);
+            color: var(--text-body);
+            background: radial-gradient(ellipse at 85% 15%, rgba(56, 189, 248, 0.16) 0%, transparent 45%),
+                        radial-gradient(ellipse at 15% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 40%),
+                        radial-gradient(ellipse at 92% 80%, rgba(45, 212, 191, 0.14) 0%, transparent 45%),
+                        linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 40%, #F8FAFC 100%);
+            position: relative;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Top Header */
+        .confirm-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 68px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--ppe-border-glass);
+            box-shadow: 0 4px 20px rgba(16, 42, 67, 0.04);
+            display: flex;
+            align-items: center;
+        }
+
+        .confirm-header-inner {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo-img {
+            width: 38px;
+            height: auto;
+            max-height: 38px;
+            object-fit: contain;
+        }
+
+        .brand-text-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-company-line {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            color: #172B4D;
+            line-height: 1.1;
+        }
+
+        .brand-corporate-sub {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            color: #64748B;
+            text-transform: uppercase;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 28px;
+            background: #D7E1EA;
+            margin: 0 4px;
+        }
+
+        .brand-product-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: var(--cyan-primary);
+            text-transform: uppercase;
+        }
+
+        .header-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #059669;
+        }
+
+        /* Main Container */
+        .confirm-main {
+            flex: 1;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 24px;
+        }
+
+        .confirm-card {
+            width: 100%;
+            max-width: 620px;
+            background: rgba(255, 255, 255, 0.80);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.88);
+            border-radius: 22px;
+            box-shadow: 0 16px 40px -4px rgba(16, 42, 67, 0.08), 0 4px 16px -2px rgba(16, 42, 67, 0.03);
+            padding: 44px 36px;
+            text-align: center;
+            animation: cardFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .confirm-check-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            color: #059669;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .confirm-title {
+            font-size: clamp(24px, 3.5vw, 28px);
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+
+        .confirm-subtitle {
+            font-size: 15px;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 12px;
+        }
+
+        .confirm-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .confirm-meta-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            background: #F8FAFC;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 24px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Next Steps Box */
+        .confirm-guidance-box {
+            background: #F8FAFC;
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .guidance-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--text-heading);
+            font-size: 13.5px;
+        }
+
+        .guidance-list {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text-muted);
+            font-size: 12.5px;
+            line-height: 1.65;
+        }
+
+        .btn-return-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 32px;
+            border-radius: 10px;
+            background: var(--ppe-gradient);
+            color: #FFFFFF;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 800;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(15, 174, 170, 0.35);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-return-home:hover {
+            background: var(--ppe-gradient-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 174, 170, 0.48);
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px) scale(0.99);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .confirm-header-inner {
+                padding: 0 16px;
+            }
+            .brand-product-badge {
+                display: none;
+            }
+            .confirm-card {
+                padding: 28px 18px;
+            }
+            .confirm-title {
+                font-size: 22px;
+            }
+        }
+
+        /* =====================================================
+           HIGH-CONTRAST BUSINESS ANALYTICS BACKGROUND GRAPHICS
+        ====================================================== */
+        .dashboard-ambient-viz {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .viz-element {
+            position: absolute;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .viz-upper-right-cluster {
+            position: absolute;
+            top: 72px;
+            right: 0;
+            width: 58vw;
+            max-width: 860px;
+            height: 380px;
+            pointer-events: none;
+        }
+
+        .viz-donut-widget {
+            top: 15px;
+            right: 48px;
+            width: 140px;
+            height: 140px;
+            opacity: 0.82;
+            animation: vizFloatSubtle 8s ease-in-out infinite alternate;
+        }
+
+        .viz-donut-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-dashboard-panel {
+            top: 38px;
+            right: 178px;
+            width: 330px;
+            height: 205px;
+            padding: 16px 20px 14px;
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1.5px solid rgba(14, 165, 233, 0.28);
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.05);
+            opacity: 0.85;
+            transform: rotate(-1deg);
+            animation: vizFloatAlt 9s ease-in-out infinite alternate;
+        }
+
+        .panel-header-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .panel-header-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #0EA5E9;
+            box-shadow: 0 0 6px rgba(14, 165, 233, 0.6);
+        }
+
+        .panel-header-line {
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(14, 165, 233, 0.22);
+        }
+
+        .panel-header-line.long { width: 56px; }
+        .panel-header-line.short { width: 32px; }
+
+        .panel-header-badge {
+            margin-left: auto;
+            font-size: 9.5px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #0284C7;
+            background: rgba(14, 165, 233, 0.08);
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(14, 165, 233, 0.25);
+        }
+
+        .panel-chart-body {
+            width: 100%;
+            height: 140px;
+        }
+
+        .panel-chart-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-node-dot {
+            transition: all 0.2s ease;
+        }
+
+        .viz-node-dot.active-peak {
+            filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.7));
+        }
+
+        .viz-mini-kpi-card {
+            top: 154px;
+            right: 146px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 12px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1.2px solid rgba(14, 165, 233, 0.24);
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.04);
+            opacity: 0.85;
+            animation: vizFloatSubtle 7s ease-in-out infinite alternate 1s;
+        }
+
+        .kpi-tag-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 7px;
+            background: rgba(14, 165, 233, 0.18);
+            color: #0284C7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .kpi-tag-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kpi-tag-title {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #1E293B;
+            line-height: 1.1;
+        }
+
+        .kpi-tag-sub {
+            font-size: 8px;
+            font-weight: 700;
+            color: #0D9488;
+            letter-spacing: 0.5px;
+        }
+
+        .viz-network-vectors {
+            top: 40px;
+            right: 40px;
+            width: 500px;
+            height: 240px;
+            opacity: 0.85;
+        }
+
+        .viz-vectors-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-dot-grid-matrix {
+            top: 245px;
+            right: 16px;
+            width: 76px;
+            height: 140px;
+            opacity: 0.80;
+        }
+
+        .viz-grid-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-top-left-network {
+            top: 76px;
+            left: 15px;
+            width: 280px;
+            height: 190px;
+            opacity: 0.84;
+            z-index: 1;
+        }
+
+        .viz-network-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-left-waves {
+            top: 135px;
+            left: -15px;
+            width: 270px;
+            height: 270px;
+            opacity: 0.84;
+        }
+
+        .viz-waves-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-bottom-right-nodes {
+            bottom: 35px;
+            right: 28px;
+            width: 180px;
+            height: 140px;
+            opacity: 0.86;
+        }
+
+        .viz-constellation-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-right-margin-bars {
+            bottom: 50px;
+            right: 18px;
+            width: 115px;
+            height: 205px;
+            opacity: 0.86;
+            z-index: 1;
+            animation: vizFloatSubtle 8.5s ease-in-out infinite alternate 1.5s;
+        }
+
+        .viz-margin-bars-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-bottom-left-curve {
+            bottom: 45px;
+            left: 25px;
+            width: 210px;
+            height: 110px;
+            opacity: 0.78;
+        }
+
+        .viz-curve-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-bottom-left-grid {
+            bottom: 45px;
+            left: 20px;
+            width: 105px;
+            height: 85px;
+            opacity: 0.82;
+            z-index: 1;
+        }
+
+        @keyframes vizFloatSubtle {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-8px); }
+        }
+
+        @keyframes vizFloatAlt {
+            0% { transform: translateY(0px) rotate(-1deg); }
+            100% { transform: translateY(-7px) rotate(-0.5deg); }
+        }
+
+        @media (max-width: 992px) {
+            .viz-upper-right-cluster {
+                display: none;
+            }
+            .viz-left-waves {
+                opacity: 0.40;
+                left: -70px;
+            }
+        }
+    </style>
+</head>
+
+<body class="confirm-body">
+
+    <!-- Background Data Visualization -->
+    <div class="dashboard-ambient-viz" aria-hidden="true">
+        <svg width="0" height="0" style="position:absolute; width:0; height:0; pointer-events:none;">
+            <defs>
+                <linearGradient id="barGradCyan" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#0284C7" stop-opacity="0.05" />
+                </linearGradient>
+                <linearGradient id="barGradTeal" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.22" />
+                    <stop offset="100%" stop-color="#0D9488" stop-opacity="0.06" />
+                </linearGradient>
+                <linearGradient id="barGradBlue" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#2563EB" stop-opacity="0.05" />
+                </linearGradient>
+                <linearGradient id="lineTrendGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#0284C7" stop-opacity="0.75" />
+                    <stop offset="50%" stop-color="#0D9488" stop-opacity="0.70" />
+                    <stop offset="100%" stop-color="#2563EB" stop-opacity="0.65" />
+                </linearGradient>
+                <linearGradient id="areaTrendGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.10" />
+                    <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.0" />
+                </linearGradient>
+                <linearGradient id="marginBarGrad1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.32" />
+                    <stop offset="100%" stop-color="#0284C7" stop-opacity="0.08" />
+                </linearGradient>
+                <linearGradient id="marginBarGrad2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.36" />
+                    <stop offset="100%" stop-color="#0D9488" stop-opacity="0.10" />
+                </linearGradient>
+                <linearGradient id="marginBarGrad3" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.30" />
+                    <stop offset="100%" stop-color="#2563EB" stop-opacity="0.06" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="viz-element viz-top-left-network" title="Neural Data Architecture">
+            <svg viewBox="0 0 280 190" class="viz-network-svg">
+                <line x1="30" y1="50" x2="90" y2="30" stroke="rgba(14, 165, 233, 0.45)" stroke-width="1.6" />
+                <line x1="90" y1="30" x2="165" y2="65" stroke="rgba(13, 148, 136, 0.45)" stroke-width="1.6" />
+                <line x1="90" y1="30" x2="105" y2="125" stroke="rgba(14, 165, 233, 0.35)" stroke-width="1.3" stroke-dasharray="4 3" />
+                <line x1="165" y1="65" x2="235" y2="35" stroke="rgba(37, 99, 235, 0.40)" stroke-width="1.4" />
+                <line x1="165" y1="65" x2="215" y2="120" stroke="rgba(14, 165, 233, 0.40)" stroke-width="1.4" />
+                <line x1="105" y1="125" x2="215" y2="120" stroke="rgba(13, 148, 136, 0.35)" stroke-width="1.2" />
+                <circle cx="30" cy="50" r="5" fill="#0284C7" stroke="rgba(56, 189, 248, 0.55)" stroke-width="4" />
+                <circle cx="90" cy="30" r="6" fill="#0D9488" stroke="rgba(45, 212, 191, 0.55)" stroke-width="5" />
+                <circle cx="165" cy="65" r="7" fill="#0284C7" stroke="rgba(14, 165, 233, 0.50)" stroke-width="6" />
+                <circle cx="235" cy="35" r="4.5" fill="#2563EB" stroke="rgba(96, 165, 250, 0.50)" stroke-width="4" />
+                <circle cx="105" cy="125" r="4" fill="#38BDF8" stroke="rgba(56, 189, 248, 0.45)" stroke-width="3" />
+                <circle cx="215" cy="120" r="5" fill="#14B8A6" stroke="rgba(45, 212, 191, 0.50)" stroke-width="4" />
+            </svg>
+        </div>
+
+        <div class="viz-upper-right-cluster">
+            <div class="viz-element viz-donut-widget">
+                <svg viewBox="0 0 120 120" class="viz-donut-svg">
+                    <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(148, 163, 184, 0.16)" stroke-width="11" />
+                    <circle cx="60" cy="60" r="46" fill="none" stroke="#0D9488" stroke-opacity="0.36" stroke-width="11" stroke-dasharray="120 289" stroke-linecap="round" />
+                    <circle cx="60" cy="60" r="46" fill="none" stroke="#0284C7" stroke-opacity="0.34" stroke-width="11" stroke-dasharray="94 289" stroke-dashoffset="-128" stroke-linecap="round" />
+                    <circle cx="60" cy="60" r="35" fill="none" stroke="rgba(14, 165, 233, 0.20)" stroke-width="1" />
+                </svg>
+            </div>
+            <div class="viz-element viz-dashboard-panel">
+                <div class="panel-header-row">
+                    <div class="panel-header-dot"></div>
+                    <div class="panel-header-line long"></div>
+                    <div class="panel-header-line short"></div>
+                    <div class="panel-header-badge">SURVEY COMPLETE</div>
+                </div>
+                <div class="panel-chart-body">
+                    <svg viewBox="0 0 280 130" class="panel-chart-svg" preserveAspectRatio="none">
+                        <line x1="10" y1="20" x2="270" y2="20" stroke="rgba(14, 165, 233, 0.14)" stroke-dasharray="3 3" />
+                        <line x1="10" y1="60" x2="270" y2="60" stroke="rgba(14, 165, 233, 0.14)" stroke-dasharray="3 3" />
+                        <line x1="10" y1="120" x2="270" y2="120" stroke="rgba(14, 165, 233, 0.24)" />
+                        <rect x="25" y="65" width="18" height="55" rx="4" fill="url(#barGradCyan)" stroke="rgba(14, 165, 233, 0.35)" stroke-width="1.2" />
+                        <rect x="65" y="42" width="18" height="78" rx="4" fill="url(#barGradTeal)" stroke="rgba(13, 148, 136, 0.40)" stroke-width="1.4" />
+                        <rect x="105" y="52" width="18" height="68" rx="4" fill="url(#barGradBlue)" stroke="rgba(37, 99, 235, 0.30)" stroke-width="1.2" />
+                        <rect x="145" y="24" width="18" height="96" rx="4" fill="url(#barGradCyan)" stroke="rgba(14, 165, 233, 0.40)" stroke-width="1.4" />
+                        <rect x="185" y="15" width="18" height="105" rx="4" fill="url(#barGradTeal)" stroke="rgba(13, 148, 136, 0.48)" stroke-width="1.5" />
+                        <rect x="225" y="32" width="18" height="88" rx="4" fill="url(#barGradBlue)" stroke="rgba(37, 99, 235, 0.30)" stroke-width="1.2" />
+                        <path d="M 34 65 C 60 40, 80 48, 114 52 C 130 54, 140 22, 154 24 C 170 26, 178 12, 194 15 C 210 18, 220 30, 234 32" fill="none" stroke="url(#lineTrendGrad)" stroke-width="2.2" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="viz-element viz-right-margin-bars">
+            <svg viewBox="0 0 115 205" class="viz-margin-bars-svg">
+                <rect x="5" y="135" width="14" height="65" rx="4" fill="url(#marginBarGrad1)" stroke="rgba(14, 165, 233, 0.42)" stroke-width="1.2" />
+                <rect x="27" y="95" width="14" height="105" rx="4" fill="url(#marginBarGrad2)" stroke="rgba(13, 148, 136, 0.46)" stroke-width="1.3" />
+                <rect x="49" y="50" width="14" height="150" rx="4" fill="url(#marginBarGrad1)" stroke="rgba(14, 165, 233, 0.48)" stroke-width="1.4" />
+                <rect x="71" y="105" width="14" height="95" rx="4" fill="url(#marginBarGrad3)" stroke="rgba(37, 99, 235, 0.38)" stroke-width="1.2" />
+                <rect x="93" y="35" width="14" height="165" rx="4" fill="url(#marginBarGrad2)" stroke="rgba(13, 148, 136, 0.52)" stroke-width="1.5" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="confirm-header">
+        <div class="confirm-header-inner">
+            <a href="welcome.html" class="brand-link">
+                <img src="/assets/visteria-logo.png" alt="Visteria Logo" class="brand-logo-img">
+                <div class="brand-text-block">
+                    <span class="brand-company-line">VISTERIA</span>
+                    <span class="brand-corporate-sub">CONSULTING SERVICES PRIVATE LIMITED</span>
+                </div>
+                <div class="brand-divider"></div>
+                <span class="brand-product-badge">PEOPLE & PROCESS EXCELLENCE</span>
+            </a>
+
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <div id="confirmLangSelectorSlot"></div>
+                <div class="header-status-pill">
+                    <span>✓</span>
+                    <span data-i18n="confirmation.badge">SUBMISSION CONFIRMED</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="confirm-main">
+        <div class="confirm-card">
+            <div class="confirm-check-icon">✓</div>
+            <h1 class="confirm-title" data-i18n="confirmation.title">Survey Completed</h1>
+            <p class="confirm-subtitle" data-i18n="confirmation.subtitle">Your responses are securely recorded.</p>
+            <p class="confirm-desc" data-i18n="confirmation.desc">
+                Thank you for your valuable time and perspective. Your feedback empowers leadership to take meaningful action and continuously enhance our organizational workflows.
+            </p>
+
+            <div class="confirm-meta-box">
+                <div class="meta-item">
+                    <span>🔒</span>
+                    <span data-i18n="nav.confidential">100% Confidential</span>
+                </div>
+                <div class="meta-item">
+                    <span>🛡️</span>
+                    <span>Encrypted Transmission</span>
+                </div>
+                <div class="meta-item">
+                    <span>✓</span>
+                    <span data-i18n="confirmation.badge">Verified Submission</span>
+                </div>
+            </div>
+
+            <!-- Post-Submission Next Steps Guidance -->
+            <div class="confirm-guidance-box">
+                <div class="guidance-title">
+                    <span style="color: #059669;">✦</span>
+                    <span>What Happens Next (Submission Guidance)</span>
+                </div>
+                <ul class="guidance-list">
+                    <li>Your submission has been cryptographically finalized and cannot be modified.</li>
+                    <li>People & Process Excellence synthesizes responses into aggregated, anonymized workplace themes.</li>
+                    <li>Management receives high-level organizational analytics with strict anonymity protection.</li>
+                    <li>You may safely close this window or return to your portal dashboard.</li>
+                </ul>
+            </div>
+
+            <a href="welcome.html" class="btn-return-home">
+                <span data-i18n="confirmation.btn_home">Return to Portal Home</span>
+                <span>→</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Shared Enterprise Footer -->
+    <footer class="ppe-footer" role="contentinfo">
+        <div class="ppe-footer-inner">
+            <div class="ppe-footer-left">
+                <strong>PEOPLE & PROCESS EXCELLENCE</strong>
+                <span>•</span>
+                <span>Visteria Consulting Services Private Limited</span>
+                <span>•</span>
+                <span class="ppe-footer-tagline">Vision Changes Everything.</span>
+            </div>
+            <div class="ppe-footer-right">
+                <span>Enterprise Assessment Platform</span>
+                <span>•</span>
+                <span>Encrypted & Confidential</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api-client.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.I18n) {
+                if (window.VisteriaAPI?.employee?.getProfile) {
+                    window.VisteriaAPI.employee.getProfile().then(res => {
+                        if (res?.data?.company) {
+                            const comp = res.data.company;
+                            window.I18n.setAllowedLanguages(comp.supported_languages || ['en'], comp.default_language || 'en');
+                        }
+                        window.I18n.mountLanguageSelector('#confirmLangSelectorSlot');
+                    }).catch(() => {
+                        window.I18n.mountLanguageSelector('#confirmLangSelectorSlot');
+                    });
+                } else {
+                    window.I18n.mountLanguageSelector('#confirmLangSelectorSlot');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

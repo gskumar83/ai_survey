@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  # ==============================================================================
+  # MongoDB Replica Set (Single-node replica set required for Prisma MongoDB transactions)
+  # ==============================================================================
+  mongodb:
+    image: mongo:7.0
+    container_name: visteria_mongodb
+    restart: unless-stopped
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    ports:
+      - "27017:27017"
+    volumes:
+      - visteria_mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "try { rs.status().ok } catch (e) { rs.initiate().ok }"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Replica set initiator
+  mongo-init:
+    image: mongo:7.0
+    restart: "no"
+    depends_on:
+      mongodb:
+        condition: service_started
+    command: >
+      bash -c "
+        echo 'Waiting for MongoDB to be accessible...';
+        until mongosh --host mongodb:27017 --eval 'db.adminCommand({ ping: 1 })' &>/dev/null; do
+          sleep 2;
+        done;
+        echo 'Initiating replica set rs0...';
+        mongosh --host mongodb:27017 --eval 'try { rs.initiate({ _id: \"rs0\", members: [{ _id: 0, host: \"mongodb:27017\" }] }); } catch (e) { print(e); }';
+        echo 'Replica set rs0 initialized.';
+      "
+
+  # ==============================================================================
+  # Visteria AI Survey Full-Stack Application
+  # ==============================================================================
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: visteria_survey_app
+    restart: unless-stopped
+    depends_on:
+      mongo-init:
+        condition: service_completed_successfully
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - CLIENT_URL=http://localhost:3000
+      - DATABASE_URL=mongodb://mongodb:27017/visteria_db?replicaSet=rs0&directConnection=true
+      - JWT_SECRET=replace-with-minimum-64-char-cryptographically-secure-random-jwt-secret
+      - JWT_ACCESS_SECRET=replace-with-minimum-64-char-cryptographically-secure-random-access-secret
+      - JWT_REFRESH_SECRET=replace-with-minimum-64-char-cryptographically-secure-random-refresh-secret
+      - SUPER_ADMIN_NAME=Visteria System Administrator
+      - SUPER_ADMIN_EMAIL=admin@yourcompany.com
+      - SUPER_ADMIN_PASSWORD=ChangeMeInProduction2026!
+      # Optional AI and Mail integrations:
+      # - ANTHROPIC_API_KEY=
+      # - SMTP_HOST=
+      # - SMTP_PORT=587
+      # - SMTP_USER=
+      # - SMTP_PASS=
+      # - SMTP_FROM=
+    volumes:
+      - visteria_uploads:/app/server/uploads
+
+volumes:
+  visteria_mongo_data:
+  visteria_uploads:

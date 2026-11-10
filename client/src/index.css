@@ -1,0 +1,639 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+VISTERIA SURVEY AI — GLOBAL DESIGN SYSTEM
+Premium corporate UI foundation
+========================================================================== */
+
+:root {
+color-scheme: light;
+
+/* Brand */
+--visteria-primary: #4f46e5;
+--visteria-primary-dark: #3730a3;
+--visteria-primary-light: #eef2ff;
+--visteria-secondary: #7c3aed;
+--visteria-accent: #06b6d4;
+
+/* Semantic */
+--success: #059669;
+--success-light: #ecfdf5;
+--warning: #d97706;
+--warning-light: #fffbeb;
+--danger: #dc2626;
+--danger-light: #fef2f2;
+--info: #0284c7;
+--info-light: #f0f9ff;
+
+/* Surfaces */
+--background: #f6f7fb;
+--surface: #ffffff;
+--surface-muted: #f8fafc;
+--surface-hover: #f1f5f9;
+
+/* Text */
+--text-primary: #111827;
+--text-secondary: #475569;
+--text-muted: #64748b;
+--text-subtle: #94a3b8;
+
+/* Borders */
+--border: #e2e8f0;
+--border-light: #eef2f7;
+--border-strong: #cbd5e1;
+
+/* Radius */
+--radius-sm: 8px;
+--radius-md: 12px;
+--radius-lg: 16px;
+--radius-xl: 20px;
+--radius-2xl: 24px;
+
+/* Shadows */
+--shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+--shadow-sm:
+0 1px 3px rgba(15, 23, 42, 0.06),
+0 1px 2px rgba(15, 23, 42, 0.04);
+--shadow-md:
+0 4px 12px rgba(15, 23, 42, 0.06),
+0 2px 4px rgba(15, 23, 42, 0.04);
+--shadow-lg:
+0 10px 30px rgba(15, 23, 42, 0.08),
+0 4px 10px rgba(15, 23, 42, 0.04);
+--shadow-xl:
+0 20px 45px rgba(15, 23, 42, 0.10),
+0 8px 18px rgba(15, 23, 42, 0.05);
+
+/* Layout */
+--sidebar-width: 260px;
+--header-height: 72px;
+
+/* Motion */
+--transition-fast: 150ms ease;
+--transition-normal: 220ms ease;
+--transition-slow: 320ms ease;
+}
+
+/* ==========================================================================
+BASE
+========================================================================== */
+
+html {
+scroll-behavior: smooth;
+min-height: 100%;
+}
+
+html,
+body,
+#root {
+min-height: 100%;
+}
+
+body {
+margin: 0;
+background:
+radial-gradient(
+circle at 100% 0%,
+rgba(99, 102, 241, 0.035),
+transparent 28%
+),
+radial-gradient(
+circle at 0% 100%,
+rgba(124, 58, 237, 0.025),
+transparent 30%
+),
+var(--background);
+
+color: var(--text-primary);
+
+font-family:
+Inter,
+ui-sans-serif,
+system-ui,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+sans-serif;
+
+font-size: 15px;
+line-height: 1.6;
+
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+
+text-rendering: optimizeLegibility;
+}
+
+/* Better box sizing throughout the application */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+/* Remove default margins where appropriate */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+margin-top: 0;
+}
+
+/* Links */
+a {
+color: inherit;
+text-decoration: none;
+}
+
+/* Buttons and form controls inherit the application font */
+button,
+input,
+textarea,
+select {
+font: inherit;
+}
+
+/* Buttons */
+button {
+cursor: pointer;
+}
+
+/* Disabled controls */
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+cursor: not-allowed;
+}
+
+/* Images */
+img {
+max-width: 100%;
+display: block;
+}
+
+/* ==========================================================================
+TYPOGRAPHY
+========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+color: var(--text-primary);
+font-weight: 700;
+letter-spacing: -0.02em;
+}
+
+h1 {
+font-size: clamp(1.75rem, 3vw, 2.35rem);
+line-height: 1.2;
+}
+
+h2 {
+font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+line-height: 1.25;
+}
+
+h3 {
+font-size: 1.25rem;
+line-height: 1.3;
+}
+
+h4 {
+font-size: 1.05rem;
+line-height: 1.4;
+}
+
+p {
+color: var(--text-secondary);
+}
+
+small {
+color: var(--text-muted);
+}
+
+/* ==========================================================================
+FORM ELEMENTS
+========================================================================== */
+
+input,
+textarea,
+select {
+color: var(--text-primary);
+background-color: var(--surface);
+}
+
+input::placeholder,
+textarea::placeholder {
+color: #94a3b8;
+}
+
+input,
+textarea,
+select {
+transition:
+border-color var(--transition-fast),
+box-shadow var(--transition-fast),
+background-color var(--transition-fast);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+border-color: var(--border-strong);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+border-color: var(--visteria-primary);
+box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.10);
+}
+
+/* ==========================================================================
+KEYBOARD ACCESSIBILITY
+========================================================================== */
+
+:focus-visible {
+outline: 2px solid var(--visteria-primary);
+outline-offset: 2px;
+border-radius: 6px;
+}
+
+/* ==========================================================================
+SELECTION
+========================================================================== */
+
+::selection {
+background: rgba(79, 70, 229, 0.16);
+color: var(--text-primary);
+}
+
+/* ==========================================================================
+SCROLLBARS
+========================================================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  }
+
+*::-webkit-scrollbar {
+width: 8px;
+height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: #cbd5e1;
+border-radius: 999px;
+border: 2px solid transparent;
+background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+background-color: #94a3b8;
+}
+
+/* ==========================================================================
+PREMIUM UTILITY CLASSES
+========================================================================== */
+
+.visteria-card {
+background: var(--surface);
+border: 1px solid var(--border);
+border-radius: var(--radius-lg);
+box-shadow: var(--shadow-sm);
+transition:
+box-shadow var(--transition-normal),
+border-color var(--transition-normal),
+transform var(--transition-normal);
+}
+
+.visteria-card:hover {
+border-color: #dbe2ea;
+box-shadow: var(--shadow-md);
+}
+
+.visteria-card-interactive:hover {
+transform: translateY(-2px);
+box-shadow: var(--shadow-lg);
+}
+
+.visteria-surface {
+background: var(--surface);
+border: 1px solid var(--border-light);
+border-radius: var(--radius-lg);
+}
+
+.visteria-gradient {
+background:
+linear-gradient(
+135deg,
+var(--visteria-primary) 0%,
+var(--visteria-secondary) 100%
+);
+}
+
+.visteria-gradient-soft {
+background:
+linear-gradient(
+135deg,
+rgba(79, 70, 229, 0.09),
+rgba(124, 58, 237, 0.06)
+);
+}
+
+.visteria-glass {
+background: rgba(255, 255, 255, 0.82);
+border: 1px solid rgba(255, 255, 255, 0.72);
+box-shadow: var(--shadow-md);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+}
+
+/* ==========================================================================
+STATUS HELPERS
+========================================================================== */
+
+.status-success {
+color: var(--success);
+background: var(--success-light);
+}
+
+.status-warning {
+color: var(--warning);
+background: var(--warning-light);
+}
+
+.status-danger {
+color: var(--danger);
+background: var(--danger-light);
+}
+
+.status-info {
+color: var(--info);
+background: var(--info-light);
+}
+
+/* ==========================================================================
+SHARED MOTION LIBRARY
+Existing animation names are preserved for compatibility.
+========================================================================== */
+
+@keyframes shine {
+0% {
+transform: translateX(-100%) skewX(-12deg);
+}
+
+20%,
+100% {
+transform: translateX(200%) skewX(-12deg);
+}
+}
+
+.animate-shine {
+animation: shine 3s infinite linear;
+}
+
+@keyframes blob-float {
+0%,
+100% {
+transform: translate(0, 0) scale(1);
+}
+
+33% {
+transform: translate(30px, -40px) scale(1.08);
+}
+
+66% {
+transform: translate(-24px, 22px) scale(0.94);
+}
+}
+
+.animate-blob {
+animation: blob-float 14s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+animation-delay: 4s;
+}
+
+@keyframes aurora-shift {
+0% {
+background-position: 0% 50%;
+}
+
+50% {
+background-position: 100% 50%;
+}
+
+100% {
+background-position: 0% 50%;
+}
+}
+
+.animate-aurora {
+background-size: 200% 200%;
+animation: aurora-shift 18s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+from {
+opacity: 0;
+transform: translateY(10px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.animate-fade-in-up {
+animation:
+fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes shimmer {
+0% {
+background-position: -400px 0;
+}
+
+100% {
+background-position: 400px 0;
+}
+}
+
+.skeleton {
+background:
+linear-gradient(
+90deg,
+#f1f5f9 25%,
+#e2e8f0 37%,
+#f1f5f9 63%
+);
+
+background-size: 800px 100%;
+animation: shimmer 1.6s linear infinite;
+}
+
+/* ==========================================================================
+ADDITIONAL MICRO-INTERACTIONS
+========================================================================== */
+
+@keyframes scale-in {
+from {
+opacity: 0;
+transform: scale(0.97);
+}
+
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+
+.animate-scale-in {
+animation:
+scale-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slide-in-right {
+from {
+opacity: 0;
+transform: translateX(12px);
+}
+
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+.animate-slide-in-right {
+animation:
+slide-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes pulse-soft {
+0%,
+100% {
+opacity: 1;
+}
+
+50% {
+opacity: 0.72;
+}
+}
+
+.animate-pulse-soft {
+animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* ==========================================================================
+TABLES
+========================================================================== */
+
+table {
+width: 100%;
+border-collapse: separate;
+border-spacing: 0;
+}
+
+thead th {
+color: var(--text-muted);
+background: var(--surface-muted);
+font-size: 0.75rem;
+font-weight: 700;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+}
+
+tbody tr {
+transition: background-color var(--transition-fast);
+}
+
+tbody tr:hover {
+background-color: #fafbfc;
+}
+
+/* ==========================================================================
+REDUCED MOTION
+========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+scroll-behavior: auto !important;
+}
+}
+
+/* ==========================================================================
+RESPONSIVE FOUNDATION
+========================================================================== */
+
+@media (max-width: 1024px) {
+:root {
+--sidebar-width: 230px;
+}
+
+body {
+font-size: 14px;
+}
+}
+
+@media (max-width: 768px) {
+:root {
+--header-height: 64px;
+}
+
+body {
+font-size: 14px;
+}
+
+.visteria-card {
+border-radius: var(--radius-md);
+}
+}
+
+@media (max-width: 480px) {
+body {
+font-size: 13px;
+}
+}
+
+/* ==========================================================================
+PRINT
+========================================================================== */
+
+@media print {
+body {
+background: #ffffff;
+}
+
+* {
+  box-shadow: none !important;
+  }
+  }

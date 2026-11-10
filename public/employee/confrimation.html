@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=welcome.html">
+    <script>window.location.replace("welcome.html");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Completed | Visteria Survey AI</title>
+
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Dedicated Stylesheet -->
+    <link rel="stylesheet" href="css/landing.css">
+
+    <style>
+        /* =========================================================
+           VISTERIA SURVEY AI — FINAL CONFIRMATION COMPLETION PAGE
+        ========================================================= */
+        :root {
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --blue-primary: #1769D5;
+            --blue-hover: #1255B0;
+            --navy-deep: #0B1F3A;
+            --navy-text: #0F172A;
+            --text-secondary: #475569;
+            --emerald-accent: #059669;
+            --card-glass: rgba(255, 255, 255, 0.96);
+            --shadow-card: 0 24px 60px -12px rgba(11, 31, 58, 0.14),
+                           0 4px 18px -2px rgba(11, 31, 58, 0.05);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body.confirm-body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: var(--font-body);
+            color: var(--navy-text);
+            background:
+                linear-gradient(135deg, rgba(248, 251, 255, 0.85) 0%, rgba(238, 246, 255, 0.92) 100%),
+                url("assets/enterprise-ai-bg.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Neural Canvas Background */
+        .landing-bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .neural-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.60;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+        }
+
+        .glow-orb-1 {
+            width: 550px;
+            height: 550px;
+            top: -120px;
+            left: -100px;
+            background: rgba(37, 125, 235, 0.12);
+        }
+
+        .glow-orb-2 {
+            width: 600px;
+            height: 600px;
+            top: 25%;
+            right: -150px;
+            background: rgba(23, 105, 213, 0.10);
+        }
+
+        /* Top Header */
+        .confirm-header {
+            position: relative;
+            width: 100%;
+            height: 70px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(23, 105, 213, 0.12);
+        }
+
+        .confirm-header-inner {
+            max-width: 1180px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo-img {
+            width: 38px;
+            height: auto;
+            filter: drop-shadow(0 2px 6px rgba(23, 105, 213, 0.25));
+        }
+
+        .brand-company-line {
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            color: var(--navy-deep);
+        }
+
+        .brand-corporate-sub {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #64748B;
+            text-transform: uppercase;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 26px;
+            background: rgba(23, 105, 213, 0.20);
+            margin: 0 4px;
+        }
+
+        .brand-product-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, rgba(23, 105, 213, 0.08) 0%, rgba(37, 125, 235, 0.14) 100%);
+            border: 1px solid rgba(23, 105, 213, 0.22);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: var(--blue-primary);
+        }
+
+        /* Main Container */
+        .confirm-main {
+            flex: 1;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .confirm-card {
+            width: 100%;
+            max-width: 640px;
+            background: var(--card-glass);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1.5px solid rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: var(--shadow-card);
+            padding: 50px 42px;
+            text-align: center;
+            animation: cardFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .confirm-check-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            box-shadow: 0 12px 30px -4px rgba(16, 185, 129, 0.45);
+        }
+
+        .confirm-title {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 800;
+            color: var(--navy-deep);
+            margin-bottom: 12px;
+        }
+
+        .confirm-subtitle {
+            font-size: 16.5px;
+            font-weight: 600;
+            color: var(--blue-primary);
+            margin-bottom: 14px;
+        }
+
+        .confirm-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .confirm-meta-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 14px 20px;
+            border-radius: 12px;
+            background: #F8FAFC;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            margin-bottom: 32px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-return-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 32px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #1769D5 0%, #257DEB 100%);
+            color: #FFFFFF;
+            font-family: var(--font-body);
+            font-size: 14.5px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px -2px rgba(23, 105, 213, 0.40);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-return-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px -2px rgba(23, 105, 213, 0.52);
+            background: linear-gradient(135deg, #1255B0 0%, #1769D5 100%);
+        }
+
+        .confirm-footer {
+            padding: 20px 24px;
+            text-align: center;
+            font-size: 12px;
+            color: #94A3B8;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(18px) scale(0.99);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body class="confirm-body">
+
+    <!-- Ambient Subtle Background Decorative Glow & Neural Canvas -->
+    <div class="landing-bg-overlay" aria-hidden="true">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <canvas id="neuralCanvas" class="neural-canvas"></canvas>
+    </div>
+
+    <!-- Header -->
+    <header class="confirm-header">
+        <div class="confirm-header-inner">
+            <a href="welcome.html" class="brand-link">
+                <img src="assets/visteria-bird-clean.png" alt="Visteria Logo" class="brand-logo-img">
+                <div class="brand-text-block">
+                    <span class="brand-company-line">VISTERIA</span>
+                    <span class="brand-corporate-sub">CONSULTING SERVICES PRIVATE LIMITED</span>
+                </div>
+                <div class="brand-divider"></div>
+                <span class="brand-product-badge">SURVEY AI</span>
+            </a>
+
+            <div style="display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.10); border: 1px solid rgba(16, 185, 129, 0.3); font-size: 12px; font-weight: 700; color: #065F46;">
+                <span>✓</span>
+                <span>SUBMISSION CONFIRMED</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="confirm-main">
+        <div class="confirm-card">
+            <div class="confirm-check-icon">✓</div>
+            <h1 class="confirm-title">Survey Completed</h1>
+            <p class="confirm-subtitle">Your responses are securely recorded.</p>
+            <p class="confirm-desc">
+                Thank you for your valuable time and perspective. Your feedback empowers leadership to take meaningful action and continuously enhance our organizational workflows.
+            </p>
+
+            <div class="confirm-meta-box">
+                <div class="meta-item">
+                    <span>🔒</span>
+                    <span>100% Confidential</span>
+                </div>
+                <div class="meta-item">
+                    <span>🛡️</span>
+                    <span>Encrypted Transmission</span>
+                </div>
+                <div class="meta-item">
+                    <span>✓</span>
+                    <span>Verified Submission</span>
+                </div>
+            </div>
+
+            <!-- Post-Submission Next Steps & Instructions -->
+            <div style="background: #F0F9FF; border: 1px solid #BAE6FD; border-radius: 12px; padding: 18px 20px; margin-bottom: 28px; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-weight: 700; color: #0369A1; font-size: 13.5px;">
+                    <span>✦</span>
+                    <span>What Happens Next (Submission Guidance)</span>
+                </div>
+                <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 12.5px; line-height: 1.6;">
+                    <li>Your submission has been cryptographically finalized and cannot be modified.</li>
+                    <li>Visteria InsightPulse AI synthesizes responses into aggregated, anonymized workplace themes.</li>
+                    <li>Management receives high-level organizational analytics with strict anonymity protection.</li>
+                    <li>You may safely close this window or return to your portal dashboard.</li>
+                </ul>
+            </div>
+
+            <a href="welcome.html" class="btn-return-home">
+                <span>Return to Portal Home</span>
+                <span>→</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="confirm-footer">
+        &copy; 2026 Visteria Consulting Services Private Limited. All rights reserved.
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const canvas = document.getElementById("neuralCanvas");
+            if (canvas) {
+                const ctx = canvas.getContext("2d");
+                let width = (canvas.width = window.innerWidth);
+                let height = (canvas.height = window.innerHeight);
+
+                window.addEventListener("resize", () => {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                });
+
+                const nodes = [];
+                const nodeCount = Math.min(Math.floor(width / 40), 35);
+                for (let i = 0; i < nodeCount; i++) {
+                    nodes.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.4,
+                        vy: (Math.random() - 0.5) * 0.4,
+                        radius: Math.random() * 2 + 1,
+                        alpha: Math.random() * 0.4 + 0.15
+                    });
+                }
+
+                function draw() {
+                    ctx.clearRect(0, 0, width, height);
+                    for (let i = 0; i < nodes.length; i++) {
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            const dx = nodes[i].x - nodes[j].x;
+                            const dy = nodes[i].y - nodes[j].y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < 130) {
+                                ctx.beginPath();
+                                ctx.moveTo(nodes[i].x, nodes[i].y);
+                                ctx.lineTo(nodes[j].x, nodes[j].y);
+                                ctx.strokeStyle = `rgba(23, 105, 213, ${(1 - dist / 130) * 0.18})`;
+                                ctx.lineWidth = 0.8;
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                    for (let i = 0; i < nodes.length; i++) {
+                        const n = nodes[i];
+                        n.x += n.vx;
+                        n.y += n.vy;
+                        if (n.x < 0 || n.x > width) n.vx *= -1;
+                        if (n.y < 0 || n.y > height) n.vy *= -1;
+                        ctx.beginPath();
+                        ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(37, 125, 235, ${n.alpha})`;
+                        ctx.fill();
+                    }
+                    requestAnimationFrame(draw);
+                }
+                draw();
+            }
+        });
+    </script>
+</body>
+
+</html>

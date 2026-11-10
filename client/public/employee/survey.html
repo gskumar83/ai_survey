@@ -1,0 +1,2933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="People & Process Excellence - Visteria Consulting Services Private Limited. Vision Changes Everything.">
+    <title>Employee Survey | People & Process Excellence</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter for Clear, Modern SaaS Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Dedicated Stylesheets -->
+    <link rel="stylesheet" href="/assets/design-system.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/employee.css">
+    <link rel="stylesheet" href="css/i18n.css">
+
+    <style>
+        /* =========================================================
+           PEOPLE & PROCESS EXCELLENCE — SURVEY QUESTIONNAIRE
+           Refined light enterprise theme: soft blue-grey, white cards, teal accents, navy text
+        ========================================================= */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            /* Refined PPE Enterprise Palette */
+            --bg-app: var(--ppe-bg-gradient);
+            --card-surface: var(--ppe-surface-card);
+            --card-surface-subtle: var(--ppe-surface-muted);
+            --border-subtle: var(--ppe-border-glass);
+            --border-medium: rgba(18, 49, 91, 0.16);
+            --cyan-primary: var(--ppe-teal);
+            --teal-accent: var(--ppe-teal);
+            --teal-hover: var(--ppe-teal-dark);
+            --emerald-badge: var(--ppe-green);
+
+            /* Typography */
+            --text-heading: var(--ppe-navy-deep);
+            --text-body: var(--ppe-navy-text);
+            --text-muted: var(--ppe-navy-text-muted);
+            --text-dim: #829AB1;
+
+            /* Elevation */
+            --shadow-card: 0 12px 32px -4px rgba(16, 42, 67, 0.06), 0 4px 12px -2px rgba(16, 42, 67, 0.03);
+            --shadow-card-hover: 0 18px 40px -4px rgba(16, 42, 67, 0.10), 0 6px 16px -2px rgba(15, 174, 170, 0.12);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            min-height: 100vh;
+            font-family: var(--font-sans);
+            background: var(--ppe-bg-gradient);
+            color: var(--text-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body.survey-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            position: relative;
+            background: radial-gradient(ellipse at 85% 15%, rgba(56, 189, 248, 0.16) 0%, transparent 45%),
+                        radial-gradient(ellipse at 15% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 40%),
+                        radial-gradient(ellipse at 92% 80%, rgba(45, 212, 191, 0.14) 0%, transparent 45%),
+                        linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 40%, #F8FAFC 100%);
+        }
+
+        /* ---------------------------------------------------------
+           1. SHARED STANDARDIZED BRAND HEADER
+           --------------------------------------------------------- */
+        .portal-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 68px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--ppe-border-glass);
+            box-shadow: 0 4px 20px rgba(16, 42, 67, 0.04);
+            display: flex;
+            align-items: center;
+        }
+
+        .portal-header-inner {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo-img {
+            width: 38px;
+            height: auto;
+            max-height: 38px;
+            object-fit: contain;
+        }
+
+        .brand-text-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-company-line {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            color: #172B4D;
+            line-height: 1.1;
+        }
+
+        .brand-corporate-sub {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            color: #64748B;
+            text-transform: uppercase;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 28px;
+            background: #D7E1EA;
+            margin: 0 4px;
+        }
+
+        .brand-product-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: var(--cyan-primary);
+            text-transform: uppercase;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .survey-secure-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #0D9488;
+        }
+
+        .btn-exit-survey {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            background: #F8FAFC;
+            border: 1px solid #D7E1EA;
+            color: var(--text-body);
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-exit-survey:hover {
+            background: #F1F5F9;
+            border-color: #CBD5E1;
+            color: #172B4D;
+        }
+
+        /* ---------------------------------------------------------
+           2. MAIN TWO-COLUMN VIEWPORT LAYOUT
+           --------------------------------------------------------- */
+        .survey-main-wrapper {
+            flex: 1;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 24px 36px 24px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .survey-split-layout {
+            width: 100%;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        /* ---------------------------------------------------------
+           3. LEFT COLUMN: COMPACT CONTEXT & CATEGORY PANEL (290px)
+           --------------------------------------------------------- */
+        .survey-dept-panel {
+            width: 290px;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.88);
+            border-radius: 20px;
+            padding: 24px 20px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        /* Organization & Employee summary */
+        .dept-org-emp-card {
+            background: var(--card-surface-subtle);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 12px 14px;
+        }
+
+        .side-comp-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .side-comp-logo-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: #FFFFFF;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .side-comp-logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .side-comp-monogram {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--cyan-primary);
+        }
+
+        .side-comp-sub {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .side-comp-name {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-heading);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .side-emp-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 12px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 8px;
+        }
+
+        .side-emp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .side-emp-label {
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .side-emp-val {
+            color: var(--text-heading);
+            font-weight: 600;
+        }
+
+        /* Category Header */
+        .dept-panel-header {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .dept-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4px;
+            color: #0D9488;
+        }
+
+        .dept-category-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+            font-size: 10.5px;
+            font-weight: 800;
+            letter-spacing: 0.7px;
+            color: #0D9488;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        .dept-title-text {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--text-heading);
+            line-height: 1.25;
+        }
+
+        .dept-desc-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .dept-tags-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .dept-pill-mini {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: var(--card-surface-subtle);
+            border: 1px solid var(--border-subtle);
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+
+        /* Compact Eagle AI trigger card */
+        .dept-eagle-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            background: #F8FAFC;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: auto;
+        }
+
+        .dept-eagle-box:hover {
+            background: #F1F5F9;
+            border-color: #0D9488;
+            transform: translateY(-1px);
+        }
+
+        .dept-eagle-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .dept-eagle-texts {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dept-eagle-texts strong {
+            font-size: 12px;
+            color: var(--text-heading);
+        }
+
+        .dept-eagle-texts span {
+            font-size: 11px;
+            color: #0D9488;
+            font-weight: 600;
+        }
+
+        /* ---------------------------------------------------------
+           4. RIGHT COLUMN: MAIN QUESTIONNAIRE CARD
+           --------------------------------------------------------- */
+        .survey-question-panel {
+            flex: 1;
+            min-width: 0;
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.88);
+            border-radius: 20px;
+            padding: 32px 36px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            position: relative;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        /* Progress Card & Question Counter Header */
+        .q-progress-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .q-progress-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .q-counter-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #0D9488;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+            padding: 4px 12px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .q-pct-pill {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .q-progress-track {
+            width: 100%;
+            height: 8px;
+            background: #E2E8F0;
+            border-radius: 999px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .q-progress-fill {
+            height: 100%;
+            width: 10%;
+            background: #0D9488;
+            border-radius: 999px;
+            transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        /* Active Question Content */
+        .active-question-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .q-focus-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            color: #0D9488;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+            padding: 3px 9px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            align-self: flex-start;
+        }
+
+        .active-q-title {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--text-heading);
+            line-height: 1.4;
+            letter-spacing: -0.2px;
+        }
+
+        .active-q-hint {
+            font-size: 14px;
+            font-family: var(--font-body);
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* Response Options List (5-point Likert or text) */
+        .options-vertical-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .option-select-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 15px 18px;
+            border-radius: 14px;
+            border: 1.5px solid rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            outline: none;
+        }
+
+        .option-select-card:hover {
+            border-color: var(--ppe-cyan);
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(15, 174, 170, 0.15);
+        }
+
+        .option-select-card.is-selected {
+            border-color: var(--ppe-teal);
+            background: rgba(230, 255, 250, 0.90);
+            box-shadow: 0 0 0 3px rgba(15, 174, 170, 0.22), 0 8px 20px rgba(15, 174, 170, 0.16);
+            transform: translateY(-2px);
+        }
+
+        .option-radio-circle {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid var(--border-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 12px;
+            font-weight: 800;
+            color: transparent;
+            transition: all 0.18s ease;
+            background: #FFFFFF;
+        }
+
+        .option-select-card.is-selected .option-radio-circle {
+            background: var(--cyan-primary);
+            border-color: var(--cyan-primary);
+            color: #FFFFFF;
+        }
+
+        .option-texts {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .option-card-label {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--text-heading);
+            line-height: 1.25;
+            transition: color 0.18s ease;
+        }
+
+        .option-select-card.is-selected .option-card-label {
+            color: #0F766E;
+            font-weight: 700;
+        }
+
+        .option-card-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        /* Open-ended Textarea for Open Questions */
+        .open-ended-textarea {
+            width: 100%;
+            min-height: 130px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1.5px solid var(--border-subtle);
+            background: #F8FAFC;
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-heading);
+            line-height: 1.5;
+            resize: vertical;
+            transition: all 0.2s ease;
+        }
+
+        .open-ended-textarea:focus {
+            outline: none;
+            border-color: var(--cyan-primary);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.20);
+            background: #FFFFFF;
+        }
+
+        .open-ended-counter {
+            text-align: right;
+            font-size: 11.5px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Validation Alert */
+        .survey-validation-alert {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.25);
+            color: #DC2626;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        .survey-validation-alert.shake {
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-6px); }
+            40%, 80% { transform: translateX(6px); }
+        }
+
+        /* Navigation Controls Footer */
+        .survey-nav-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: auto;
+        }
+
+        .btn-survey-prev {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            background: #F8FAFC;
+            border: 1px solid var(--border-medium);
+            color: var(--text-body);
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-survey-prev:hover:not(:disabled) {
+            background: #F1F5F9;
+            border-color: #94A3B8;
+            color: var(--text-heading);
+            transform: translateY(-1px);
+        }
+
+        .btn-survey-prev:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: #F8FAFC;
+        }
+
+        .btn-survey-next {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            background: var(--ppe-gradient);
+            border: none;
+            color: #FFFFFF;
+            font-size: 13.5px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(15, 174, 170, 0.35);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-survey-next:hover:not(:disabled) {
+            background: var(--ppe-gradient-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 174, 170, 0.48);
+        }
+
+        .btn-survey-next:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* ---------------------------------------------------------
+           5. DEDICATED LOADING, ERROR & EMPTY STATES
+           --------------------------------------------------------- */
+        .state-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+            gap: 16px;
+        }
+
+        .state-spinner {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 3px solid rgba(13, 148, 136, 0.2);
+            border-top-color: var(--cyan-primary);
+            animation: spin 0.9s infinite linear;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .state-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .state-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            max-width: 460px;
+            line-height: 1.5;
+        }
+
+        .btn-state-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 10px;
+            background: var(--cyan-primary);
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-state-action:hover {
+            background: #0F766E;
+        }
+
+        /* ---------------------------------------------------------
+           6. SUBMIT CONFIRMATION MODAL
+           --------------------------------------------------------- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .modal-overlay.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            width: 100%;
+            max-width: 480px;
+            background: #FFFFFF;
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 32px 28px;
+            box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .modal-icon {
+            font-size: 36px;
+            color: var(--cyan-primary);
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-heading);
+        }
+
+        .modal-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .modal-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .btn-modal-cancel {
+            padding: 11px 20px;
+            border-radius: 10px;
+            background: #F8FAFC;
+            border: 1px solid var(--border-medium);
+            color: var(--text-body);
+            font-weight: 700;
+            font-size: 13.5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-modal-cancel:hover {
+            background: #F1F5F9;
+            color: var(--text-heading);
+        }
+
+        .btn-modal-confirm {
+            padding: 11px 24px;
+            border-radius: 10px;
+            background: #0D9488;
+            border: none;
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 13.5px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .btn-modal-confirm:hover {
+            background: #0F766E;
+            box-shadow: 0 4px 14px rgba(15, 118, 110, 0.35);
+        }
+
+        /* ---------------------------------------------------------
+           7. EAGLE AI FLOATING ASSISTANT DRAWER
+           --------------------------------------------------------- */
+        .eagle-avatar-wrapper {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 900;
+        }
+
+        .eagle-avatar-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #0D9488;
+            border: 2px solid rgba(13, 148, 136, 0.4);
+            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .eagle-avatar-btn:hover {
+            background: #0F766E;
+            transform: scale(1.08);
+            box-shadow: 0 6px 18px rgba(15, 118, 110, 0.4);
+        }
+
+        .eagle-avatar-img {
+            width: 28px;
+            height: auto;
+        }
+
+        .eagle-chat-box {
+            position: fixed;
+            bottom: 86px;
+            right: 24px;
+            width: 360px;
+            max-width: calc(100vw - 32px);
+            height: 480px;
+            max-height: calc(100vh - 120px);
+            background: #FFFFFF;
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px) scale(0.98);
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 910;
+        }
+
+        .eagle-chat-box.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0) scale(1);
+        }
+
+        .chat-header {
+            padding: 14px 18px;
+            background: #F8FAFC;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-title-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-title {
+            font-size: 13.5px;
+            font-weight: 800;
+            color: #172B4D;
+        }
+
+        .chat-sub {
+            font-size: 10.5px;
+            color: #0D9488;
+        }
+
+        .chat-close-btn {
+            background: none;
+            border: none;
+            color: #64748B;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            line-height: 1;
+            transition: color 0.15s ease;
+        }
+
+        .chat-close-btn:hover {
+            color: #172B4D;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #EAF0F5;
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .eagle-bubble {
+            align-self: flex-start;
+            background: #FFFFFF;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-heading);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+        }
+
+        .user-bubble {
+            align-self: flex-end;
+            background: #0D9488;
+            color: #FFFFFF;
+        }
+
+        .chat-quick-section {
+            padding: 10px 14px;
+            background: #F8FAFC;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .quick-chips-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .quick-chip {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: #FFFFFF;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-heading);
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        .quick-chip:hover {
+            color: #0D9488;
+            border-color: #0D9488;
+            background: #F1F5F9;
+        }
+
+        .chat-input-bar {
+            padding: 12px 14px;
+            display: flex;
+            gap: 8px;
+            background: #F8FAFC;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .chat-input-bar input {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            background: #FFFFFF;
+            color: var(--text-heading);
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .chat-input-bar input:focus {
+            outline: none;
+            border-color: var(--cyan-primary);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.20);
+        }
+
+        .chat-send-btn {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: none;
+            background: #0D9488;
+            color: #FFFFFF;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+
+        .chat-send-btn:hover {
+            background: #0F766E;
+        }
+
+        /* ---------------------------------------------------------
+           8. RESPONSIVE BREAKPOINTS
+           --------------------------------------------------------- */
+        @media (max-width: 960px) {
+            .survey-split-layout {
+                flex-direction: column;
+            }
+            .survey-dept-panel {
+                width: 100%;
+            }
+            .brand-company-line {
+                font-size: 13px;
+            }
+            .brand-product-badge {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .portal-header-inner {
+                padding: 0 16px;
+            }
+            .survey-main-wrapper {
+                padding: 16px 14px 28px 14px;
+            }
+            .survey-question-panel {
+                padding: 20px 18px;
+            }
+            .active-q-title {
+                font-size: 18px;
+            }
+            .survey-secure-pill {
+                display: none;
+            }
+        }
+
+        /* =====================================================
+           HIGH-CONTRAST BUSINESS ANALYTICS BACKGROUND GRAPHICS
+           Light blue, medium blue, cyan, and soft teal
+           Strictly behind content (z-index: 1), pointer-events: none
+        ====================================================== */
+        .dashboard-ambient-viz {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .viz-element {
+            position: absolute;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        /* 1. UPPER-RIGHT MAIN VISUALIZATION CLUSTER */
+        .viz-upper-right-cluster {
+            position: absolute;
+            top: 72px;
+            right: 0;
+            width: 58vw;
+            max-width: 860px;
+            height: 380px;
+            pointer-events: none;
+        }
+
+        /* A. Outlined 3-Segment Donut / Pie Chart (Far Upper Right) */
+        .viz-donut-widget {
+            top: 15px;
+            right: 48px;
+            width: 140px;
+            height: 140px;
+            opacity: 0.82;
+            animation: vizFloatSubtle 8s ease-in-out infinite alternate;
+        }
+
+        .viz-donut-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* B. Semi-Transparent Outlined Analytics Dashboard Panel */
+        .viz-dashboard-panel {
+            top: 38px;
+            right: 178px;
+            width: 330px;
+            height: 205px;
+            padding: 16px 20px 14px;
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1.5px solid rgba(14, 165, 233, 0.28);
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.05);
+            opacity: 0.85;
+            transform: rotate(-1deg);
+            animation: vizFloatAlt 9s ease-in-out infinite alternate;
+        }
+
+        .panel-header-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .panel-header-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #0EA5E9;
+            box-shadow: 0 0 6px rgba(14, 165, 233, 0.6);
+        }
+
+        .panel-header-line {
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(14, 165, 233, 0.22);
+        }
+
+        .panel-header-line.long { width: 56px; }
+        .panel-header-line.short { width: 32px; }
+
+        .panel-header-badge {
+            margin-left: auto;
+            font-size: 9.5px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #0284C7;
+            background: rgba(14, 165, 233, 0.08);
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(14, 165, 233, 0.25);
+        }
+
+        .panel-chart-body {
+            width: 100%;
+            height: 140px;
+        }
+
+        .panel-chart-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-node-dot {
+            transition: all 0.2s ease;
+        }
+
+        .viz-node-dot.active-peak {
+            filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.7));
+        }
+
+        /* C. Outlined Secondary Mini KPI Tag Card */
+        .viz-mini-kpi-card {
+            top: 154px;
+            right: 146px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 12px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1.2px solid rgba(14, 165, 233, 0.24);
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.04);
+            opacity: 0.85;
+            animation: vizFloatSubtle 7s ease-in-out infinite alternate 1s;
+        }
+
+        .kpi-tag-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 7px;
+            background: rgba(14, 165, 233, 0.18);
+            color: #0284C7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .kpi-tag-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kpi-tag-title {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #1E293B;
+            line-height: 1.1;
+        }
+
+        .kpi-tag-sub {
+            font-size: 8px;
+            font-weight: 700;
+            color: #0D9488;
+            letter-spacing: 0.5px;
+        }
+
+        /* D. Flowing Network Vectors & Connected Nodes */
+        .viz-network-vectors {
+            top: 40px;
+            right: 40px;
+            width: 500px;
+            height: 240px;
+            opacity: 0.85;
+        }
+
+        .viz-vectors-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* E. Precision Analytics Dot Grid Matrix (Right Margin) */
+        .viz-dot-grid-matrix {
+            top: 245px;
+            right: 16px;
+            width: 76px;
+            height: 140px;
+            opacity: 0.80;
+        }
+
+        .viz-grid-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* 2. OUTER EDGES & CORNERS */
+        .viz-top-left-network {
+            top: 76px;
+            left: 15px;
+            width: 280px;
+            height: 190px;
+            opacity: 0.84;
+            z-index: 1;
+        }
+
+        .viz-network-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-left-waves {
+            top: 135px;
+            left: -15px;
+            width: 270px;
+            height: 270px;
+            opacity: 0.84;
+        }
+
+        .viz-waves-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-bottom-right-nodes {
+            bottom: 35px;
+            right: 28px;
+            width: 180px;
+            height: 140px;
+            opacity: 0.86;
+        }
+
+        .viz-constellation-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-right-margin-bars {
+            bottom: 50px;
+            right: 18px;
+            width: 115px;
+            height: 205px;
+            opacity: 0.86;
+            z-index: 1;
+            animation: vizFloatSubtle 8.5s ease-in-out infinite alternate 1.5s;
+        }
+
+        .viz-margin-bars-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-bottom-left-curve {
+            bottom: 45px;
+            left: 25px;
+            width: 210px;
+            height: 110px;
+            opacity: 0.78;
+        }
+
+        .viz-curve-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .viz-bottom-left-grid {
+            bottom: 45px;
+            left: 20px;
+            width: 105px;
+            height: 85px;
+            opacity: 0.82;
+            z-index: 1;
+        }
+
+        /* Float animations */
+        @keyframes vizFloatSubtle {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-8px); }
+        }
+
+        @keyframes vizFloatAlt {
+            0% { transform: translateY(0px) rotate(-1deg); }
+            100% { transform: translateY(-7px) rotate(-0.5deg); }
+        }
+
+        /* Dark Mode Ambient Adaptation */
+        body.dark .viz-dashboard-panel {
+            background: rgba(15, 23, 42, 0.28);
+            border-color: rgba(56, 189, 248, 0.25);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark .donut-inner-hub {
+            stroke: rgba(56, 189, 248, 0.22);
+        }
+
+        body.dark .donut-track {
+            stroke: rgba(51, 65, 85, 0.35);
+        }
+
+        body.dark .viz-mini-kpi-card {
+            background: rgba(15, 23, 42, 0.32);
+            border-color: rgba(56, 189, 248, 0.25);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark .kpi-tag-title {
+            color: #E2E8F0;
+        }
+
+        body.dark .viz-node-dot {
+            fill: #0F172A;
+            stroke: #38BDF8;
+        }
+
+        body.dark .grid-dot {
+            fill: rgba(56, 189, 248, 0.30);
+        }
+
+        body.dark .viz-right-margin-bars rect {
+            stroke: rgba(56, 189, 248, 0.40);
+        }
+
+        body.dark .viz-top-left-network line {
+            stroke: rgba(56, 189, 248, 0.35);
+        }
+
+        @media (max-width: 1200px) {
+            .viz-upper-right-cluster {
+                width: 50vw;
+                transform: scale(0.85);
+                transform-origin: top right;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .viz-upper-right-cluster {
+                display: none;
+            }
+            .viz-left-waves {
+                opacity: 0.40;
+                left: -70px;
+            }
+            .viz-bottom-right-nodes,
+            .viz-bottom-left-curve {
+                opacity: 0.45;
+            }
+        }
+    </style>
+</head>
+
+<body class="survey-body">
+
+    <!-- =====================================================
+         BACKGROUND DATA VISUALIZATION GRAPHICS
+         Positioned in background behind content with z-index: 1
+    ====================================================== -->
+    <div class="dashboard-ambient-viz" aria-hidden="true">
+        <!-- SVG Definitions (Gradients, filters) -->
+        <svg width="0" height="0" style="position:absolute; width:0; height:0; pointer-events:none;">
+            <defs>
+                <!-- Bar Gradients (Light Translucent Fills) -->
+                <linearGradient id="barGradCyan" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#0284C7" stop-opacity="0.05" />
+                </linearGradient>
+                <linearGradient id="barGradTeal" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.22" />
+                    <stop offset="100%" stop-color="#0D9488" stop-opacity="0.06" />
+                </linearGradient>
+                <linearGradient id="barGradBlue" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#2563EB" stop-opacity="0.05" />
+                </linearGradient>
+                <linearGradient id="lineTrendGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#0284C7" stop-opacity="0.75" />
+                    <stop offset="50%" stop-color="#0D9488" stop-opacity="0.70" />
+                    <stop offset="100%" stop-color="#2563EB" stop-opacity="0.65" />
+                </linearGradient>
+                <linearGradient id="areaTrendGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.10" />
+                    <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.0" />
+                </linearGradient>
+
+                <!-- Donut Segment Gradients -->
+                <linearGradient id="donutTeal" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.45" />
+                    <stop offset="100%" stop-color="#0D9488" stop-opacity="0.35" />
+                </linearGradient>
+                <linearGradient id="donutCyan" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.45" />
+                    <stop offset="100%" stop-color="#0284C7" stop-opacity="0.32" />
+                </linearGradient>
+                <linearGradient id="donutBlue" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#818CF8" stop-opacity="0.35" />
+                    <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.25" />
+                </linearGradient>
+                <!-- Right Margin Rising Bar Gradients -->
+                <linearGradient id="marginBarGrad1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.32" />
+                    <stop offset="100%" stop-color="#0284C7" stop-opacity="0.08" />
+                </linearGradient>
+                <linearGradient id="marginBarGrad2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.36" />
+                    <stop offset="100%" stop-color="#0D9488" stop-opacity="0.10" />
+                </linearGradient>
+                <linearGradient id="marginBarGrad3" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.30" />
+                    <stop offset="100%" stop-color="#2563EB" stop-opacity="0.06" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <!-- 0. TOP-LEFT CONNECTED NETWORK NODES -->
+        <div class="viz-element viz-top-left-network" title="Neural Data Architecture">
+            <svg viewBox="0 0 280 190" class="viz-network-svg">
+                <!-- Connected Network Lines -->
+                <line x1="30" y1="50" x2="90" y2="30" stroke="rgba(14, 165, 233, 0.45)" stroke-width="1.6" />
+                <line x1="90" y1="30" x2="165" y2="65" stroke="rgba(13, 148, 136, 0.45)" stroke-width="1.6" />
+                <line x1="90" y1="30" x2="105" y2="125" stroke="rgba(14, 165, 233, 0.35)" stroke-width="1.3" stroke-dasharray="4 3" />
+                <line x1="165" y1="65" x2="235" y2="35" stroke="rgba(37, 99, 235, 0.40)" stroke-width="1.4" />
+                <line x1="165" y1="65" x2="215" y2="120" stroke="rgba(14, 165, 233, 0.40)" stroke-width="1.4" />
+                <line x1="105" y1="125" x2="215" y2="120" stroke="rgba(13, 148, 136, 0.35)" stroke-width="1.2" />
+                <line x1="30" y1="50" x2="55" y2="115" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.3" />
+
+                <!-- Nodes with Luminous Halos -->
+                <circle cx="30" cy="50" r="5" fill="#0284C7" stroke="rgba(56, 189, 248, 0.55)" stroke-width="4" />
+                <circle cx="90" cy="30" r="6" fill="#0D9488" stroke="rgba(45, 212, 191, 0.55)" stroke-width="5" />
+                <circle cx="165" cy="65" r="7" fill="#0284C7" stroke="rgba(14, 165, 233, 0.50)" stroke-width="6" />
+                <circle cx="235" cy="35" r="4.5" fill="#2563EB" stroke="rgba(96, 165, 250, 0.50)" stroke-width="4" />
+                <circle cx="105" cy="125" r="4" fill="#38BDF8" stroke="rgba(56, 189, 248, 0.45)" stroke-width="3" />
+                <circle cx="215" cy="120" r="5" fill="#14B8A6" stroke="rgba(45, 212, 191, 0.50)" stroke-width="4" />
+                <circle cx="55" cy="115" r="3.5" fill="#60A5FA" />
+            </svg>
+        </div>
+
+        <!-- 1. MAIN UPPER-RIGHT ANALYTICS CLUSTER -->
+        <div class="viz-upper-right-cluster">
+
+            <!-- A. Outlined 3-Segment Donut / Pie Chart (Far Upper Right) -->
+            <div class="viz-element viz-donut-widget" title="Sentiment Distribution Chart">
+                <svg viewBox="0 0 120 120" class="viz-donut-svg">
+                    <!-- Outlined background track ring -->
+                    <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(148, 163, 184, 0.16)" stroke-width="11" class="donut-track" />
+
+                    <!-- Segment 1: Cyan / Teal (42%) -->
+                    <circle cx="60" cy="60" r="46" fill="none" stroke="#0D9488" stroke-opacity="0.36" stroke-width="11"
+                        stroke-dasharray="120 289" stroke-dashoffset="0" stroke-linecap="round" class="donut-seg-1" />
+
+                    <!-- Segment 2: Medium Blue (33%) -->
+                    <circle cx="60" cy="60" r="46" fill="none" stroke="#0284C7" stroke-opacity="0.34" stroke-width="11"
+                        stroke-dasharray="94 289" stroke-dashoffset="-128" stroke-linecap="round" class="donut-seg-2" />
+
+                    <!-- Segment 3: Deep Blue (18%) -->
+                    <circle cx="60" cy="60" r="46" fill="none" stroke="#6366F1" stroke-opacity="0.26" stroke-width="11"
+                        stroke-dasharray="50 289" stroke-dashoffset="-228" stroke-linecap="round" class="donut-seg-3" />
+
+                    <!-- Inner Hub Outline Ring -->
+                    <circle cx="60" cy="60" r="35" fill="none" stroke="rgba(14, 165, 233, 0.20)" stroke-width="1" class="donut-inner-hub" />
+                    <circle cx="60" cy="60" r="4" fill="#0EA5E9" opacity="0.6" class="donut-core-pulse" />
+                </svg>
+            </div>
+
+            <!-- B. Semi-Transparent Outlined Analytics Dashboard Panel -->
+            <div class="viz-element viz-dashboard-panel" title="Organizational Analytics Dashboard">
+                <!-- Panel Header -->
+                <div class="panel-header-row">
+                    <div class="panel-header-dot"></div>
+                    <div class="panel-header-line long"></div>
+                    <div class="panel-header-line short"></div>
+                    <div class="panel-header-badge">LIVE KPI</div>
+                </div>
+
+                <!-- Combined Bar & Trend Line Canvas -->
+                <div class="panel-chart-body">
+                    <svg viewBox="0 0 280 130" class="panel-chart-svg" preserveAspectRatio="none">
+                        <!-- Horizontal Grid Lines -->
+                        <line x1="10" y1="20" x2="270" y2="20" stroke="rgba(14, 165, 233, 0.14)" stroke-dasharray="3 3" />
+                        <line x1="10" y1="55" x2="270" y2="55" stroke="rgba(14, 165, 233, 0.14)" stroke-dasharray="3 3" />
+                        <line x1="10" y1="90" x2="270" y2="90" stroke="rgba(14, 165, 233, 0.14)" stroke-dasharray="3 3" />
+                        <line x1="10" y1="120" x2="270" y2="120" stroke="rgba(14, 165, 233, 0.24)" />
+
+                        <!-- Vertical Outlined Bar Chart (6 Bars) -->
+                        <rect x="25" y="65" width="18" height="55" rx="4" fill="url(#barGradCyan)" stroke="rgba(14, 165, 233, 0.35)" stroke-width="1.2" class="viz-bar bar-1" />
+                        <rect x="65" y="42" width="18" height="78" rx="4" fill="url(#barGradTeal)" stroke="rgba(13, 148, 136, 0.40)" stroke-width="1.4" class="viz-bar bar-2" />
+                        <rect x="105" y="52" width="18" height="68" rx="4" fill="url(#barGradBlue)" stroke="rgba(37, 99, 235, 0.30)" stroke-width="1.2" class="viz-bar bar-3" />
+                        <rect x="145" y="24" width="18" height="96" rx="4" fill="url(#barGradCyan)" stroke="rgba(14, 165, 233, 0.40)" stroke-width="1.4" class="viz-bar bar-4" />
+                        <rect x="185" y="15" width="18" height="105" rx="4" fill="url(#barGradTeal)" stroke="rgba(13, 148, 136, 0.48)" stroke-width="1.5" class="viz-bar bar-5" />
+                        <rect x="225" y="32" width="18" height="88" rx="4" fill="url(#barGradBlue)" stroke="rgba(37, 99, 235, 0.30)" stroke-width="1.2" class="viz-bar bar-6" />
+
+                        <!-- Area Fill Under Spline -->
+                        <path d="M 34 65 C 60 40, 80 48, 114 52 C 130 54, 140 22, 154 24 C 170 26, 178 12, 194 15 C 210 18, 220 30, 234 32 L 234 120 L 34 120 Z"
+                            fill="url(#areaTrendGrad)" class="viz-trend-area" />
+
+                        <!-- Trend Line Spline -->
+                        <path d="M 34 65 C 60 40, 80 48, 114 52 C 130 54, 140 22, 154 24 C 170 26, 178 12, 194 15 C 210 18, 220 30, 234 32"
+                            fill="none" stroke="url(#lineTrendGrad)" stroke-width="2.2" stroke-linecap="round" class="viz-trend-path" />
+
+                        <!-- Circular Vertex Data Nodes -->
+                        <circle cx="34" cy="65" r="4" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.8" class="viz-node-dot" />
+                        <circle cx="74" cy="42" r="4" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.8" class="viz-node-dot" />
+                        <circle cx="114" cy="52" r="4" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" class="viz-node-dot" />
+                        <circle cx="154" cy="24" r="4" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.8" class="viz-node-dot" />
+                        <circle cx="194" cy="15" r="4.5" fill="#FFFFFF" stroke="#0D9488" stroke-width="2.2" class="viz-node-dot active-peak" />
+                        <circle cx="234" cy="32" r="4" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.8" class="viz-node-dot" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- C. Floating Secondary Mini KPI Tag Card -->
+            <div class="viz-element viz-mini-kpi-card" title="Analytics Metrics Tag">
+                <div class="kpi-tag-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <div class="kpi-tag-meta">
+                    <div class="kpi-tag-title">AI</div>
+                    <div class="kpi-tag-sub">INSIGHTS</div>
+                </div>
+            </div>
+
+            <!-- D. Flowing Data Vectors & Connected Network Nodes -->
+            <div class="viz-element viz-network-vectors">
+                <svg viewBox="0 0 500 240" class="viz-vectors-svg">
+                    <!-- Flowing curve connecting across hero section -->
+                    <path d="M 10 110 C 120 70, 210 150, 310 90 C 390 40, 430 110, 490 80"
+                        fill="none" stroke="rgba(14, 165, 233, 0.50)" stroke-width="1.8" stroke-dasharray="6 4" class="vector-curve-1" />
+                    <path d="M 50 170 C 160 130, 240 210, 340 160 C 410 120, 460 170, 495 140"
+                        fill="none" stroke="rgba(13, 148, 136, 0.40)" stroke-width="1.5" class="vector-curve-2" />
+
+                    <!-- Connected Node Circles -->
+                    <circle cx="120" cy="70" r="4" fill="#0284C7" stroke="rgba(56, 189, 248, 0.6)" stroke-width="4" />
+                    <circle cx="310" cy="90" r="5" fill="#0D9488" stroke="rgba(45, 212, 191, 0.6)" stroke-width="5" />
+                    <circle cx="430" cy="110" r="4.5" fill="#2563EB" stroke="rgba(96, 165, 250, 0.6)" stroke-width="4" />
+                    <circle cx="240" cy="210" r="3.5" fill="#38BDF8" />
+                    <circle cx="340" cy="160" r="4" fill="#14B8A6" />
+                </svg>
+            </div>
+
+            <!-- E. Precision Analytics Dot Grid Matrix (Right Edge) -->
+            <div class="viz-element viz-dot-grid-matrix">
+                <svg width="72" height="130" viewBox="0 0 72 130" class="viz-grid-svg">
+                    <defs>
+                        <pattern id="dotPatternWelcomeSurvey" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                            <circle cx="8" cy="8" r="2.2" fill="rgba(37, 99, 235, 0.38)" class="grid-dot" />
+                        </pattern>
+                    </defs>
+                    <rect width="72" height="130" fill="url(#dotPatternWelcomeSurvey)" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- 2. LEFT-EDGE & CORNER DATA PATTERNS -->
+        <!-- A. Far-Left Circular Radar Waves & Concentric Arcs -->
+        <div class="viz-element viz-left-waves">
+            <svg viewBox="0 0 260 260" class="viz-waves-svg">
+                <!-- Outer Arc -->
+                <circle cx="30" cy="130" r="110" fill="none" stroke="rgba(56, 189, 248, 0.32)" stroke-width="1.8" stroke-dasharray="8 6" />
+                <!-- Middle Arc -->
+                <circle cx="30" cy="130" r="75" fill="none" stroke="rgba(14, 165, 233, 0.28)" stroke-width="1.6" />
+                <!-- Inner Arc -->
+                <circle cx="30" cy="130" r="45" fill="none" stroke="rgba(13, 148, 136, 0.30)" stroke-width="1.5" />
+                <!-- Center Core Node -->
+                <circle cx="30" cy="130" r="7" fill="#0D9488" stroke="rgba(13, 148, 136, 0.4)" stroke-width="6" />
+                <!-- Radiating Vector Line -->
+                <path d="M 30 130 C 70 170, 110 200, 160 220" fill="none" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.6" />
+                <circle cx="160" cy="220" r="4" fill="#0284C7" />
+            </svg>
+        </div>
+
+        <!-- B. Bottom-Right Connected Node Constellation -->
+        <div class="viz-element viz-bottom-right-nodes">
+            <svg viewBox="0 0 180 140" class="viz-constellation-svg">
+                <line x1="20" y1="90" x2="90" y2="35" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1.4" />
+                <line x1="90" y1="35" x2="160" y2="80" stroke="rgba(37, 99, 235, 0.40)" stroke-width="1.4" />
+                <line x1="90" y1="35" x2="110" y2="120" stroke="rgba(13, 148, 136, 0.38)" stroke-width="1.4" />
+
+                <circle cx="20" cy="90" r="4" fill="#0284C7" stroke="rgba(56, 189, 248, 0.5)" stroke-width="4" />
+                <circle cx="90" cy="35" r="5" fill="#0D9488" stroke="rgba(45, 212, 191, 0.5)" stroke-width="5" />
+                <circle cx="160" cy="80" r="4.5" fill="#2563EB" stroke="rgba(96, 165, 250, 0.5)" stroke-width="4" />
+                <circle cx="110" cy="120" r="3.5" fill="#38BDF8" />
+            </svg>
+        </div>
+
+        <!-- C. Bottom-Left Soft Ambient Vector Curve -->
+        <div class="viz-element viz-bottom-left-curve">
+            <svg viewBox="0 0 200 120" class="viz-curve-svg">
+                <path d="M 0 90 Q 70 30, 160 80 T 200 60" fill="none" stroke="rgba(56, 189, 248, 0.30)" stroke-width="1.5" />
+                <circle cx="160" cy="80" r="3.5" fill="#0D9488" />
+            </svg>
+        </div>
+
+        <!-- D. Bottom-Left Precision Dotted Grid Matrix -->
+        <div class="viz-element viz-bottom-left-grid" title="Sample Matrix Grid">
+            <svg width="105" height="85" viewBox="0 0 105 85">
+                <defs>
+                    <pattern id="dotPatternBottomLeftSurvey" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+                        <circle cx="9" cy="9" r="2.4" fill="rgba(14, 165, 233, 0.35)" class="grid-dot" />
+                    </pattern>
+                </defs>
+                <rect width="105" height="85" fill="url(#dotPatternBottomLeftSurvey)" />
+            </svg>
+        </div>
+
+        <!-- E. Right-Margin Vertical Bar Chart Pillars (From Design Reference) -->
+        <div class="viz-element viz-right-margin-bars" title="Right Margin Analytics Index">
+            <svg viewBox="0 0 115 205" class="viz-margin-bars-svg">
+                <!-- 5 Vertical Rising Outlined Bars -->
+                <rect x="5" y="135" width="14" height="65" rx="4" fill="url(#marginBarGrad1)" stroke="rgba(14, 165, 233, 0.42)" stroke-width="1.2" />
+                <rect x="27" y="95" width="14" height="105" rx="4" fill="url(#marginBarGrad2)" stroke="rgba(13, 148, 136, 0.46)" stroke-width="1.3" />
+                <rect x="49" y="50" width="14" height="150" rx="4" fill="url(#marginBarGrad1)" stroke="rgba(14, 165, 233, 0.48)" stroke-width="1.4" />
+                <rect x="71" y="105" width="14" height="95" rx="4" fill="url(#marginBarGrad3)" stroke="rgba(37, 99, 235, 0.38)" stroke-width="1.2" />
+                <rect x="93" y="35" width="14" height="165" rx="4" fill="url(#marginBarGrad2)" stroke="rgba(13, 148, 136, 0.52)" stroke-width="1.5" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- =====================================================
+         1. STANDARDIZED BRAND HEADER (~68px)
+    ====================================================== -->
+    <header class="portal-header">
+        <div class="portal-header-inner">
+            <a href="welcome.html" class="brand-link" id="brandLink">
+                <img src="/assets/visteria-logo.png" alt="Visteria Logo" class="brand-logo-img">
+                <div class="brand-text-block">
+                    <span class="brand-company-line">VISTERIA</span>
+                    <span class="brand-corporate-sub">CONSULTING SERVICES PRIVATE LIMITED</span>
+                </div>
+                <div class="brand-divider"></div>
+                <span class="brand-product-badge">PEOPLE & PROCESS EXCELLENCE</span>
+            </a>
+
+            <div class="header-actions">
+                <div id="surveyLangSelectorSlot"></div>
+
+                <div class="survey-secure-pill">
+                    <span data-i18n="nav.confidential">🔒 100% Confidential</span>
+                </div>
+
+                <a href="welcome.html" id="btnExitSurvey" class="btn-exit-survey" title="Save and return to dashboard">
+                    <span>←</span>
+                    <span data-i18n="nav.back">Back to Dashboard</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================
+         2. SURVEY MAIN SPLIT VIEWPORT
+    ====================================================== -->
+    <main class="survey-main-wrapper">
+        <div class="survey-split-layout">
+
+            <!-- LEFT COLUMN: CONTEXT & DEPARTMENT FOCUS -->
+            <aside class="survey-dept-panel" id="deptPanel">
+
+                <!-- Company Information & Logged-in Employee Card -->
+                <div class="dept-org-emp-card" id="deptOrgEmpCard">
+                    <div class="side-comp-header">
+                        <div class="side-comp-logo-box" id="sideCompLogoWrap">
+                            <img id="sideCompLogoImg" src="" alt="Organization Logo" style="display: none;">
+                            <span id="sideCompLogoFallback" class="side-comp-monogram">CO</span>
+                        </div>
+                        <div style="min-width: 0; flex: 1;">
+                            <div class="side-comp-sub" data-i18n="welcome.org_conducting">ORGANIZATION</div>
+                            <div id="sideCompName" class="side-comp-name">Organization</div>
+                        </div>
+                    </div>
+
+                    <div class="side-emp-grid">
+                        <div class="side-emp-row">
+                            <span class="side-emp-label" data-i18n="profile.emp_name">Employee:</span>
+                            <strong id="sideEmpName" class="side-emp-val">--</strong>
+                        </div>
+                        <div class="side-emp-row">
+                            <span class="side-emp-label" data-i18n="profile.emp_id">Employee ID:</span>
+                            <span id="sideEmpCode" class="side-emp-val" style="font-family: monospace;">--</span>
+                        </div>
+                        <div class="side-emp-row">
+                            <span class="side-emp-label" data-i18n="profile.department">Department:</span>
+                            <span id="sideEmpDept" class="side-emp-val">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Department / Survey Context Header -->
+                <div class="dept-panel-header">
+                    <div class="dept-icon-box" id="deptIconBox" aria-hidden="true">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+
+                    <span class="dept-category-tag" id="deptCategoryTag">ASSIGNED SURVEY</span>
+                    <h2 class="dept-title-text" id="deptTitleText">Workplace Assessment</h2>
+                    <p class="dept-desc-text" id="deptDescText">
+                        Evaluating operational effectiveness, teamwork, and organizational processes.
+                    </p>
+
+                    <div class="dept-tags-wrap" id="deptTagsWrap">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+
+                <!-- Compact Eagle AI Assistant Trigger -->
+                <div class="dept-eagle-box" id="deptEagleTrigger" title="Click to ask Eagle AI about this question">
+                    <span class="dept-eagle-icon">🦅</span>
+                    <div class="dept-eagle-texts">
+                        <strong>Eagle AI Assistant</strong>
+                        <span>Click for question guidance</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- RIGHT COLUMN: ACTIVE SINGLE QUESTION CARD -->
+            <article class="survey-question-panel" id="surveyQuestionPanel">
+
+                <!-- 1. LOADING STATE CONTAINER -->
+                <div class="state-container" id="surveyLoadingState">
+                    <div class="state-spinner"></div>
+                    <h2 class="state-title">Loading questionnaire...</h2>
+                    <p class="state-desc">Securely loading your assigned survey questions from the server.</p>
+                </div>
+
+                <!-- 2. ERROR STATE CONTAINER -->
+                <div class="state-container" id="surveyErrorState" style="display: none;">
+                    <div style="font-size: 38px;">⚠️</div>
+                    <h2 class="state-title">Unable to Load Questionnaire</h2>
+                    <p class="state-desc" id="surveyErrorMsg">We encountered an issue loading your survey questions. Please check your connection and try again.</p>
+                    <div style="display: flex; gap: 12px; margin-top: 8px;">
+                        <button type="button" class="btn-state-action" id="btnRetryLoad">Retry Loading</button>
+                        <a href="welcome.html" class="btn-exit-survey">Return to Dashboard</a>
+                    </div>
+                </div>
+
+                <!-- 3. EMPTY STATE CONTAINER -->
+                <div class="state-container" id="surveyEmptyState" style="display: none;">
+                    <div style="font-size: 38px;">📋</div>
+                    <h2 class="state-title">No Questions Available</h2>
+                    <p class="state-desc">This survey cycle currently does not contain any active questions for your assignment.</p>
+                    <a href="welcome.html" class="btn-state-action">Return to Dashboard</a>
+                </div>
+
+                <!-- 4. ACTIVE QUESTIONNAIRE CONTAINER -->
+                <div id="surveyActiveContent" style="display: none; flex-direction: column; gap: 20px;">
+
+                    <!-- Progress Bar & Question Counter -->
+                    <div class="q-progress-card">
+                        <div class="q-progress-meta">
+                            <span class="q-counter-pill" id="qCounterPill">Question 1 of 10</span>
+                            <span class="q-pct-pill" id="qPctPill">10% Completed</span>
+                        </div>
+                        <div class="q-progress-track" aria-hidden="true">
+                            <div class="q-progress-fill" id="qProgressFill" style="width: 10%;">
+                                <div class="q-progress-shimmer"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question Focus, Title, and Hint -->
+                    <div class="active-question-wrapper">
+                        <span class="q-focus-badge" id="qFocusBadge">OPERATIONAL ASSESSMENT</span>
+                        <h1 class="active-q-title" id="activeQTitle">...</h1>
+                        <p class="active-q-hint" id="activeQHint">Please reflect on your personal day-to-day experience.</p>
+
+                        <!-- Answer Options (Likert Vertical Stack or Textarea) -->
+                        <div class="options-vertical-list" id="optionsContainer" role="radiogroup" aria-label="Question Options">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+
+                        <!-- Validation Alert -->
+                        <div class="survey-validation-alert" id="surveyValidationAlert" role="alert">
+                            <span aria-hidden="true">⚠️</span>
+                            <span id="validationAlertText" data-i18n="survey.validation_required">Please select an answer to continue.</span>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Footer -->
+                    <footer class="survey-nav-footer">
+                        <button type="button" class="btn-survey-prev" id="btnPrev" aria-label="Previous question">
+                            <span id="btnPrevArrow">←</span>
+                            <span id="btnPrevLabel" data-i18n="action.previous">PREVIOUS</span>
+                        </button>
+
+                        <button type="button" class="btn-survey-next" id="btnNext" aria-label="Next question">
+                            <span id="btnNextLabel" data-i18n="action.next">NEXT</span>
+                            <span id="btnNextArrow">→</span>
+                        </button>
+                    </footer>
+                </div>
+
+            </article>
+
+        </div>
+    </main>
+
+    <!-- =====================================================
+         ENTERPRISE SAAS FOOTER
+    ====================================================== -->
+    <footer class="ppe-footer" role="contentinfo">
+        <div class="ppe-footer-inner">
+            <div class="ppe-footer-left">
+                <strong>PEOPLE & PROCESS EXCELLENCE</strong>
+                <span>•</span>
+                <span>Visteria Consulting Services Private Limited</span>
+                <span>•</span>
+                <span class="ppe-footer-tagline">Vision Changes Everything.</span>
+            </div>
+            <div class="ppe-footer-right">
+                <span>Enterprise Assessment Platform</span>
+                <span>•</span>
+                <span>Encrypted & Confidential</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================
+         3. SUBMIT CONFIRMATION MODAL
+    ====================================================== -->
+    <div class="modal-overlay" id="submitModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-card">
+            <div class="modal-icon">✦</div>
+            <h2 class="modal-title" id="modalTitle" data-i18n="survey.confirm_modal_title">Submit Survey Evaluation?</h2>
+            <p class="modal-desc" data-i18n="survey.confirm_modal_desc">
+                You have reached the end of the survey questions. Once submitted, your encrypted responses will be finalized and included in the organizational report.
+            </p>
+            <div class="modal-actions">
+                <button type="button" class="btn-modal-cancel" id="btnModalCancel" data-i18n="action.cancel">Keep Reviewing</button>
+                <button type="button" class="btn-modal-confirm" id="btnModalConfirm" data-i18n="action.confirm_submit">Yes, Submit Survey</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+         4. EAGLE AI FLOATING ASSISTANT
+    ====================================================== -->
+    <aside class="eagle-avatar-wrapper" aria-label="Eagle AI Assistant">
+        <button type="button" id="eagleAvatar" class="eagle-avatar-btn" aria-label="Open Eagle AI Assistant"
+            title="Eagle AI Assistant">
+            <div class="eagle-glow-halo" aria-hidden="true"></div>
+            <img src="/assets/eagle-avatar.png" alt="Eagle AI Mascot" class="eagle-mascot-img" draggable="false">
+            <span class="eagle-status-online" title="Eagle is online"></span>
+        </button>
+
+        <div class="eagle-chat-box" id="eagleChatBox" role="dialog" aria-label="Eagle AI Survey Assistant"
+            aria-hidden="true">
+            <div class="chat-header">
+                <div class="chat-title-group">
+                    <img src="/assets/eagle-avatar.png" alt="Eagle AI" class="chat-mini-avatar">
+                    <div>
+                        <div class="chat-title">Eagle AI Assistant</div>
+                        <div class="chat-sub">Context Aware • Confidential</div>
+                    </div>
+                </div>
+                <button type="button" id="eagleChatCloseBtn" class="chat-close-btn" aria-label="Close Eagle chat"
+                    title="Close">
+                    ✕
+                </button>
+            </div>
+
+            <div class="chat-messages" id="eagleChatMessages" role="log" aria-live="polite">
+                <div class="chat-bubble eagle-bubble">
+                    <p id="eagleWelcomeMsg">
+                        Hi! I'm Eagle AI. I can explain this question, clarify what the options mean, or answer questions about your survey privacy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="chat-quick-section" id="eagleQuickQuestions">
+                <div class="quick-chips-grid">
+                    <button type="button" class="quick-chip" data-action="explain">Explain this question</button>
+                    <button type="button" class="quick-chip" data-action="options">What do options mean?</button>
+                    <button type="button" class="quick-chip" data-action="how">How should I answer?</button>
+                    <button type="button" class="quick-chip" data-action="privacy">Survey confidentiality</button>
+                </div>
+            </div>
+
+            <form id="eagleChatForm" class="chat-input-bar">
+                <input type="text" id="eagleChatInput" placeholder="Ask Eagle anything..." autocomplete="off"
+                    aria-label="Type your question for Eagle">
+                <button type="submit" class="chat-send-btn" aria-label="Send question">➤</button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- =====================================================
+         5. CORE JAVASCRIPT ENGINE
+    ====================================================== -->
+    <script src="js/api-client.js"></script>
+    <script src="js/i18n.js"></script>
+
+    <script>
+        window.getDepartmentSvg = function(deptKey) {
+            const svgs = {
+                finance: '<svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="finG" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#0284C7"/><stop offset="1" stop-color="#0D9488"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#finG)"/><path d="M14 34V20M24 34V14M34 34V26" stroke="white" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="14" r="2.5" fill="#38BDF8"/></svg>',
+                sales: '<svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="salG" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#059669"/><stop offset="1" stop-color="#10B981"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#salG)"/><path d="M14 32L22 24L28 28L36 18" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 18H36V24" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                hr: '<svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hrG" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#7C3AED"/><stop offset="1" stop-color="#EC4899"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#hrG)"/><circle cx="24" cy="18" r="5" fill="white"/><path d="M15 34C15 29.5 19 26 24 26C29 26 33 29.5 33 34H15Z" fill="white"/></svg>',
+                production: '<svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="prodG" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#D97706"/><stop offset="1" stop-color="#EA580C"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#prodG)"/><path d="M24 16C19.6 16 16 19.6 16 24C16 28.4 19.6 32 24 32C28.4 32 32 28.4 32 24C32 19.6 28.4 16 24 16ZM24 28C21.8 28 20 26.2 20 24C20 21.8 21.8 20 24 20C26.2 20 28 21.8 28 24C28 26.2 26.2 28 24 28Z" fill="white"/></svg>',
+                management: '<svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mgmtG" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#1E3A8A"/><stop offset="1" stop-color="#38BDF8"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mgmtG)"/><path d="M12 32L14 20L20 25L24 15L28 25L34 20L36 32H12Z" fill="white"/></svg>',
+                it: '<svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="itG" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#0284C7"/><stop offset="1" stop-color="#0D9488"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#itG)"/><rect x="16" y="16" width="16" height="16" rx="4" fill="white"/><rect x="19" y="19" width="10" height="10" rx="2" fill="#0284C7"/></svg>',
+                general: '<svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="genG" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#14B8A6"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#genG)"/><circle cx="24" cy="24" r="10" stroke="white" stroke-width="2" fill="none"/><ellipse cx="24" cy="24" rx="5" ry="10" stroke="white" stroke-width="1.5" fill="none"/></svg>'
+            };
+            return svgs[deptKey] || svgs.general;
+        };
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            'use strict';
+
+            /* -----------------------------------------------------
+               1. BACKGROUND NEURAL CANVAS
+               ----------------------------------------------------- */
+            const canvas = document.getElementById("neuralCanvas");
+            if (canvas) {
+                const ctx = canvas.getContext("2d");
+                let width = canvas.width = window.innerWidth;
+                let height = canvas.height = window.innerHeight;
+
+                const nodes = [];
+                const nodeCount = Math.min(35, Math.floor(width / 35));
+
+                for (let i = 0; i < nodeCount; i++) {
+                    nodes.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.4,
+                        vy: (Math.random() - 0.5) * 0.4,
+                        radius: Math.random() * 2 + 1
+                    });
+                }
+
+                function drawNodes() {
+                    ctx.clearRect(0, 0, width, height);
+                    ctx.fillStyle = "rgba(56, 189, 248, 0.35)";
+                    ctx.strokeStyle = "rgba(56, 189, 248, 0.08)";
+
+                    for (let i = 0; i < nodes.length; i++) {
+                        const node = nodes[i];
+                        node.x += node.vx;
+                        node.y += node.vy;
+
+                        if (node.x < 0 || node.x > width) node.vx *= -1;
+                        if (node.y < 0 || node.y > height) node.vy *= -1;
+
+                        ctx.beginPath();
+                        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            const n2 = nodes[j];
+                            const dist = Math.hypot(node.x - n2.x, node.y - n2.y);
+                            if (dist < 110) {
+                                ctx.beginPath();
+                                ctx.moveTo(node.x, node.y);
+                                ctx.lineTo(n2.x, n2.y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                    requestAnimationFrame(drawNodes);
+                }
+                drawNodes();
+
+                window.addEventListener("resize", () => {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                });
+            }
+
+            /* -----------------------------------------------------
+               2. DOM REFERENCES
+               ----------------------------------------------------- */
+            const surveyLoadingState = document.getElementById("surveyLoadingState");
+            const surveyErrorState = document.getElementById("surveyErrorState");
+            const surveyErrorMsg = document.getElementById("surveyErrorMsg");
+            const surveyEmptyState = document.getElementById("surveyEmptyState");
+            const surveyActiveContent = document.getElementById("surveyActiveContent");
+
+            const sideCompNameEl = document.getElementById("sideCompName");
+            const sideEmpNameEl = document.getElementById("sideEmpName");
+            const sideEmpCodeEl = document.getElementById("sideEmpCode");
+            const sideEmpDeptEl = document.getElementById("sideEmpDept");
+            const sideCompLogoImgEl = document.getElementById("sideCompLogoImg");
+            const sideCompLogoFallbackEl = document.getElementById("sideCompLogoFallback");
+
+            const deptIconBoxEl = document.getElementById("deptIconBox");
+            const deptCategoryTagEl = document.getElementById("deptCategoryTag");
+            const deptTitleTextEl = document.getElementById("deptTitleText");
+            const deptDescTextEl = document.getElementById("deptDescText");
+            const deptTagsWrapEl = document.getElementById("deptTagsWrap");
+            const deptEagleTriggerEl = document.getElementById("deptEagleTrigger");
+
+            const qCounterPillEl = document.getElementById("qCounterPill");
+            const qPctPillEl = document.getElementById("qPctPill");
+            const qProgressFillEl = document.getElementById("qProgressFill");
+            const qFocusBadgeEl = document.getElementById("qFocusBadge");
+            const activeQTitleEl = document.getElementById("activeQTitle");
+            const activeQHintEl = document.getElementById("activeQHint");
+            const optionsContainerEl = document.getElementById("optionsContainer");
+            const validationAlertEl = document.getElementById("surveyValidationAlert");
+            const validationAlertTextEl = document.getElementById("validationAlertText");
+
+            const btnPrevEl = document.getElementById("btnPrev");
+            const btnNextEl = document.getElementById("btnNext");
+            const btnNextLabelEl = document.getElementById("btnNextLabel");
+            const btnNextArrowEl = document.getElementById("btnNextArrow");
+            const btnExitSurveyEl = document.getElementById("btnExitSurvey");
+            const btnRetryLoadEl = document.getElementById("btnRetryLoad");
+
+            const submitModalEl = document.getElementById("submitModal");
+            const btnModalCancelEl = document.getElementById("btnModalCancel");
+            const btnModalConfirmEl = document.getElementById("btnModalConfirm");
+
+            /* -----------------------------------------------------
+               3. STATE MANAGEMENT
+               ----------------------------------------------------- */
+            let activeAssignmentId = null;
+            let currentQuestionIndex = 0;
+            let activeQuestionsList = [];
+            let activeSurveyMeta = {
+                title: "Workplace Assessment",
+                category: "ASSIGNED SURVEY",
+                desc: "Evaluating operational processes and team culture."
+            };
+            let userAnswers = {};
+            let isSubmitting = false;
+            let currentEmployee = null;
+
+            const STANDARD_OPTIONS = [
+                { label: "Strongly Agree", value: "5", score: 5 },
+                { label: "Agree", value: "4", score: 4 },
+                { label: "Neutral", value: "3", score: 3 },
+                { label: "Disagree", value: "2", score: 2 },
+                { label: "Strongly Disagree", value: "1", score: 1 }
+            ];
+
+            function escapeHtml(str) {
+                if (!str) return "";
+                return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+            }
+
+            /* -----------------------------------------------------
+               4. RENDER QUESTION
+               ----------------------------------------------------- */
+            function renderActiveQuestion() {
+                hideValidationAlert();
+
+                if (!activeQuestionsList || activeQuestionsList.length === 0) {
+                    surveyLoadingState.style.display = "none";
+                    surveyErrorState.style.display = "none";
+                    surveyActiveContent.style.display = "none";
+                    surveyEmptyState.style.display = "flex";
+                    return;
+                }
+
+                if (currentQuestionIndex < 0) currentQuestionIndex = 0;
+                if (currentQuestionIndex >= activeQuestionsList.length) {
+                    currentQuestionIndex = activeQuestionsList.length - 1;
+                }
+
+                const totalQuestions = activeQuestionsList.length;
+                const qData = activeQuestionsList[currentQuestionIndex];
+
+                if (!qData) {
+                    surveyLoadingState.style.display = "none";
+                    surveyErrorState.style.display = "flex";
+                    surveyErrorMsg.textContent = "Unable to locate question at index " + (currentQuestionIndex + 1);
+                    surveyActiveContent.style.display = "none";
+                    return;
+                }
+
+                // Show active content
+                surveyLoadingState.style.display = "none";
+                surveyErrorState.style.display = "none";
+                surveyEmptyState.style.display = "none";
+                surveyActiveContent.style.display = "flex";
+
+                // Update Progress Pills & Bar
+                const currentNum = currentQuestionIndex + 1;
+                const pct = Math.round((currentNum / totalQuestions) * 100);
+
+                if (window.I18n) {
+                    qCounterPillEl.textContent = window.I18n.t("survey.question_counter", { current: currentNum, total: totalQuestions });
+                    qPctPillEl.textContent = window.I18n.t("survey.completion_pct", { percent: pct });
+                } else {
+                    qCounterPillEl.textContent = `Question ${currentNum} of ${totalQuestions}`;
+                    qPctPillEl.textContent = `${pct}% Completed`;
+                }
+
+                qProgressFillEl.style.width = `${pct}%`;
+
+                // Translate Question
+                const currentLang = window.I18n ? window.I18n.getCurrentLanguage() : 'en';
+                const translatedQ = window.I18n ? window.I18n.getTranslatedQuestion(qData, currentLang) : qData;
+
+                // Category & Titles
+                qFocusBadgeEl.textContent = qData.category || activeSurveyMeta.category || "OPERATIONAL ASSESSMENT";
+                activeQTitleEl.textContent = translatedQ.title || qData.title || "Question";
+                activeQHintEl.textContent = translatedQ.hint || qData.hint || (window.I18n ? window.I18n.t("survey.hint_default") : "Reflect on your day-to-day experience.");
+
+                // Render Options
+                optionsContainerEl.innerHTML = "";
+
+                const isOpenQuestion = (qData.type === "open" || qData.type === "text" || qData.id?.indexOf("open") !== -1);
+
+                if (isOpenQuestion) {
+                    // Render Open Feedback Textarea
+                    const currentVal = userAnswers[qData.id] || "";
+                    const wrapper = document.createElement("div");
+                    wrapper.style.width = "100%";
+                    const placeholderText = translatedQ.placeholder || (window.I18n ? window.I18n.t("feedback.textarea_placeholder") : "Share your observations, suggestions, or ideas...");
+                    wrapper.innerHTML = `
+                        <textarea class="open-ended-textarea" id="openFeedbackInput" placeholder="${escapeHtml(placeholderText)}">${escapeHtml(currentVal)}</textarea>
+                        <div class="open-ended-counter" id="charCounter">${currentVal.length} characters (Optional)</div>
+                    `;
+                    optionsContainerEl.appendChild(wrapper);
+
+                    const textarea = document.getElementById("openFeedbackInput");
+                    const counter = document.getElementById("charCounter");
+                    textarea.addEventListener("input", (e) => {
+                        const val = e.target.value;
+                        userAnswers[qData.id] = val;
+                        saveAnswers();
+                        counter.textContent = `${val.length} characters (Optional)`;
+                    });
+                } else {
+                    // Render Likert or Custom Options
+                    const selectedVal = userAnswers[qData.id];
+                    let optionsToRender = [];
+
+                    if (Array.isArray(translatedQ.options) && translatedQ.options.length > 0) {
+                        optionsToRender = translatedQ.options;
+                    } else if (window.I18n) {
+                        optionsToRender = window.I18n.getLikertOptions(currentLang);
+                    } else {
+                        optionsToRender = STANDARD_OPTIONS;
+                    }
+
+                    optionsToRender.forEach((opt) => {
+                        const optVal = opt.value !== undefined ? String(opt.value) : (opt.label || "");
+                        const isSelected = (
+                            selectedVal === optVal ||
+                            selectedVal === opt.label ||
+                            selectedVal === String(opt.score)
+                        );
+
+                        const card = document.createElement("div");
+                        card.className = "option-select-card " + (isSelected ? "is-selected" : "");
+                        card.setAttribute("role", "radio");
+                        card.setAttribute("aria-checked", isSelected ? "true" : "false");
+                        card.setAttribute("tabindex", "0");
+                        card.dataset.value = optVal;
+
+                        card.innerHTML = `
+                            <div class="option-radio-circle" aria-hidden="true">✓</div>
+                            <div class="option-texts">
+                                <span class="option-card-label">${escapeHtml(opt.label)}</span>
+                                ${opt.desc ? `<span class="option-card-desc">${escapeHtml(opt.desc)}</span>` : ''}
+                            </div>
+                        `;
+
+                        card.addEventListener("click", () => {
+                            selectOption(qData.id, optVal, opt.label);
+                        });
+
+                        card.addEventListener("keydown", (e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                selectOption(qData.id, optVal, opt.label);
+                            }
+                        });
+
+                        optionsContainerEl.appendChild(card);
+                    });
+                }
+
+                // Update Previous Button State
+                btnPrevEl.disabled = (currentQuestionIndex === 0);
+
+                // Update Next Button: Last Question switches to "REVIEW & SUBMIT"
+                const isLastQuestion = (currentQuestionIndex === totalQuestions - 1);
+                const isRtl = window.I18n ? window.I18n.isRtl() : false;
+
+                const btnPrevArrowEl = document.getElementById("btnPrevArrow");
+                const btnPrevLabelEl = document.getElementById("btnPrevLabel");
+                if (btnPrevArrowEl) {
+                    btnPrevArrowEl.textContent = isRtl ? "→" : "←";
+                }
+                if (btnPrevLabelEl && window.I18n) {
+                    btnPrevLabelEl.textContent = window.I18n.t("action.previous") || "PREVIOUS";
+                }
+
+                if (isLastQuestion) {
+                    btnNextLabelEl.textContent = window.I18n ? (window.I18n.t("action.review_submit") || window.I18n.t("action.submit_survey")) : "REVIEW & SUBMIT";
+                    btnNextArrowEl.textContent = "✓";
+                } else {
+                    btnNextLabelEl.textContent = window.I18n ? window.I18n.t("action.next") : "NEXT";
+                    btnNextArrowEl.textContent = isRtl ? "←" : "→";
+                }
+
+                updateEagleContext(qData, activeSurveyMeta.title);
+            }
+
+            /* -----------------------------------------------------
+               5. OPTION SELECTION
+               ----------------------------------------------------- */
+            function selectOption(qId, value, displayLabel) {
+                userAnswers[qId] = value;
+                saveAnswers();
+                hideValidationAlert();
+
+                const cards = optionsContainerEl.querySelectorAll(".option-select-card");
+                cards.forEach(card => {
+                    if (card.dataset.value === String(value) || (displayLabel && card.dataset.value === displayLabel)) {
+                        card.classList.add("is-selected");
+                        card.setAttribute("aria-checked", "true");
+                    } else {
+                        card.classList.remove("is-selected");
+                        card.setAttribute("aria-checked", "false");
+                    }
+                });
+            }
+
+            let saveDebounceTimer = null;
+            function saveAnswers() {
+                try {
+                    localStorage.setItem("visteria_survey_answers", JSON.stringify(userAnswers));
+                } catch (e) {}
+
+                if (activeAssignmentId && window.VisteriaAPI?.employee?.saveProgress) {
+                    clearTimeout(saveDebounceTimer);
+                    saveDebounceTimer = setTimeout(async () => {
+                        const answersPayload = Object.keys(userAnswers).map(qid => ({
+                            question_id: qid,
+                            answer_value: String(userAnswers[qid] || "")
+                        }));
+                        try {
+                            await window.VisteriaAPI.employee.saveProgress(activeAssignmentId, answersPayload);
+                        } catch (err) {
+                            console.warn("Progressive backend save notice:", err);
+                        }
+                    }, 250);
+                }
+            }
+
+            /* -----------------------------------------------------
+               6. VALIDATION & NAVIGATION
+               ----------------------------------------------------- */
+            function showValidationAlert(msg) {
+                if (validationAlertEl && validationAlertTextEl) {
+                    validationAlertTextEl.textContent = msg || (window.I18n ? window.I18n.t("survey.validation_required") : "Please select an answer to continue.");
+                    validationAlertEl.style.display = "flex";
+                    validationAlertEl.classList.remove("shake");
+                    void validationAlertEl.offsetWidth;
+                    validationAlertEl.classList.add("shake");
+                }
+            }
+
+            function hideValidationAlert() {
+                if (validationAlertEl) {
+                    validationAlertEl.style.display = "none";
+                    validationAlertEl.classList.remove("shake");
+                }
+            }
+
+            function handleNextClick() {
+                if (!activeQuestionsList || activeQuestionsList.length === 0) return;
+                const qData = activeQuestionsList[currentQuestionIndex];
+                const isOpenQuestion = (qData.type === "open" || qData.type === "text" || qData.id?.indexOf("open") !== -1);
+
+                // Required question validation
+                if (!isOpenQuestion) {
+                    if (!userAnswers[qData.id]) {
+                        showValidationAlert();
+                        return;
+                    }
+                }
+
+                hideValidationAlert();
+
+                if (currentQuestionIndex === activeQuestionsList.length - 1) {
+                    // Final question: open submit confirmation modal
+                    openSubmitModal();
+                    return;
+                }
+
+                currentQuestionIndex++;
+                renderActiveQuestion();
+            }
+
+            function handlePrevClick() {
+                hideValidationAlert();
+                if (currentQuestionIndex > 0) {
+                    currentQuestionIndex--;
+                    renderActiveQuestion();
+                }
+            }
+
+            btnNextEl.addEventListener("click", handleNextClick);
+            btnPrevEl.addEventListener("click", handlePrevClick);
+
+            document.addEventListener("keydown", (e) => {
+                if (e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT") return;
+                if (submitModalEl && submitModalEl.classList.contains("is-active")) return;
+
+                if (e.key === "ArrowRight") {
+                    handleNextClick();
+                } else if (e.key === "ArrowLeft") {
+                    handlePrevClick();
+                }
+            });
+
+            /* -----------------------------------------------------
+               7. SUBMISSION FLOW
+               ----------------------------------------------------- */
+            function openSubmitModal() {
+                if (submitModalEl) {
+                    submitModalEl.classList.add("is-active");
+                }
+            }
+
+            function closeSubmitModal() {
+                if (submitModalEl) {
+                    submitModalEl.classList.remove("is-active");
+                }
+            }
+
+            if (btnModalCancelEl) {
+                btnModalCancelEl.addEventListener("click", closeSubmitModal);
+            }
+
+            if (btnModalConfirmEl) {
+                btnModalConfirmEl.addEventListener("click", async () => {
+                    closeSubmitModal();
+                    await submitSurvey();
+                });
+            }
+
+            async function submitSurvey() {
+                if (isSubmitting) return;
+                isSubmitting = true;
+
+                btnNextEl.disabled = true;
+                btnNextLabelEl.textContent = "Submitting...";
+                btnNextArrowEl.textContent = "⏳";
+
+                const activeQIds = new Set(activeQuestionsList.map(q => q.id));
+                const answersPayload = Object.keys(userAnswers)
+                    .filter(qid => activeQIds.size === 0 || activeQIds.has(qid))
+                    .map(qid => ({
+                        question_id: qid,
+                        answer_value: String(userAnswers[qid] || "")
+                    }));
+
+                try {
+                    if (activeAssignmentId && window.VisteriaAPI?.employee?.submitResponse) {
+                        await window.VisteriaAPI.employee.submitResponse(activeAssignmentId, answersPayload);
+                    }
+
+                    sessionStorage.setItem("visteria_survey_completed", "true");
+                    sessionStorage.setItem("visteria_submitted_answers", JSON.stringify(answersPayload));
+
+                    setTimeout(() => {
+                        window.location.href = "confirmation.html";
+                    }, 500);
+                } catch (err) {
+                    console.error("Survey submission error:", err);
+                    isSubmitting = false;
+                    btnNextEl.disabled = false;
+                    btnNextLabelEl.textContent = window.I18n ? window.I18n.t("action.submit_survey") : "REVIEW & SUBMIT";
+                    btnNextArrowEl.textContent = "✓";
+                    showValidationAlert(err.message || "Failed to submit survey. Please try again.");
+                }
+            }
+
+            /* -----------------------------------------------------
+               8. EAGLE AI FLOATING ASSISTANT
+               ----------------------------------------------------- */
+            const eagleChatBox = document.getElementById("eagleChatBox");
+            const eagleAvatar = document.getElementById("eagleAvatar");
+            const eagleChatCloseBtn = document.getElementById("eagleChatCloseBtn");
+            const eagleChatMessages = document.getElementById("eagleChatMessages");
+            const eagleChatForm = document.getElementById("eagleChatForm");
+            const eagleChatInput = document.getElementById("eagleChatInput");
+
+            function toggleEagle(force) {
+                if (!eagleChatBox) return;
+                if (force === true) {
+                    eagleChatBox.classList.add("active");
+                    eagleChatBox.setAttribute("aria-hidden", "false");
+                } else if (force === false) {
+                    eagleChatBox.classList.remove("active");
+                    eagleChatBox.setAttribute("aria-hidden", "true");
+                } else {
+                    const isActive = eagleChatBox.classList.toggle("active");
+                    eagleChatBox.setAttribute("aria-hidden", (!isActive).toString());
+                }
+            }
+
+            if (eagleAvatar) eagleAvatar.addEventListener("click", () => toggleEagle());
+            if (eagleChatCloseBtn) eagleChatCloseBtn.addEventListener("click", () => toggleEagle(false));
+            if (deptEagleTriggerEl) deptEagleTriggerEl.addEventListener("click", () => toggleEagle(true));
+
+            function appendEagleMessage(sender, text) {
+                if (!eagleChatMessages) return;
+                const bubble = document.createElement("div");
+                bubble.className = "chat-bubble " + (sender === "user" ? "user-bubble" : "eagle-bubble");
+                bubble.innerHTML = "<p>" + escapeHtml(text) + "</p>";
+                eagleChatMessages.appendChild(bubble);
+                eagleChatMessages.scrollTop = eagleChatMessages.scrollHeight;
+            }
+
+            let activeQuestionContext = null;
+            let eagleChatHistory = [];
+
+            function updateEagleContext(qData, deptName) {
+                activeQuestionContext = { qData, deptName };
+                const welcomeEl = document.getElementById("eagleWelcomeMsg");
+                if (welcomeEl) {
+                    const currentLang = window.I18n ? window.I18n.getCurrentLanguage() : 'en';
+                    if (currentLang === 'ta') {
+                        welcomeEl.textContent = `வணக்கம்! ${deptName || 'கணக்கெடுப்பு'} தொடர்பான இந்தக் கேள்விக்கு உதவ நான் தயார். உங்கள் பதிலை தேர்வு செய்யவும்.`;
+                    } else if (currentLang === 'hi') {
+                        welcomeEl.textContent = `नमस्ते! मैं इस प्रश्न में आपकी सहायता के लिए तैयार हूँ। अपना उत्तर चुनें और आगे बढ़ें।`;
+                    } else if (currentLang === 'ar') {
+                        welcomeEl.textContent = `مرحباً! أنا هنا للمساعدة في هذا السؤال. يرجى تحديد إجابتك والمتابعة.`;
+                    } else {
+                        welcomeEl.textContent = `Hi! I'm here to help with this question for ${deptName || 'your survey'}. Select your answer and click Next when ready.`;
+                    }
+                }
+            }
+
+            const quickChips = document.querySelectorAll(".quick-chip");
+            quickChips.forEach(chip => {
+                chip.addEventListener("click", async () => {
+                    const action = chip.dataset.action;
+                    toggleEagle(true);
+
+                    let prompt = "Can you explain this question?";
+                    if (action === "options") prompt = "What do the rating scale options mean?";
+                    else if (action === "how") prompt = "How should I answer this question?";
+                    else if (action === "privacy") prompt = "Is my survey response confidential?";
+
+                    appendEagleMessage("user", prompt);
+                    eagleChatHistory.push({ role: 'user', content: prompt });
+
+                    try {
+                        let reply = "";
+                        const currentLang = window.I18n ? window.I18n.getCurrentLanguage() : 'en';
+                        if (window.VisteriaAPI?.employee?.chatWithEagle) {
+                            const res = await window.VisteriaAPI.employee.chatWithEagle(prompt, eagleChatHistory.slice(-8), {
+                                activeQuestion: activeQuestionContext?.qData?.title,
+                                currentQuestion: activeQuestionContext?.qData,
+                                deptName: activeQuestionContext?.deptName,
+                                currentLanguage: currentLang
+                            });
+                            reply = res?.data?.reply || res?.reply;
+                        }
+                        if (!reply) {
+                            reply = "Your responses are 100% confidential and saved progressively to your account.";
+                        }
+                        appendEagleMessage("eagle", reply);
+                        eagleChatHistory.push({ role: 'assistant', content: reply });
+                    } catch (err) {
+                        appendEagleMessage("eagle", "Your responses are 100% confidential and saved progressively to your account.");
+                    }
+                });
+            });
+
+            if (eagleChatForm && eagleChatInput) {
+                eagleChatForm.addEventListener("submit", async (e) => {
+                    e.preventDefault();
+                    const text = eagleChatInput.value.trim();
+                    if (!text) return;
+
+                    appendEagleMessage("user", text);
+                    eagleChatInput.value = "";
+                    eagleChatHistory.push({ role: 'user', content: text });
+
+                    try {
+                        let reply = "";
+                        const currentLang = window.I18n ? window.I18n.getCurrentLanguage() : 'en';
+                        if (window.VisteriaAPI?.employee?.chatWithEagle) {
+                            const res = await window.VisteriaAPI.employee.chatWithEagle(text, eagleChatHistory.slice(-8), {
+                                activeQuestion: activeQuestionContext?.qData?.title,
+                                currentQuestion: activeQuestionContext?.qData,
+                                deptName: activeQuestionContext?.deptName,
+                                currentLanguage: currentLang
+                            });
+                            reply = res?.data?.reply || res?.reply;
+                        }
+                        if (!reply) {
+                            reply = "Your responses are 100% confidential and saved progressively to your account.";
+                        }
+                        appendEagleMessage("eagle", reply);
+                        eagleChatHistory.push({ role: 'assistant', content: reply });
+                    } catch (err) {
+                        appendEagleMessage("eagle", "Your responses are 100% confidential and saved progressively to your account.");
+                    }
+                });
+            }
+
+            /* -----------------------------------------------------
+               9. RENDER SIDEBAR CONTEXT
+               ----------------------------------------------------- */
+            function renderSidebarContext(meta, emp, deptKey) {
+                if (emp) {
+                    const compName = (typeof emp.company === 'string' ? emp.company : emp.company?.name) || emp.company_name || "Organization";
+                    const compLogoUrl = emp.company?.logo_url || emp.company_obj?.logo_url;
+                    const empName = emp.name || emp.fullname || "Employee";
+                    const empCode = emp.employee_code || emp.employeeId || emp.id || "--";
+                    const empDept = emp.department || "General";
+                    const monogram = compName
+                        .split(/\s+/)
+                        .map(w => w[0])
+                        .filter(Boolean)
+                        .slice(0, 2)
+                        .join('')
+                        .toUpperCase() || 'CO';
+
+                    if (sideCompNameEl) sideCompNameEl.textContent = compName;
+                    if (sideEmpNameEl) sideEmpNameEl.textContent = empName;
+                    if (sideEmpCodeEl) sideEmpCodeEl.textContent = empCode;
+                    if (sideEmpDeptEl) sideEmpDeptEl.textContent = empDept;
+                    if (sideCompLogoFallbackEl) sideCompLogoFallbackEl.textContent = monogram;
+
+                    if (compLogoUrl && sideCompLogoImgEl) {
+                        sideCompLogoImgEl.src = compLogoUrl;
+                        sideCompLogoImgEl.onload = () => {
+                            sideCompLogoImgEl.style.display = 'block';
+                            if (sideCompLogoFallbackEl) sideCompLogoFallbackEl.style.display = 'none';
+                        };
+                        sideCompLogoImgEl.onerror = () => {
+                            sideCompLogoImgEl.style.display = 'none';
+                            if (sideCompLogoFallbackEl) sideCompLogoFallbackEl.style.display = 'block';
+                        };
+                    }
+                }
+
+                const currentLang = window.I18n ? window.I18n.getCurrentLanguage() : 'en';
+                const transMeta = window.I18n?.getTranslatedMeta ? window.I18n.getTranslatedMeta(meta, currentLang) : meta;
+
+                if (deptIconBoxEl) {
+                    deptIconBoxEl.innerHTML = window.getDepartmentSvg ? window.getDepartmentSvg(deptKey || 'general') : '✦';
+                }
+
+                if (deptCategoryTagEl) deptCategoryTagEl.textContent = transMeta?.category || meta?.category || "ASSIGNED SURVEY";
+                if (deptTitleTextEl) deptTitleTextEl.textContent = transMeta?.title || meta?.title || "Workplace Assessment";
+                if (deptDescTextEl) deptDescTextEl.textContent = transMeta?.desc || meta?.desc || "Evaluating operational processes and team culture.";
+
+                if (deptTagsWrapEl && Array.isArray(meta?.tags)) {
+                    deptTagsWrapEl.innerHTML = "";
+                    meta.tags.forEach(t => {
+                        const pill = document.createElement("span");
+                        pill.className = "dept-pill-mini";
+                        pill.textContent = t;
+                        deptTagsWrapEl.appendChild(pill);
+                    });
+                }
+            }
+
+            /* -----------------------------------------------------
+               10. LOAD SURVEY FROM BACKEND ASSIGNMENTS
+               ----------------------------------------------------- */
+            async function loadBackendSurvey() {
+                surveyLoadingState.style.display = "flex";
+                surveyErrorState.style.display = "none";
+                surveyEmptyState.style.display = "none";
+                surveyActiveContent.style.display = "none";
+
+                const token = window.VisteriaAPI?.auth?.getEmployeeToken();
+                const sessionUser = JSON.parse(sessionStorage.getItem("visteria_auth_user") || "null");
+
+                if (!token && !sessionUser) {
+                    window.location.href = "index.html";
+                    return;
+                }
+
+                currentEmployee = sessionUser || null;
+
+                // Pre-populate left-side information card immediately from cached session
+                if (currentEmployee) {
+                    renderSidebarContext(activeSurveyMeta, currentEmployee, currentEmployee.department?.toLowerCase() || 'general');
+                }
+
+                // 1. Fetch Profile for Organization Details & Company Language
+                if (token && window.VisteriaAPI?.employee?.getProfile) {
+                    try {
+                        const profileRes = await window.VisteriaAPI.employee.getProfile();
+                        if (profileRes?.data) {
+                            currentEmployee = profileRes.data;
+
+                            // Cache profile in session storage for immediate access on return
+                            try {
+                                sessionStorage.setItem("visteria_auth_user", JSON.stringify({
+                                    id: currentEmployee.id,
+                                    name: currentEmployee.name,
+                                    employeeId: currentEmployee.employee_code,
+                                    employee_code: currentEmployee.employee_code,
+                                    company: currentEmployee.company ? currentEmployee.company.name : "Organization",
+                                    company_obj: currentEmployee.company,
+                                    department: currentEmployee.department || "General",
+                                    email: currentEmployee.email,
+                                    role: "employee",
+                                    loginTime: new Date().toISOString()
+                                }));
+                            } catch (sErr) {}
+
+                            // Update left panel with verified live database profile
+                            renderSidebarContext(activeSurveyMeta, currentEmployee, currentEmployee.department?.toLowerCase() || 'general');
+
+                            const comp = currentEmployee.company || {};
+                            if (window.I18n) {
+                                const supportedLangs = Array.isArray(comp.supported_languages) && comp.supported_languages.length > 0
+                                    ? comp.supported_languages
+                                    : ['en'];
+                                const defaultLang = comp.default_language || 'en';
+                                window.I18n.setAllowedLanguages(supportedLangs, defaultLang);
+                                window.I18n.mountLanguageSelector('#surveyLangSelectorSlot');
+                            }
+                        }
+                    } catch (pErr) {
+                        console.warn("Could not fetch profile:", pErr);
+                    }
+                }
+
+                // 2. Fetch Assignments
+                try {
+                    let targetAssignment = null;
+
+                    if (token && window.VisteriaAPI?.employee?.getAssignments) {
+                        const assignmentsRes = await window.VisteriaAPI.employee.getAssignments();
+                        const assignments = assignmentsRes?.data || [];
+
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const paramAssignmentId = urlParams.get('assignmentId') || sessionStorage.getItem('active_assignment_id');
+
+                        if (paramAssignmentId) {
+                            targetAssignment = assignments.find(a => a.id === paramAssignmentId);
+                        }
+                        if (!targetAssignment) {
+                            targetAssignment = assignments.find(a => a.status === 'in_progress') ||
+                                               assignments.find(a => a.status === 'assigned') ||
+                                               assignments[0];
+                        }
+                    }
+
+                    if (targetAssignment) {
+                        // Already completed? Redirect back to welcome dashboard
+                        if (targetAssignment.status === 'completed') {
+                            window.location.href = "welcome.html";
+                            return;
+                        }
+
+                        activeAssignmentId = targetAssignment.id;
+                        sessionStorage.setItem("active_assignment_id", targetAssignment.id);
+
+                        // Restore saved answers from database
+                        userAnswers = {};
+                        if (Array.isArray(targetAssignment.saved_answers)) {
+                            targetAssignment.saved_answers.forEach(sa => {
+                                if (sa.question_id && sa.answer_value) {
+                                    userAnswers[sa.question_id] = sa.answer_value;
+                                }
+                            });
+                        }
+
+                        // Transition status: assigned -> in_progress
+                        if (targetAssignment.status === 'assigned' && window.VisteriaAPI?.employee?.startAssignment) {
+                            window.VisteriaAPI.employee.startAssignment(targetAssignment.id).catch(e => console.warn(e));
+                        }
+
+                        // Extract questions from backend assignment
+                        const rawQuestions = targetAssignment.survey_cycle?.survey?.questions || [];
+                        const surveyTitle = targetAssignment.survey_cycle?.survey?.title || "Workplace Assessment";
+                        const surveyDesc = targetAssignment.survey_cycle?.survey?.description || "Evaluating operational processes and team culture.";
+
+                        activeSurveyMeta = {
+                            title: surveyTitle,
+                            category: "ASSIGNED SURVEY",
+                            desc: surveyDesc,
+                            tags: ["Confidential", "Encrypted", "Real-time Save"]
+                        };
+
+                        // Render sidebar context for the loaded active assignment
+                        renderSidebarContext(activeSurveyMeta, currentEmployee, currentEmployee?.department?.toLowerCase() || 'general');
+
+                        if (rawQuestions.length > 0) {
+                            activeQuestionsList = rawQuestions.map(q => {
+                                let opts = q.options_json;
+                                if (typeof opts === 'string') {
+                                    try { opts = JSON.parse(opts); } catch (e) { opts = null; }
+                                }
+                                if (!Array.isArray(opts) || opts.length === 0) {
+                                    opts = STANDARD_OPTIONS;
+                                } else {
+                                    opts = opts.map(o => typeof o === 'string' ? { label: o, value: o } : o);
+                                }
+                                return {
+                                    id: q.id,
+                                    type: q.question_type === 'text' ? 'open' : (q.question_type || 'rating'),
+                                    category: "ASSIGNED SURVEY",
+                                    title: q.question_text,
+                                    hint: q.question_type === 'text' ? 'Share your detailed feedback and observations.' : 'Reflect on your personal day-to-day workplace experience.',
+                                    explanation: 'Your confidential feedback helps us understand workplace operations and team culture.',
+                                    options: opts,
+                                    translations_json: q.translations_json
+                                };
+                            });
+
+                            // Resume from first unanswered question
+                            const firstUnansweredIdx = activeQuestionsList.findIndex(q => !userAnswers[q.id]);
+                            currentQuestionIndex = firstUnansweredIdx > 0 ? firstUnansweredIdx : 0;
+                        } else {
+                            // Backend assignment has no questions
+                            activeQuestionsList = [];
+                        }
+
+                    } else {
+                        // Truthful Empty State: no survey assignments found in the database
+                        activeQuestionsList = [];
+                        activeSurveyMeta = {
+                            title: "Workplace Assessment",
+                            category: "NO ASSIGNED SURVEY",
+                            desc: "There are currently no active survey questions assigned to your profile.",
+                            tags: ["Confidential", "Encrypted"]
+                        };
+                        renderSidebarContext(activeSurveyMeta, currentEmployee, currentEmployee?.department?.toLowerCase() || 'general');
+                    }
+
+                    renderActiveQuestion();
+                } catch (loadErr) {
+                    console.error("Survey load error:", loadErr);
+                    surveyLoadingState.style.display = "none";
+                    surveyErrorState.style.display = "flex";
+                    surveyErrorMsg.textContent = loadErr.message || "Unable to connect to the server. Please check your internet connection and try again.";
+                }
+            }
+
+            if (btnRetryLoadEl) {
+                btnRetryLoadEl.addEventListener("click", loadBackendSurvey);
+            }
+
+            if (btnExitSurveyEl) {
+                btnExitSurveyEl.addEventListener("click", (e) => {
+                    saveAnswers();
+                });
+            }
+
+            if (window.I18n) {
+                window.I18n.onLanguageChange(() => {
+                    renderSidebarContext(activeSurveyMeta, currentEmployee, currentEmployee?.department?.toLowerCase() || 'general');
+                    renderActiveQuestion();
+                });
+            }
+
+            // Launch survey initialization
+            loadBackendSurvey();
+        });
+    </script>
+</body>
+
+</html>

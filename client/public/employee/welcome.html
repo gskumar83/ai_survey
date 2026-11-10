@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEOPLE &amp; PROCESS EXCELLENCE | Visteria</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/visteria-logo.png">
+    <link rel="apple-touch-icon" href="/assets/visteria-logo.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="css/welcome.css">
+</head>
+
+<body class="welcome-body">
+
+    <!-- =====================================================
+         BACKGROUND LAYER: EXPANDED 3D GLOBE (Zero Analytics)
+    ====================================================== -->
+    <div class="bg-ambient-layer" aria-hidden="true">
+        <!-- Neural Connected Mesh -->
+        <svg class="bg-neural-mesh" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="neuralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0FAEAA" stop-opacity="0.16"/>
+                    <stop offset="50%" stop-color="#0284C7" stop-opacity="0.12"/>
+                    <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.06"/>
+                </linearGradient>
+            </defs>
+            <path d="M-50,180 Q180,90 420,160 T900,120 T1480,180" stroke="url(#neuralGrad)" stroke-width="1.2" stroke-dasharray="6 8"/>
+            <path d="M-30,340 Q240,260 540,320 T1080,270 T1500,340" stroke="url(#neuralGrad)" stroke-width="1.2" stroke-dasharray="4 6"/>
+            <path d="M120,-20 Q320,180 520,380 T920,580 T1320,780" stroke="url(#neuralGrad)" stroke-width="0.9" stroke-dasharray="3 5"/>
+        </svg>
+
+        <!-- Expanded Left-Side 3D World Globe -->
+        <div class="bg-welcome-globe">
+            <canvas id="welcomeGlobeCanvas" width="660" height="680"></canvas>
+        </div>
+
+        <!-- Concentric Wave Rings on Left Margin -->
+        <div class="bg-left-rings"></div>
+    </div>
+
+
+    <!-- =====================================================
+         1. TOP HEADER (Visteria Branded)
+    ====================================================== -->
+    <header class="welcome-header">
+        <div class="header-inner">
+            <!-- Brand Logo + Name: PEOPLE & PROCESS EXCELLENCE -->
+            <div class="header-brand">
+                <img src="/assets/visteria-logo.png" alt="Visteria Logo" class="header-logo-img">
+                <div class="header-brand-text">
+                    <span class="header-brand-title">PEOPLE &amp; PROCESS EXCELLENCE</span>
+                    <span class="header-brand-sub">VISTERIA CONSULTING SERVICES PRIVATE LIMITED</span>
+                </div>
+            </div>
+
+            <!-- Top Right Action Controls -->
+            <div class="header-actions">
+                <div class="portal-status-badge">
+                    <span class="status-dot"></span>
+                    <span>SURVEY PORTAL ACTIVE</span>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button type="button" id="themeToggleBtn" class="theme-switch-toggle" aria-label="Toggle light/dark theme" role="switch" aria-checked="false">
+                    <span class="theme-switch-track">
+                        <span id="themeTrackSun" class="track-icon track-sun" title="Light Theme" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="4"/>
+                                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                            </svg>
+                        </span>
+                        <span id="themeTrackMoon" class="track-icon track-moon" title="Dark Theme" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                            </svg>
+                        </span>
+                    </span>
+                    <span class="theme-switch-thumb" aria-hidden="true"></span>
+                </button>
+
+                <!-- Modern Sign Out Button -->
+                <button type="button" id="signOutBtn" class="sign-out-btn header-signout-btn" aria-label="Sign out of Employee Portal">
+                    <svg class="signout-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Sign Out</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         2. MAIN HERO & DUAL CARDS SECTION (Viewport-Fitted)
+    ====================================================== -->
+    <main class="welcome-main">
+        <div class="welcome-container">
+
+            <!-- Pill Badge -->
+            <div class="badge-container hero-tag-pill-wrap">
+                <span class="hero-badge hero-tag-pill">
+                    <span class="badge-icon spark-icon" aria-hidden="true">✦</span>
+                    <span class="badge-text">PEOPLE &amp; PROCESS EXCELLENCE</span>
+                </span>
+            </div>
+
+            <!-- Prominent Hero Heading -->
+            <h1 class="hero-heading">
+                PEOPLE &amp; PROCESS <span class="gradient-text highlight-teal">EXCELLENCE</span>
+            </h1>
+
+            <p class="hero-sub hero-description">
+                Visteria Consulting Services Private Limited welcomes you to your confidential workplace survey. Your honest feedback guides meaningful organizational improvements.
+            </p>
+
+            <!-- Dual Cards Container -->
+            <div class="cards-grid">
+
+                <!-- LEFT CARD: ORGANIZATION CONDUCTING SURVEY (Interactive) -->
+                <div class="card card-org" id="orgCard">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <span class="card-icon-emoji" aria-hidden="true">🏢</span>
+                            <h2 class="card-title">ORGANIZATION CONDUCTING SURVEY</h2>
+                        </div>
+                        <div id="surveyStatusBadge" class="status-pill status-pill-notstarted" title="Survey Program Status">
+                            <span class="status-dot"></span>
+                            <span id="surveyStatusText">Not Started</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Organization Info Banner -->
+                    <div class="org-profile-box org-banner" id="orgProfileBox" title="Click to view organization details">
+                        <div class="org-avatar" id="orgAvatar">V</div>
+                        <div class="org-meta org-details">
+                            <h3 class="org-name" id="orgCompanyName">VCS</h3>
+                            <p class="org-sub">Official Organization Survey Program</p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Employee Details Rows with Click-to-Copy -->
+                    <div class="emp-details-list meta-list">
+                        <div class="emp-row meta-row" data-field="Employee Name" title="Click to copy name">
+                            <span class="emp-label meta-label">
+                                <svg class="emp-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                EMPLOYEE NAME
+                            </span>
+                            <span class="emp-val meta-value">
+                                <span id="empName">—</span>
+                                <span class="emp-copy-hint">Copy</span>
+                            </span>
+                        </div>
+
+                        <div class="emp-row meta-row" data-field="Employee ID" title="Click to copy Employee ID">
+                            <span class="emp-label meta-label">
+                                <svg class="emp-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+                                    <circle cx="9" cy="10" r="2"></circle>
+                                    <line x1="15" y1="9" x2="17" y2="9"></line>
+                                    <line x1="15" y1="13" x2="17" y2="13"></line>
+                                </svg>
+                                EMPLOYEE ID
+                            </span>
+                            <span class="emp-val">
+                                <span class="emp-code-pill meta-code-badge" id="empCodeBadge">—</span>
+                                <span class="emp-copy-hint">Copy</span>
+                            </span>
+                        </div>
+
+                        <div class="emp-row meta-row" data-field="Department" title="Click to copy department">
+                            <span class="emp-label meta-label">
+                                <svg class="emp-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                                DEPARTMENT
+                            </span>
+                            <span class="emp-val meta-value">
+                                <span id="empDept">—</span>
+                                <span class="emp-copy-hint">Copy</span>
+                            </span>
+                        </div>
+
+                        <div class="emp-row meta-row" data-field="Work Email" title="Click to copy email">
+                            <span class="emp-label meta-label">
+                                <svg class="emp-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                WORK EMAIL
+                            </span>
+                            <span class="emp-val emp-val-email meta-value meta-email">
+                                <span id="empEmail">—</span>
+                                <span class="emp-copy-hint">Copy</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Privacy Box -->
+                    <div class="card-privacy-box card-notice card-privacy-footer" id="privacyNoticeBox" title="Click to verify end-to-end anonymity">
+                        <span class="lock-icon notice-icon" aria-hidden="true">🔒</span>
+                        <span class="privacy-text notice-text">Your responses are encrypted, aggregated, and strictly anonymous.</span>
+                    </div>
+                </div>
+
+
+                <!-- RIGHT CARD: SURVEY CATEGORIES (Interactive) -->
+                <div class="card card-surveys" id="surveysCard">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <span class="card-icon-emoji" aria-hidden="true">📋</span>
+                            <h2 class="card-title">SURVEY CATEGORIES</h2>
+                        </div>
+                        <div class="count-pill">
+                            <span id="surveyCountText">0 Available</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Survey Content Area -->
+                    <div id="surveyCategoriesArea" class="survey-categories-area">
+                        <!-- Interactive Empty State -->
+                        <div id="surveyEmptyState" class="survey-empty-state" title="Click to check for available survey cycles">
+                            <div class="empty-state-icon-wrap" aria-hidden="true">
+                                <span class="empty-state-icon">📋</span>
+                            </div>
+                            <h3 class="empty-state-title">No survey categories are currently available for your organization.</h3>
+                            <p class="empty-state-sub">Please check back later or contact your company administrator.</p>
+                            <button type="button" id="refreshSurveysBtn" class="empty-state-action-btn" aria-label="Check for new surveys">
+                                <span>↻ Check for Updates</span>
+                            </button>
+                        </div>
+
+                        <!-- Active Survey Cards Container -->
+                        <div id="surveyCardsList" class="survey-cards-list" style="display: none;"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+
+    <!-- =====================================================
+         3. FOOTER (Clean & Compact)
+    ====================================================== -->
+    <footer class="welcome-footer">
+        <div class="footer-inner">
+            <!-- Left Branding with Full Product Title -->
+            <div class="footer-brand">
+                <img src="/assets/visteria-logo.png" alt="Visteria Logo" class="footer-logo-img">
+                <div class="footer-brand-text">
+                    <strong>VISTERIA CONSULTING SERVICES PRIVATE LIMITED</strong>
+                    <span>Vision Changes Everything. &bull; PEOPLE &amp; PROCESS EXCELLENCE</span>
+                </div>
+            </div>
+
+            <!-- Right Legal Policy Links -->
+            <div class="footer-right">
+                <nav class="footer-nav" aria-label="Legal Links">
+                    <button type="button" id="footerPrivacyLink" class="footer-link-btn">Privacy Policy</button>
+                    <span class="footer-link-sep" aria-hidden="true">|</span>
+                    <button type="button" id="footerTermsLink" class="footer-link-btn">Terms &amp; Conditions</button>
+                </nav>
+            </div>
+        </div>
+
+        <div class="footer-bottom-row">
+            <span>© 2026 Visteria Consulting Services Private Limited. All rights reserved.</span>
+        </div>
+    </footer>
+
+
+    <!-- =====================================================
+         INTERACTIVE NOTIFICATION TOAST
+    ====================================================== -->
+    <div id="notificationToast" class="notification-toast" role="status" aria-live="polite">
+        <div class="toast-icon">✓</div>
+        <div class="toast-body">
+            <strong class="toast-title">Notice</strong>
+            <p class="toast-desc">Message details</p>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         4. FLOATING AI ASSISTANT WIDGET (Main Page Area)
+    ====================================================== -->
+    <div id="floatingAssistantWrap" class="floating-assistant-wrap" aria-label="Ask Visteria Assistant">
+        <button type="button" id="askEagleBtn" class="floating-ask-visteria-pill ask-eagle-btn" aria-label="Open Visteria AI Assistant">
+            <span class="pill-spark spark-icon" aria-hidden="true">✦</span>
+            <span>Ask Visteria</span>
+            <span class="pill-arrow" aria-hidden="true"></span>
+        </button>
+        <div id="assistantAvatarBadge" class="floating-assistant-badge assistant-avatar-badge" role="button" tabindex="0" title="Click to chat with Visteria Assistant" aria-label="Open Visteria AI Assistant">
+            <img src="/assets/visteria-logo.png" alt="Visteria Assistant" class="floating-assistant-logo assistant-avatar-img">
+            <span class="assistant-online-dot" aria-hidden="true"></span>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         5. AI ASSISTANT CHAT DRAWER WITH ZOOM CONTROLS
+    ====================================================== -->
+    <aside id="eagleContainer" class="eagle-widget-wrapper" aria-label="Visteria AI Assistant">
+        <div id="eagleAvatar" style="display:none;"></div>
+        
+        <div id="eagleChatBox" class="eagle-chat-box" role="dialog" aria-hidden="true" aria-labelledby="eagleChatTitle">
+            <!-- Header with Title and Smooth Zoom / Min Controls -->
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <img src="/assets/visteria-logo.png" alt="Assistant" class="chat-mini-avatar">
+                    <div class="chat-header-title">
+                        <strong id="eagleChatTitle">Visteria Assistant</strong>
+                        <span>Online &bull; Survey Guide</span>
+                    </div>
+                </div>
+
+                <!-- Window & Zoom Controls -->
+                <div class="chat-window-controls">
+                    <span id="chatZoomBadge" class="chat-zoom-badge" title="Current View Zoom">100%</span>
+                    
+                    <!-- Zoom Out Button -->
+                    <button type="button" id="chatZoomOutBtn" class="chat-ctrl-btn" title="Zoom Out (Compact View)" aria-label="Zoom Out" style="display: none;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </button>
+
+                    <!-- Zoom In Button -->
+                    <button type="button" id="chatZoomInBtn" class="chat-ctrl-btn" title="Zoom In (Expanded View)" aria-label="Zoom In">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </button>
+
+                    <!-- Minimize Button -->
+                    <button type="button" id="chatMinimizeBtn" class="chat-ctrl-btn" title="Minimize" aria-label="Minimize Assistant">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+
+                    <!-- Close Button -->
+                    <button type="button" id="eagleChatCloseBtn" class="chat-ctrl-btn" title="Close" aria-label="Close Assistant">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages Log -->
+            <div id="eagleChatMessages" class="chat-messages" role="log" aria-live="polite">
+                <div class="chat-bubble eagle-bubble">
+                    <p>👋 Welcome to <strong>People &amp; Process Excellence</strong>! I am your AI Survey Guide. How can I assist you with your survey participation today?</p>
+                </div>
+            </div>
+
+            <!-- Quick Inquiry Chips -->
+            <div class="chat-quick-chips">
+                <button type="button" class="chat-chip" data-query="Is my survey anonymous?">🔒 Is my survey anonymous?</button>
+                <button type="button" class="chat-chip" data-query="How long does it take?">⏱️ How long does it take?</button>
+                <button type="button" class="chat-chip" data-query="Can I save and resume?">💾 Can I save &amp; resume?</button>
+            </div>
+
+            <!-- Input Row -->
+            <form id="eagleChatForm" class="chat-input-row" onsubmit="return false;">
+                <input type="text" id="eagleChatInput" class="chat-input" placeholder="Type your question..." autocomplete="off">
+                <button type="submit" id="eagleChatSendBtn" class="chat-send-btn" aria-label="Send Message">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </aside>
+
+
+    <!-- =====================================================
+         6. LEGAL POLICY MODAL (Privacy Policy & Terms)
+    ====================================================== -->
+    <div id="legalPolicyModal" class="legal-modal-backdrop" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+        <div class="legal-modal-card">
+            <div class="legal-modal-header">
+                <div class="legal-modal-title-wrap">
+                    <img src="/assets/visteria-logo.png" alt="Visteria" class="legal-modal-logo">
+                    <div>
+                        <h2 id="legalModalTitle" class="legal-modal-title">Terms &amp; Conditions &amp; Privacy Policy</h2>
+                        <span class="legal-modal-subtitle">People &amp; Process Excellence • Visteria Consulting Services Private Limited</span>
+                    </div>
+                </div>
+                <button type="button" id="closeLegalModalBtn" class="legal-modal-close" aria-label="Close dialog">✕</button>
+            </div>
+
+            <!-- Tab Switcher inside Modal -->
+            <div class="legal-modal-tabs" role="tablist">
+                <button type="button" id="legalTabTerms" class="legal-tab-btn active" role="tab" aria-selected="true" data-target="legalContentTerms">Terms &amp; Conditions</button>
+                <button type="button" id="legalTabPrivacy" class="legal-tab-btn" role="tab" aria-selected="false" data-target="legalContentPrivacy">Privacy Policy</button>
+            </div>
+
+            <div class="legal-modal-meta-bar">
+                <span><strong>Effective Date:</strong> October 2026</span>
+                <span>•</span>
+                <span><strong>Last Updated:</strong> October 24, 2026</span>
+                <span>•</span>
+                <span><strong>Policy Version:</strong> v2.4-PPE</span>
+            </div>
+
+            <div class="legal-modal-body">
+                <!-- Section 1: TERMS & CONDITIONS -->
+                <div id="legalContentTerms" class="legal-tab-panel active">
+                    <div class="legal-policy-callout">
+                        <strong>Operational Transparency Notice:</strong> The terms and policies described herein accurately reflect the actual technical architecture, database data flows, and administrative role boundaries of the People &amp; Process Excellence platform. Specific enterprise service level agreements (SLAs), client retention schedules, and organizational policies are subject to confirmation by Visteria management and applicable client corporate agreements.
+                    </div>
+
+                    <section class="legal-sec">
+                        <h3>1. Purpose of the People &amp; Process Excellence Survey</h3>
+                        <p>The People &amp; Process Excellence platform is an enterprise assessment and organizational development solution provided by Visteria Consulting Services Private Limited. Its primary purpose is to collect structured employee feedback regarding workplace culture, operational workflows, leadership effectiveness, process efficiency, and organizational well-being. Collected data is transformed into actionable organizational insights that assist enterprise leaders in fostering continuous workplace improvements.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>2. Employee Participation and Responsibilities</h3>
+                        <p>Participation in scheduled survey cycles is conducted on behalf of your employer in connection with organizational improvement initiatives. As a participant, you agree to:</p>
+                        <ul>
+                            <li>Provide honest, constructive, and accurate feedback reflecting your authentic workplace experience.</li>
+                            <li>Protect the confidentiality of your employee login credentials and survey access links.</li>
+                            <li>Refrain from sharing login codes or submitting survey responses on behalf of other colleagues.</li>
+                            <li>Adhere to your organization's professional code of conduct when providing optional open-ended text commentary.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>3. Confidentiality and Handling of Employee Feedback</h3>
+                        <p>We treat all employee feedback with high confidentiality. Individual survey responses (Likert scale ratings and commentary) are aggregated at the department, branch, and company levels to produce generalized statistical summaries, sentiment trends, and organizational indexes. Reporting dashboards provided to enterprise management do not display raw scores mapped to employee names in executive summaries. Technical access to underlying database records is strictly restricted to authorized system administrators under role-based security controls.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>4. Prohibited Misuse of the Platform</h3>
+                        <p>Users of this platform shall not:</p>
+                        <ul>
+                            <li>Submit intentionally false, defamatory, harassing, or abusive content.</li>
+                            <li>Attempt to probe, scan, bypass, or breach authentication mechanisms or security boundaries.</li>
+                            <li>Reverse engineer, scrape, or extract source data or administrative reports without authorization.</li>
+                            <li>Introduce malicious scripts, automated bots, or interference agents into the survey submission API.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>5. User Consent and Acknowledgement</h3>
+                        <p>By registering an account and checking the agreement checkbox, you explicitly acknowledge that you have read, understood, and agreed to be bound by these Terms &amp; Conditions and the associated Privacy Policy. You understand that your feedback will be processed to generate organizational excellence analytics for your enterprise.</p>
+                    </section>
+                </div>
+
+                <!-- Section 2: PRIVACY POLICY -->
+                <div id="legalContentPrivacy" class="legal-tab-panel" style="display: none;">
+                    <div class="legal-policy-callout">
+                        <strong>Data Protection &amp; Governance Notice:</strong> Visteria Consulting Services Private Limited processes employee information in accordance with applicable data protection principles, including the Digital Personal Data Protection (DPDP) Act 2023 and relevant international privacy standards.
+                    </div>
+
+                    <section class="legal-sec">
+                        <h3>1. Personal Information Collected and Intended Use</h3>
+                        <p>When you register and use the People &amp; Process Excellence portal, the system collects and processes the following categories of data:</p>
+                        <ul>
+                            <li><strong>Identity Data:</strong> Full name, corporate email address, auto-generated employee code, and optional contact number.</li>
+                            <li><strong>Organizational Context:</strong> Company affiliation, branch, department, and assigned survey cycle identifiers.</li>
+                            <li><strong>Feedback Responses:</strong> Likert scale ratings (1–5) across survey categories, open qualitative feedback comments, and post-survey platform ratings.</li>
+                            <li><strong>Authentication &amp; Technical Metadata:</strong> Secure salted password hashes (bcrypt), timestamp of registration, session tokens, and password reset tokens. Plaintext passwords are never stored.</li>
+                        </ul>
+                        <p>This information is used strictly to verify employee eligibility, deliver assigned department-specific survey questionnaires, and synthesize organizational analytics.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>2. Data Storage, Access Permissions, Retention, and Deletion</h3>
+                        <p>All application data is hosted on enterprise cloud infrastructure with database access restricted through authenticated connection pools and network isolation. Access permissions follow least-privilege principles:</p>
+                        <ul>
+                            <li><strong>Super Administrators:</strong> Authorized personnel managing company onboarding, survey question templates, and technical platform reliability.</li>
+                            <li><strong>Company Leadership:</strong> Authorized access limited strictly to their own enterprise’s aggregated reports, department analytics, and AI summaries. Cross-company access is strictly barred.</li>
+                            <li><strong>Retention Period:</strong> Survey records and associated analytics are maintained for the active duration of the evaluation cycle and administrative reporting period as designated by the client contract [Subject to client agreement and legal retention policies].</li>
+                            <li><strong>Account &amp; Data Deletion:</strong> Requests for employee record erasure or department re-assignment may be submitted through designated corporate administrators or Visteria's Data Protection Officer.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>3. Processing of Survey Responses and AI-Generated Insights</h3>
+                        <p>Survey responses are analyzed using structured statistical aggregations and intelligent natural language processing algorithms (including Eagle AI / Gemini API integrations). AI processing is used to:</p>
+                        <ul>
+                            <li>Calculate category-level health scores, engagement distributions, and operational heatmaps.</li>
+                            <li>Synthesize key organizational themes, strengths, and priority areas for leadership focus.</li>
+                            <li>Identify systemic process friction and recommend constructive workplace training frameworks.</li>
+                        </ul>
+                        <p>AI processing does not make automated individual decisions affecting employment or disciplinary action; insights are intended solely for organizational process improvement.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>4. Limitations of Anonymity and Confidentiality</h3>
+                        <p>For absolute transparency: Although responses are aggregated to protect employee confidentiality, this system does not claim complete cryptographic anonymity. Each response record is associated with an employee ID and survey cycle in the database to verify participation, prevent duplicate voting, and support survey cycle tracking. Furthermore, if open-ended text answers contain self-identifying details or urgent disclosures of legal violations, health hazards, or severe workplace harassment, duty-of-care protocols may necessitate appropriate administrative review under enterprise compliance policies.</p>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>5. Applicable Privacy Rights and Legal Obligations</h3>
+                        <p>Depending on your jurisdiction, you may have statutory rights regarding your personal information, including:</p>
+                        <ul>
+                            <li>The right to confirm whether your personal data is being processed.</li>
+                            <li>The right to access and review your basic profile information.</li>
+                            <li>The right to request correction of inaccurate profile attributes.</li>
+                            <li>The right to register a grievance with the data fiduciary or relevant regulatory authority.</li>
+                        </ul>
+                    </section>
+
+                    <section class="legal-sec">
+                        <h3>6. Contact Details &amp; Privacy Grievance Process</h3>
+                        <p>If you have questions, concerns, or requests regarding this Privacy Policy, your feedback confidentiality, or data governance practices, please contact:</p>
+                        <div class="legal-contact-card">
+                            <strong>Data Privacy &amp; Compliance Office</strong><br>
+                            Visteria Consulting Services Private Limited<br>
+                            Email: <a href="mailto:info@visteriaconsulting.com" style="color:#0FAEAA;text-decoration:underline;">info@visteriaconsulting.com</a><br>
+                            Corporate Tagline: <em>Vision Changes Everything.</em>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="legal-modal-footer">
+                <button type="button" id="acceptLegalPolicyBtn" class="btn-primary" style="padding: 10px 22px; font-size: 13.5px;">
+                    <span>I Have Read &amp; Accept</span>
+                    <span aria-hidden="true">✓</span>
+                </button>
+                <button type="button" id="closeLegalPolicyModalBtn" class="btn-secondary" style="padding: 10px 18px; font-size: 13.5px;">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         SCRIPTS & BACKEND INTEGRATION
+    ====================================================== -->
+    <script src="js/api-client.js"></script>
+    <script src="js/employee.js"></script>
+
+    <script>
+        // =====================================================
+        // EXPANDED 3D WORLD GLOBE ANIMATION (Canvas Engine)
+        // =====================================================
+        (function initExpandedGlobe() {
+            const canvas = document.getElementById("welcomeGlobeCanvas");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+
+            const dpr = window.devicePixelRatio || 1;
+            const baseW = 660;
+            const baseH = 680;
+            canvas.width = baseW * dpr;
+            canvas.height = baseH * dpr;
+            ctx.scale(dpr, dpr);
+
+            const cx = 200;
+            const cy = 300;
+            const R = 235;
+
+            const continentNodes = [
+                // North America
+                { lat: 0.85, lon: -1.7 }, { lat: 0.95, lon: -1.6 }, { lat: 1.05, lon: -1.8 },
+                { lat: 0.75, lon: -1.5 }, { lat: 0.80, lon: -1.3 }, { lat: 0.90, lon: -1.4 },
+                { lat: 0.65, lon: -1.6 }, { lat: 0.60, lon: -1.4 }, { lat: 0.50, lon: -1.5 },
+                { lat: 0.40, lon: -1.55 }, { lat: 0.35, lon: -1.4 }, { lat: 0.55, lon: -1.7 },
+                { lat: 0.70, lon: -1.85 }, { lat: 0.85, lon: -2.0 }, { lat: 1.0, lon: -2.2 },
+                { lat: 0.50, lon: -1.9 }, { lat: 0.45, lon: -1.7 }, { lat: 0.30, lon: -1.6 },
+
+                // South America
+                { lat: 0.15, lon: -1.3 }, { lat: 0.10, lon: -1.1 }, { lat: 0.0, lon: -1.0 },
+                { lat: -0.10, lon: -0.9 }, { lat: -0.20, lon: -0.85 }, { lat: -0.35, lon: -0.95 },
+                { lat: -0.50, lon: -1.1 }, { lat: -0.65, lon: -1.15 }, { lat: -0.80, lon: -1.2 },
+                { lat: -0.15, lon: -1.35 }, { lat: -0.30, lon: -1.3 }, { lat: -0.45, lon: -1.25 },
+                { lat: 0.05, lon: -1.4 }, { lat: -0.10, lon: -1.2 }, { lat: -0.25, lon: -1.05 },
+
+                // Europe & Scandinavia
+                { lat: 0.90, lon: 0.1 }, { lat: 0.95, lon: 0.3 }, { lat: 1.05, lon: 0.4 },
+                { lat: 0.80, lon: 0.0 }, { lat: 0.85, lon: 0.25 }, { lat: 0.82, lon: 0.45 },
+                { lat: 0.75, lon: -0.1 }, { lat: 0.72, lon: 0.15 }, { lat: 0.70, lon: 0.35 },
+                { lat: 0.65, lon: 0.55 }, { lat: 0.78, lon: 0.65 }, { lat: 0.88, lon: 0.55 },
+
+                // Africa
+                { lat: 0.55, lon: -0.1 }, { lat: 0.55, lon: 0.2 }, { lat: 0.50, lon: 0.5 },
+                { lat: 0.40, lon: -0.25 }, { lat: 0.35, lon: 0.1 }, { lat: 0.35, lon: 0.45 },
+                { lat: 0.20, lon: -0.3 }, { lat: 0.15, lon: 0.0 }, { lat: 0.15, lon: 0.35 },
+                { lat: 0.0, lon: -0.15 }, { lat: -0.10, lon: 0.2 }, { lat: -0.15, lon: 0.45 },
+                { lat: -0.25, lon: 0.1 }, { lat: -0.35, lon: 0.35 }, { lat: -0.50, lon: 0.3 },
+                { lat: -0.60, lon: 0.35 }, { lat: -0.40, lon: 0.4 }, { lat: 0.25, lon: 0.65 },
+
+                // Asia & Middle East
+                { lat: 0.60, lon: 0.8 }, { lat: 0.65, lon: 1.1 }, { lat: 0.70, lon: 1.4 },
+                { lat: 0.75, lon: 1.7 }, { lat: 0.85, lon: 1.6 }, { lat: 0.95, lon: 1.8 },
+                { lat: 0.50, lon: 0.9 }, { lat: 0.45, lon: 1.2 }, { lat: 0.40, lon: 1.5 },
+                { lat: 0.35, lon: 1.8 }, { lat: 0.55, lon: 1.5 }, { lat: 0.60, lon: 2.0 },
+                { lat: 0.25, lon: 1.3 }, { lat: 0.20, lon: 1.5 }, { lat: 0.15, lon: 1.8 },
+                { lat: 0.30, lon: 1.1 }, { lat: 0.22, lon: 0.9 }, { lat: 0.10, lon: 1.4 },
+                { lat: 0.0, lon: 1.7 }, { lat: -0.10, lon: 1.9 }, { lat: 0.05, lon: 2.1 },
+
+                // Australia & Oceania
+                { lat: -0.35, lon: 2.0 }, { lat: -0.40, lon: 2.3 }, { lat: -0.45, lon: 2.5 },
+                { lat: -0.55, lon: 2.1 }, { lat: -0.60, lon: 2.35 }, { lat: -0.65, lon: 2.6 },
+                { lat: -0.50, lon: 2.45 }, { lat: -0.70, lon: 2.4 }, { lat: -0.65, lon: 2.8 }
+            ];
+
+            const densePoints = [];
+            continentNodes.forEach(pt => {
+                densePoints.push({ lat: pt.lat, lon: pt.lon, r: 2.1 });
+                densePoints.push({ lat: pt.lat + 0.04, lon: pt.lon + 0.04, r: 1.6 });
+                densePoints.push({ lat: pt.lat - 0.04, lon: pt.lon - 0.04, r: 1.6 });
+                densePoints.push({ lat: pt.lat + 0.07, lon: pt.lon - 0.03, r: 1.3 });
+                densePoints.push({ lat: pt.lat - 0.06, lon: pt.lon + 0.05, r: 1.3 });
+            });
+
+            const latAngles = [-1.1, -0.75, -0.4, 0.0, 0.4, 0.75, 1.1];
+            const meridianCount = 16;
+            const orbitRings = [
+                { rxMult: 1.28, ryMult: 0.38, tilt: -0.40, yOffset: -0.05, speed: 0.009, nodes: 4 },
+                { rxMult: 1.38, ryMult: 0.45, tilt: -0.34, yOffset: 0.12, speed: -0.007, nodes: 3 }
+            ];
+
+            let rotation = 0;
+            let time = 0;
+
+            function draw() {
+                ctx.clearRect(0, 0, baseW, baseH);
+
+                const isDark = document.body.classList.contains("dark") || document.body.classList.contains("dark-theme");
+                const mainColor = isDark ? "rgba(38, 198, 218, " : "rgba(15, 174, 170, ";
+                const orbitColor = isDark ? "rgba(56, 189, 248, " : "rgba(2, 132, 199, ";
+
+                // 1. Back halves of orbital rings
+                orbitRings.forEach(orb => {
+                    const orbCy = cy + orb.yOffset * R;
+                    const rx = R * orb.rxMult;
+                    const ry = R * orb.ryMult;
+
+                    ctx.save();
+                    ctx.translate(cx, orbCy);
+                    ctx.rotate(orb.tilt);
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, rx, ry, 0, Math.PI, Math.PI * 2);
+                    ctx.strokeStyle = orbitColor + (isDark ? "0.15)" : "0.18)");
+                    ctx.lineWidth = 1.1;
+                    ctx.setLineDash([4, 6]);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    ctx.restore();
+                });
+
+                // 2. Spherical Clip & Globe Surface
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(cx, cy, R, 0, Math.PI * 2);
+                ctx.clip();
+
+                const globeGlow = ctx.createRadialGradient(cx - R * 0.28, cy - R * 0.28, R * 0.1, cx, cy, R);
+                globeGlow.addColorStop(0, isDark ? "rgba(38, 198, 218, 0.14)" : "rgba(186, 230, 253, 0.26)");
+                globeGlow.addColorStop(0.7, isDark ? "rgba(15, 30, 52, 0.08)" : "rgba(224, 242, 254, 0.10)");
+                globeGlow.addColorStop(1, isDark ? "rgba(38, 198, 218, 0.03)" : "rgba(15, 174, 170, 0.04)");
+                ctx.fillStyle = globeGlow;
+                ctx.fill();
+
+                // Draw Latitude Parallels
+                latAngles.forEach(lat => {
+                    const y = cy - R * Math.sin(lat);
+                    const rLat = R * Math.cos(lat);
+                    if (rLat <= 0) return;
+
+                    ctx.beginPath();
+                    ctx.ellipse(cx, y, rLat, rLat * 0.26, 0, 0, Math.PI * 2);
+                    ctx.strokeStyle = mainColor + (isDark ? "0.18)" : "0.22)");
+                    ctx.lineWidth = 1.0;
+                    ctx.stroke();
+                });
+
+                // Draw Longitude Meridians
+                for (let i = 0; i < meridianCount; i++) {
+                    const lonAngle = (i * Math.PI / (meridianCount / 2)) + rotation;
+                    const cosL = Math.cos(lonAngle);
+                    const rx = R * Math.abs(cosL);
+
+                    ctx.beginPath();
+                    ctx.ellipse(cx, cy, rx, R, 0, 0, Math.PI * 2);
+                    const alpha = (0.12 + Math.abs(cosL) * 0.16) * (isDark ? 0.9 : 1.0);
+                    ctx.strokeStyle = mainColor + alpha.toFixed(3) + ")";
+                    ctx.lineWidth = 1.0;
+                    ctx.stroke();
+                }
+
+                // Draw Continents
+                densePoints.forEach(pt => {
+                    const phi = pt.lat;
+                    const theta = pt.lon + rotation;
+
+                    const cosPhi = Math.cos(phi);
+                    const sinPhi = Math.sin(phi);
+                    const cosTheta = Math.cos(theta);
+                    const sinTheta = Math.sin(theta);
+
+                    const x = R * cosPhi * sinTheta;
+                    const y = -R * sinPhi;
+                    const z = R * cosPhi * cosTheta;
+
+                    if (z > -20) {
+                        const depthFactor = (z + R) / (2 * R);
+                        const px = cx + x;
+                        const py = cy + y;
+                        const pRadius = Math.max(0.8, pt.r * (0.55 + depthFactor * 0.65));
+                        const alpha = Math.min(0.9, (0.2 + depthFactor * 0.72) * (isDark ? 0.9 : 1.0));
+
+                        ctx.beginPath();
+                        ctx.arc(px, py, pRadius, 0, Math.PI * 2);
+                        ctx.fillStyle = mainColor + alpha.toFixed(3) + ")";
+                        ctx.fill();
+                    }
+                });
+
+                ctx.beginPath();
+                ctx.arc(cx, cy, R - 0.5, 0, Math.PI * 2);
+                ctx.strokeStyle = mainColor + (isDark ? "0.38)" : "0.45)");
+                ctx.lineWidth = 1.8;
+                ctx.stroke();
+
+                ctx.restore();
+
+                // 3. Front halves of orbital rings
+                orbitRings.forEach(orb => {
+                    const orbCy = cy + orb.yOffset * R;
+                    const rx = R * orb.rxMult;
+                    const ry = R * orb.ryMult;
+
+                    ctx.save();
+                    ctx.translate(cx, orbCy);
+                    ctx.rotate(orb.tilt);
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI);
+                    ctx.strokeStyle = orbitColor + (isDark ? "0.38)" : "0.42)");
+                    ctx.lineWidth = 1.3;
+                    ctx.stroke();
+
+                    for (let n = 0; n < orb.nodes; n++) {
+                        const nodeAngle = ((time * orb.speed + (n * Math.PI * 2) / orb.nodes) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
+                        if (nodeAngle >= 0 && nodeAngle <= Math.PI) {
+                            const px = rx * Math.cos(nodeAngle);
+                            const py = ry * Math.sin(nodeAngle);
+
+                            ctx.beginPath();
+                            ctx.arc(px, py, 3.5, 0, Math.PI * 2);
+                            ctx.fillStyle = "#FFFFFF";
+                            ctx.fill();
+
+                            const packetGlow = ctx.createRadialGradient(px, py, 1, px, py, 8);
+                            packetGlow.addColorStop(0, orbitColor + "0.85)");
+                            packetGlow.addColorStop(1, orbitColor + "0)");
+                            ctx.fillStyle = packetGlow;
+                            ctx.beginPath();
+                            ctx.arc(px, py, 8, 0, Math.PI * 2);
+                            ctx.fill();
+                        }
+                    }
+                    ctx.restore();
+                });
+
+                rotation += 0.0018;
+                time += 1;
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+        })();
+
+        // =====================================================
+        // APPLICATION CONTROLLER & INTERACTIVE ACTIONS
+        // =====================================================
+        document.addEventListener("DOMContentLoaded", async () => {
+            // 1. Session Verification
+            const token = localStorage.getItem("employee_accessToken") ||
+                          localStorage.getItem("employee_access_token") ||
+                          sessionStorage.getItem("employee_accessToken") ||
+                          sessionStorage.getItem("employee_access_token");
+
+            if (!token) {
+                console.warn("No active employee session found. Redirecting to sign in.");
+                window.location.href = "index.html";
+                return;
+            }
+
+            // 2. Theme Toggle
+            const themeBtn = document.getElementById("themeToggleBtn");
+            const trackSun = document.getElementById("themeTrackSun");
+            const trackMoon = document.getElementById("themeTrackMoon");
+
+            function applyTheme(isDark) {
+                document.body.classList.toggle("dark", isDark);
+                document.body.classList.toggle("dark-theme", isDark);
+                if (themeBtn) {
+                    themeBtn.classList.toggle("is-dark", isDark);
+                    themeBtn.setAttribute("aria-checked", isDark ? "true" : "false");
+                }
+                localStorage.setItem("visteria_theme", isDark ? "dark" : "light");
+            }
+
+            const savedTheme = localStorage.getItem("visteria_theme") ||
+                (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            applyTheme(savedTheme === "dark");
+
+            if (themeBtn) {
+                themeBtn.addEventListener("click", () => {
+                    const willBeDark = !document.body.classList.contains("dark") && !document.body.classList.contains("dark-theme");
+                    applyTheme(willBeDark);
+                });
+            }
+            if (trackSun) {
+                trackSun.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    applyTheme(false);
+                });
+            }
+            if (trackMoon) {
+                trackMoon.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    applyTheme(true);
+                });
+            }
+
+            // 3. Sign Out
+            const signOutBtn = document.getElementById("signOutBtn");
+            if (signOutBtn) {
+                signOutBtn.addEventListener("click", () => {
+                    if (window.VisteriaAPI?.auth?.clearEmployeeToken) {
+                        window.VisteriaAPI.auth.clearEmployeeToken();
+                    }
+                    localStorage.removeItem("employee_accessToken");
+                    localStorage.removeItem("employee_access_token");
+                    sessionStorage.clear();
+                    window.location.href = "index.html";
+                });
+            }
+
+            // 4. Legal Modal
+            initWelcomeLegalModal();
+
+            // 5. Floating AI Assistant & Smooth Zoom
+            initAssistantWithZoomControls();
+
+            // 6. Interactive Toast Function
+            window.showWelcomeToast = function (title, desc, type = "success") {
+                const toast = document.getElementById("notificationToast");
+                if (!toast) return;
+
+                const iconEl = toast.querySelector(".toast-icon");
+                const titleEl = toast.querySelector(".toast-title");
+                const descEl = toast.querySelector(".toast-desc");
+
+                if (titleEl) titleEl.textContent = title;
+                if (descEl) descEl.textContent = desc;
+                if (iconEl) iconEl.textContent = type === "success" ? "✓" : "ℹ";
+
+                toast.classList.add("show");
+                clearTimeout(toast._timer);
+                toast._timer = setTimeout(() => {
+                    toast.classList.remove("show");
+                }, 3200);
+            };
+
+            // 7. Interactive Organization Card Row Click-to-Copy
+            document.querySelectorAll(".emp-row").forEach(row => {
+                row.addEventListener("click", () => {
+                    const field = row.getAttribute("data-field") || "Detail";
+                    const valEl = row.querySelector(".emp-val span:first-child") || row.querySelector(".emp-val");
+                    const rawVal = valEl ? valEl.textContent.trim() : "";
+                    const displayVal = (rawVal && rawVal !== "—") ? rawVal : "Copied";
+
+                    if (navigator.clipboard && navigator.clipboard.writeText && rawVal && rawVal !== "—") {
+                        navigator.clipboard.writeText(rawVal).catch(() => {});
+                    }
+                    window.showWelcomeToast("Copied to Clipboard", `${field}: ${displayVal}`, "success");
+                });
+            });
+
+            // Interactive Organization Banner
+            const orgBanner = document.getElementById("orgProfileBox");
+            if (orgBanner) {
+                orgBanner.addEventListener("click", () => {
+                    const compName = document.getElementById("orgCompanyName")?.textContent || "Organization";
+                    window.showWelcomeToast("Survey Organization", `Authorized Program: ${compName}`, "info");
+                });
+            }
+
+            // Interactive Privacy Box
+            const privBox = document.getElementById("privacyNoticeBox");
+            if (privBox) {
+                privBox.addEventListener("click", () => {
+                    window.showWelcomeToast("Security Guarantee", "Your responses are encrypted, aggregated, and strictly anonymous.", "success");
+                });
+            }
+
+            // Interactive Empty State Refresh Button
+            const refreshBtn = document.getElementById("refreshSurveysBtn");
+            const emptyStateEl = document.getElementById("surveyEmptyState");
+            if (refreshBtn) {
+                refreshBtn.addEventListener("click", async (e) => {
+                    e.stopPropagation();
+                    refreshBtn.textContent = "↻ Checking...";
+                    await new Promise(r => setTimeout(r, 600));
+                    refreshBtn.textContent = "↻ Check for Updates";
+                    window.showWelcomeToast("Surveys Up-To-Date", "No new survey assignments currently available.", "info");
+                });
+            }
+            if (emptyStateEl) {
+                emptyStateEl.addEventListener("click", () => {
+                    window.showWelcomeToast("Survey Portal", "Your organization will notify you when new surveys are published.", "info");
+                });
+            }
+
+            // 8. Dynamic Employee Profile Loader
+            try {
+                if (window.VisteriaAPI && window.VisteriaAPI.employee) {
+                    const profileRes = await window.VisteriaAPI.employee.getProfile();
+                    const emp = (profileRes && profileRes.data) ? profileRes.data : profileRes;
+
+                    const compName = emp.company?.name || emp.company_name || "VCS";
+                    const orgNameEl = document.getElementById("orgCompanyName");
+                    const orgAvatarEl = document.getElementById("orgAvatar");
+                    if (orgNameEl) orgNameEl.textContent = compName;
+                    if (orgAvatarEl) {
+                        const initial = compName.trim().charAt(0).toUpperCase() || "O";
+                        orgAvatarEl.textContent = initial;
+                    }
+
+                    const nameEl = document.getElementById("empName");
+                    const codeEl = document.getElementById("empCodeBadge");
+                    const deptEl = document.getElementById("empDept");
+                    const emailEl = document.getElementById("empEmail");
+
+                    if (nameEl) nameEl.textContent = emp.name || "Employee";
+                    if (codeEl) codeEl.textContent = emp.employee_code || "—";
+                    if (deptEl) deptEl.textContent = emp.department || "General";
+                    if (emailEl) emailEl.textContent = emp.email || "—";
+                }
+            } catch (err) {
+                console.warn("Could not load employee profile:", err);
+            }
+
+            // 9. Dynamic Survey Categories & Status Loader (Interactive Category Rows)
+            const countTextEl = document.getElementById("surveyCountText");
+            const cardsListEl = document.getElementById("surveyCardsList");
+            const statusBadgeEl = document.getElementById("surveyStatusBadge");
+            const statusTextEl = document.getElementById("surveyStatusText");
+
+            try {
+                const assignmentsRes = await window.VisteriaAPI.employee.getAssignments();
+                const assignments = (assignmentsRes && assignmentsRes.data) ? assignmentsRes.data : [];
+
+                const availableCount = Array.isArray(assignments) ? assignments.length : 0;
+                if (countTextEl) countTextEl.textContent = `${availableCount} Available`;
+
+                if (!assignments || assignments.length === 0) {
+                    if (emptyStateEl) emptyStateEl.style.display = "flex";
+                    if (cardsListEl) cardsListEl.style.display = "none";
+                    if (statusTextEl) statusTextEl.textContent = "Not Started";
+                    if (statusBadgeEl) statusBadgeEl.className = "status-pill status-pill-notstarted";
+                    return;
+                }
+
+                let completedCount = 0;
+                let inProgressCount = 0;
+                let firstIncomplete = null;
+
+                if (cardsListEl) {
+                    cardsListEl.innerHTML = "";
+                    cardsListEl.style.display = "flex";
+                }
+                if (emptyStateEl) emptyStateEl.style.display = "none";
+
+                assignments.forEach(a => {
+                    const title = a.category || a.survey_cycle?.survey?.title || "Workplace Survey";
+                    const totalQ = a.questions_count ?? (a.survey_cycle?.survey?.questions?.length || 0);
+                    const answeredQ = a.answered_count ?? (a.saved_answers?.length || 0);
+                    const isCompleted = a.status === 'completed';
+                    const isInProgress = a.status === 'in_progress';
+
+                    if (isCompleted) completedCount++;
+                    else if (isInProgress) {
+                        inProgressCount++;
+                        if (!firstIncomplete) firstIncomplete = a;
+                    } else {
+                        if (!firstIncomplete) firstIncomplete = a;
+                    }
+
+                    let actionBtnHtml = '';
+                    if (isCompleted) {
+                        actionBtnHtml = `<span class="survey-status-badge-complete">✓ Completed</span>`;
+                    } else if (isInProgress) {
+                        actionBtnHtml = `<span class="survey-action-btn survey-btn-resume">Resume (${answeredQ}/${totalQ}) &rarr;</span>`;
+                    } else {
+                        actionBtnHtml = `<span class="survey-action-btn survey-btn-start">Start Survey &rarr;</span>`;
+                    }
+
+                    // Clickable interactive card for each survey category
+                    const card = document.createElement("div");
+                    card.className = "survey-item-row";
+                    card.setAttribute("role", "button");
+                    card.setAttribute("tabindex", "0");
+                    card.setAttribute("title", isCompleted ? "Survey Completed - Click for details" : `Click to open ${escapeHtml(title)}`);
+                    card.innerHTML = `
+                        <div class="survey-item-info">
+                            <h4 class="survey-item-title">${escapeHtml(title)}</h4>
+                            <span class="survey-item-meta">
+                                ${totalQ} Questions &bull; <strong style="color: ${isCompleted ? '#059669' : (isInProgress ? '#B45309' : '#64748B')}">${isCompleted ? 'Completed' : (isInProgress ? `In Progress (${answeredQ}/${totalQ})` : 'Not Started')}</strong>
+                            </span>
+                        </div>
+                        <div class="survey-item-action">
+                            ${actionBtnHtml}
+                        </div>
+                    `;
+
+                    // Category Click Interaction
+                    card.addEventListener("click", () => {
+                        if (isCompleted) {
+                            window.showWelcomeToast("Survey Completed", "You have already completed this survey category. Thank you!", "info");
+                        } else {
+                            window.location.href = `survey.html?assignmentId=${encodeURIComponent(a.id)}`;
+                        }
+                    });
+
+                    card.addEventListener("keydown", (e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            card.click();
+                        }
+                    });
+
+                    if (cardsListEl) cardsListEl.appendChild(card);
+                });
+
+                if (statusBadgeEl && statusTextEl) {
+                    if (completedCount === assignments.length && assignments.length > 0) {
+                        statusBadgeEl.className = "status-pill status-pill-complete";
+                        statusTextEl.textContent = "Completed";
+                    } else if (inProgressCount > 0 || completedCount > 0) {
+                        statusBadgeEl.className = "status-pill status-pill-inprogress";
+                        statusTextEl.textContent = "In Progress";
+                    } else {
+                        statusBadgeEl.className = "status-pill status-pill-notstarted";
+                        statusTextEl.textContent = "Not Started";
+                    }
+                }
+            } catch (err) {
+                console.warn("Could not load employee assignments:", err);
+            }
+        });
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        // =====================================================
+        // AI ASSISTANT WITH SMOOTH ZOOM CONTROLS
+        // =====================================================
+        function initAssistantWithZoomControls() {
+            const askEagleBtn = document.getElementById("askEagleBtn");
+            const avatarBadge = document.getElementById("assistantAvatarBadge");
+            const eagleChatBox = document.getElementById("eagleChatBox");
+            const chatCloseBtn = document.getElementById("eagleChatCloseBtn");
+            const chatMinimizeBtn = document.getElementById("chatMinimizeBtn");
+            const chatZoomInBtn = document.getElementById("chatZoomInBtn");
+            const chatZoomOutBtn = document.getElementById("chatZoomOutBtn");
+            const chatZoomBadge = document.getElementById("chatZoomBadge");
+
+            function toggleChat(e) {
+                if (e && e.stopPropagation) e.stopPropagation();
+                if (!eagleChatBox) return;
+                const isOpen = eagleChatBox.classList.contains("chat-open") || eagleChatBox.classList.contains("active");
+                if (isOpen) {
+                    closeChat();
+                } else {
+                    openChat();
+                }
+            }
+
+            function openChat() {
+                if (!eagleChatBox) return;
+                eagleChatBox.classList.add("chat-open", "active");
+                eagleChatBox.setAttribute("aria-hidden", "false");
+                const input = document.getElementById("eagleChatInput");
+                if (input) input.focus();
+            }
+
+            function closeChat() {
+                if (!eagleChatBox) return;
+                eagleChatBox.classList.remove("chat-open", "active");
+                eagleChatBox.setAttribute("aria-hidden", "true");
+            }
+
+            function setZoom(isZoomed) {
+                if (!eagleChatBox) return;
+                if (isZoomed) {
+                    eagleChatBox.classList.add("chat-zoomed");
+                    if (chatZoomInBtn) chatZoomInBtn.style.display = "none";
+                    if (chatZoomOutBtn) chatZoomOutBtn.style.display = "flex";
+                    if (chatZoomBadge) chatZoomBadge.textContent = "140%";
+                } else {
+                    eagleChatBox.classList.remove("chat-zoomed");
+                    if (chatZoomInBtn) chatZoomInBtn.style.display = "flex";
+                    if (chatZoomOutBtn) chatZoomOutBtn.style.display = "none";
+                    if (chatZoomBadge) chatZoomBadge.textContent = "100%";
+                }
+            }
+
+            if (askEagleBtn) askEagleBtn.addEventListener("click", toggleChat);
+            if (avatarBadge) avatarBadge.addEventListener("click", toggleChat);
+            if (chatCloseBtn) chatCloseBtn.addEventListener("click", closeChat);
+            if (chatMinimizeBtn) chatMinimizeBtn.addEventListener("click", closeChat);
+
+            if (chatZoomInBtn) chatZoomInBtn.addEventListener("click", () => setZoom(true));
+            if (chatZoomOutBtn) chatZoomOutBtn.addEventListener("click", () => setZoom(false));
+
+            const chips = document.querySelectorAll(".chat-chip");
+            const chatMessages = document.getElementById("eagleChatMessages");
+            const chatInput = document.getElementById("eagleChatInput");
+
+            chips.forEach(chip => {
+                chip.addEventListener("click", () => {
+                    const q = chip.getAttribute("data-query") || chip.textContent;
+                    handleAssistantQuery(q);
+                });
+            });
+
+            const chatForm = document.getElementById("eagleChatForm");
+            if (chatForm) {
+                chatForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    if (!chatInput) return;
+                    const text = chatInput.value.trim();
+                    if (text) {
+                        handleAssistantQuery(text);
+                        chatInput.value = "";
+                    }
+                });
+            }
+
+            function handleAssistantQuery(query) {
+                if (!chatMessages) return;
+
+                const uMsg = document.createElement("div");
+                uMsg.className = "chat-bubble user-bubble";
+                uMsg.innerHTML = `<p>${escapeHtml(query)}</p>`;
+                chatMessages.appendChild(uMsg);
+
+                const aMsg = document.createElement("div");
+                aMsg.className = "chat-bubble eagle-bubble";
+                
+                let answer = "Thank you for asking! I'm here to ensure your survey experience is smooth and confidential. If you have specific questions about deadlines or categories, your organization administrator can also assist.";
+                const lower = query.toLowerCase();
+
+                if (lower.includes("anonymous") || lower.includes("confidential") || lower.includes("private")) {
+                    answer = "🔒 <strong>Strict Anonymity Guaranteed:</strong> Your survey answers are cryptographically aggregated and stripped of any identifying employee information before reports are generated. No individual responses can ever be traced back to you.";
+                } else if (lower.includes("how long") || lower.includes("time") || lower.includes("duration")) {
+                    answer = "⏱️ Each survey module typically takes between <strong>5 to 10 minutes</strong> to complete. Questions are multiple choice and designed for quick, thoughtful feedback.";
+                } else if (lower.includes("save") || lower.includes("resume") || lower.includes("draft")) {
+                    answer = "💾 <strong>Automatic Progress Saving:</strong> Yes! You can pause at any time and return to complete your survey. Your progress will automatically resume where you left off.";
+                }
+
+                setTimeout(() => {
+                    aMsg.innerHTML = `<p>${answer}</p>`;
+                    chatMessages.appendChild(aMsg);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 300);
+
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        // =====================================================
+        // LEGAL POLICY MODAL CONTROLLER
+        // =====================================================
+        function initWelcomeLegalModal() {
+            const modal = document.getElementById("legalPolicyModal");
+            if (!modal) return;
+
+            const tabTerms = document.getElementById("legalTabTerms");
+            const tabPrivacy = document.getElementById("legalTabPrivacy");
+            const contentTerms = document.getElementById("legalContentTerms");
+            const contentPrivacy = document.getElementById("legalContentPrivacy");
+            const closeTopBtn = document.getElementById("closeLegalModalBtn");
+            const closeBottomBtn = document.getElementById("closeLegalPolicyModalBtn");
+            const acceptBtn = document.getElementById("acceptLegalPolicyBtn");
+
+            function openModal(activeTab) {
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+                switchTab(activeTab || "privacy");
+            }
+
+            function closeModal() {
+                modal.style.display = "none";
+                document.body.style.overflow = "";
+            }
+
+            function switchTab(target) {
+                if (target === "terms") {
+                    if (tabTerms) { tabTerms.classList.add("active"); tabTerms.setAttribute("aria-selected", "true"); }
+                    if (tabPrivacy) { tabPrivacy.classList.remove("active"); tabPrivacy.setAttribute("aria-selected", "false"); }
+                    if (contentTerms) { contentTerms.classList.add("active"); contentTerms.style.display = "block"; }
+                    if (contentPrivacy) { contentPrivacy.classList.remove("active"); contentPrivacy.style.display = "none"; }
+                } else {
+                    if (tabTerms) { tabTerms.classList.remove("active"); tabTerms.setAttribute("aria-selected", "false"); }
+                    if (tabPrivacy) { tabPrivacy.classList.add("active"); tabPrivacy.setAttribute("aria-selected", "true"); }
+                    if (contentTerms) { contentTerms.classList.remove("active"); contentTerms.style.display = "none"; }
+                    if (contentPrivacy) { contentPrivacy.classList.add("active"); contentPrivacy.style.display = "block"; }
+                }
+            }
+
+            const pLink = document.getElementById("footerPrivacyLink");
+            const tLink = document.getElementById("footerTermsLink");
+            if (pLink) pLink.addEventListener("click", (e) => { e.preventDefault(); openModal("privacy"); });
+            if (tLink) tLink.addEventListener("click", (e) => { e.preventDefault(); openModal("terms"); });
+
+            if (tabTerms) tabTerms.addEventListener("click", () => switchTab("terms"));
+            if (tabPrivacy) tabPrivacy.addEventListener("click", () => switchTab("privacy"));
+            if (closeTopBtn) closeTopBtn.addEventListener("click", closeModal);
+            if (closeBottomBtn) closeBottomBtn.addEventListener("click", closeModal);
+            if (acceptBtn) acceptBtn.addEventListener("click", closeModal);
+
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && modal.style.display === "flex") closeModal();
+            });
+        }
+    </script>
+</body>
+
+</html>

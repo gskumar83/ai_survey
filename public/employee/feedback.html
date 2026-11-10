@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="People & Process Excellence - Visteria Consulting Services Private Limited. Vision Changes Everything.">
+    <title>Survey Feedback | People & Process Excellence</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Dedicated Stylesheet -->
+    <link rel="stylesheet" href="/assets/design-system.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/employee.css">
+    <link rel="stylesheet" href="css/i18n.css">
+
+    <style>
+        /* =========================================================
+           PEOPLE & PROCESS EXCELLENCE — SURVEY EXPERIENCE FEEDBACK PAGE
+           Refined light enterprise theme: soft blue-grey, white cards, teal accents, navy text
+        ========================================================= */
+        :root {
+            --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --primary-action: var(--ppe-teal);
+            --primary-action-hover: var(--ppe-teal-dark);
+            --blue-primary: var(--ppe-teal);
+            --blue-hover: var(--ppe-teal-dark);
+            --blue-bright: var(--ppe-cyan);
+            --blue-dark: var(--ppe-bg-mist);
+            --blue-light-bg: var(--ppe-surface-card);
+            --blue-subtle: var(--ppe-surface-muted);
+            --navy-deep: var(--ppe-navy-deep);
+            --navy-text: var(--ppe-navy-text);
+            --navy-secondary: var(--ppe-navy-deep);
+            --text-secondary: var(--ppe-navy-text);
+            --text-muted: var(--ppe-navy-text-muted);
+            --border-light: var(--ppe-border-glass);
+            --border-active: var(--ppe-teal);
+            --card-glass: var(--ppe-surface-card);
+            --emerald-badge: var(--ppe-green);
+            --emerald-bg: rgba(72, 199, 142, 0.12);
+            --amber-accent: #D97706;
+            --error-red: #DC2626;
+            --error-bg: rgba(220, 38, 38, 0.1);
+            --shadow-card: var(--ppe-shadow-card);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--ppe-bg-gradient);
+        }
+
+        body.feedback-body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: var(--font-body);
+            color: var(--ppe-navy-text);
+            background: var(--ppe-bg-gradient);
+            position: relative;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Ambient Neural Canvas Background */
+        .landing-bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .neural-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        .glow-orb-1 {
+            width: 550px;
+            height: 550px;
+            top: -120px;
+            left: -100px;
+            background: rgba(13, 148, 136, 0.04);
+        }
+
+        .glow-orb-2 {
+            width: 600px;
+            height: 600px;
+            top: 25%;
+            right: -150px;
+            background: rgba(13, 148, 136, 0.03);
+        }
+
+        .glow-orb-3 {
+            width: 500px;
+            height: 500px;
+            bottom: -100px;
+            left: 30%;
+            background: rgba(234, 240, 245, 0.5);
+        }
+
+        /* ---------------------------------------------------------
+           1. TOP BRANDED HEADER
+           --------------------------------------------------------- */
+        .feedback-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 68px;
+            flex-shrink: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--ppe-border-glass);
+            box-shadow: 0 4px 20px rgba(16, 42, 67, 0.04);
+        }
+
+        .feedback-header-inner {
+            max-width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo-img {
+            width: 38px;
+            height: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .brand-link:hover .brand-logo-img {
+            transform: scale(1.05);
+        }
+
+        .brand-text-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-company-line {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            color: #172B4D;
+            line-height: 1.1;
+        }
+
+        .brand-corporate-sub {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            color: #64748B;
+            text-transform: uppercase;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 28px;
+            background: #D7E1EA;
+            margin: 0 4px;
+        }
+
+        .brand-product-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #0D9488;
+            text-transform: uppercase;
+        }
+
+        .header-meta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: var(--emerald-bg);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            font-size: 12px;
+            font-weight: 700;
+            color: #059669;
+            letter-spacing: 0.4px;
+            box-shadow: 0 1px 4px rgba(16, 185, 129, 0.08);
+        }
+
+        .header-meta-badge .check-circle {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--emerald-badge);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 900;
+        }
+
+        /* ---------------------------------------------------------
+           2. MAIN CONTAINER & HERO TITLE BLOCK
+           --------------------------------------------------------- */
+        .feedback-main {
+            flex: 1;
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 34px 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feedback-hero-block {
+            text-align: center;
+            margin-bottom: 26px;
+            animation: heroSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-completion-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            background: rgba(16, 185, 129, 0.10);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            color: #059669;
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 4px rgba(16, 185, 129, 0.08);
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 4.2vw, 36px);
+            font-weight: 800;
+            color: var(--navy-deep);
+            line-height: 1.18;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(15px, 2.2vw, 17px);
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+
+        .hero-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 640px;
+            line-height: 1.55;
+            margin: 0 auto;
+        }
+
+        /* ---------------------------------------------------------
+           3. SINGLE CLEAN PREMIUM FEEDBACK CARD
+           --------------------------------------------------------- */
+        .feedback-card-container {
+            width: 100%;
+            max-width: 820px;
+            background: rgba(255, 255, 255, 0.80);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.88);
+            border-radius: 22px;
+            box-shadow: 0 16px 40px -4px rgba(16, 42, 67, 0.08), 0 4px 16px -2px rgba(16, 42, 67, 0.03);
+            overflow: hidden;
+            animation: cardFadeIn 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        /* Card Top Branded Strip */
+        .card-top-strip {
+            padding: 14px 32px;
+            background: #F8FAFC;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .card-top-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-completed-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #059669;
+            letter-spacing: 0.5px;
+        }
+
+        .card-top-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .card-confidential-pill {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Card Body & Question Flow */
+        .feedback-card-body {
+            padding: 32px 36px 36px 36px;
+        }
+
+        .feedback-section {
+            padding-bottom: 28px;
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            transition: all 0.25s ease;
+        }
+
+        .feedback-section:last-of-type {
+            border-bottom: none;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* Error Highlight State */
+        .feedback-section.has-error {
+            border-radius: 14px;
+            background: var(--error-bg);
+            border: 1.5px solid rgba(220, 38, 38, 0.35);
+            padding: 20px 22px;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+            animation: gentleShake 0.4s ease-in-out;
+        }
+
+        .section-error-msg {
+            display: none;
+            color: var(--error-red);
+            font-size: 12.5px;
+            font-weight: 600;
+            margin-top: 10px;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feedback-section.has-error .section-error-msg {
+            display: flex;
+        }
+
+        /* Question Header */
+        .question-header-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .question-title-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .question-number-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: #F8FAFC;
+            border: 1px solid var(--border-light);
+            color: var(--blue-primary);
+            font-size: 13px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+        }
+
+        .question-text {
+            font-size: 16.5px;
+            font-weight: 700;
+            color: #172B4D;
+            line-height: 1.35;
+        }
+
+        .optional-badge {
+            display: inline-block;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: #F1F5F9;
+            border: 1px solid var(--border-light);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.3px;
+            flex-shrink: 0;
+        }
+
+        .question-helper-text {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            margin-left: 40px;
+            margin-bottom: 16px;
+            margin-top: -6px;
+            line-height: 1.4;
+        }
+
+        /* ---------------------------------------------------------
+           QUESTION 1: 5-POINT SMILEY RATING CARDS
+           --------------------------------------------------------- */
+        .rating-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .rating-option-btn {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 8px;
+            background: #F8FAFC;
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
+
+        .rating-option-btn:hover {
+            border-color: #0D9488;
+            background: #F1F5F9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+        }
+
+        .rating-option-btn:focus-visible {
+            border-color: var(--blue-primary);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.25);
+        }
+
+        .rating-emoji {
+            font-size: 28px;
+            line-height: 1;
+            margin-bottom: 8px;
+            transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .rating-option-btn:hover .rating-emoji {
+            transform: scale(1.14);
+        }
+
+        .rating-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            transition: color 0.2s ease;
+        }
+
+        /* Selected State for Question 1 */
+        .rating-option-btn.is-selected {
+            border-color: #0D9488;
+            background: #E6FFFA;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15), 0 0 0 1px #0D9488;
+        }
+
+        .rating-option-btn.is-selected .rating-emoji {
+            transform: scale(1.16);
+        }
+
+        .rating-option-btn.is-selected .rating-label {
+            color: #0F766E;
+            font-weight: 800;
+        }
+
+        /* Checkmark on Selected Option */
+        .rating-check-indicator {
+            position: absolute;
+            top: 7px;
+            right: 7px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #0D9488;
+            color: #FFFFFF;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 900;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            animation: popIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .rating-option-btn.is-selected .rating-check-indicator {
+            display: flex;
+        }
+
+        /* ---------------------------------------------------------
+           QUESTION 2 & 3: 3-OPTION SELECTION PILLS/CARDS
+           --------------------------------------------------------- */
+        .choice-cards-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        .choice-option-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            padding: 14px 18px;
+            background: #F8FAFC;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
+
+        .choice-option-btn:hover {
+            border-color: #0D9488;
+            background: #F1F5F9;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+        }
+
+        .choice-option-btn:focus-visible {
+            border-color: var(--blue-primary);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.25);
+        }
+
+        .choice-radio-circle {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid #CBD5E1;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .choice-radio-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #0D9488;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .choice-label-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: color 0.18s ease;
+        }
+
+        /* Selected State for Question 2 & 3 */
+        .choice-option-btn.is-selected {
+            border-color: #0D9488;
+            background: #E6FFFA;
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.15), 0 0 0 1px #0D9488;
+            transform: translateY(-1px);
+        }
+
+        .choice-option-btn.is-selected .choice-radio-circle {
+            background: #E6FFFA;
+            border-color: #0D9488;
+        }
+
+        .choice-option-btn.is-selected .choice-radio-dot {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .choice-option-btn.is-selected .choice-label-text {
+            color: #0F766E;
+            font-weight: 700;
+        }
+
+        /* ---------------------------------------------------------
+           QUESTION 4: OPTIONAL IMPROVEMENTS TEXTAREA
+           --------------------------------------------------------- */
+        .textarea-container {
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .feedback-textarea {
+            width: 100%;
+            min-height: 105px;
+            max-height: 180px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1.5px solid var(--border-light);
+            background: #F8FAFC;
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: #172B4D;
+            line-height: 1.5;
+            resize: vertical;
+            transition: all 0.2s ease;
+        }
+
+        .feedback-textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .feedback-textarea:focus {
+            outline: none;
+            border-color: #0D9488;
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+            background: #FFFFFF;
+        }
+
+        .counter-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 6px;
+            padding: 0 2px;
+        }
+
+        .textarea-tip {
+            font-size: 11.5px;
+            color: var(--text-muted);
+        }
+
+        .character-counter {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .character-counter.near-limit {
+            color: var(--amber-accent);
+        }
+
+        /* ---------------------------------------------------------
+           OPTIONAL QUICK FEEDBACK CHIPS
+           --------------------------------------------------------- */
+        .quick-feedback-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .feedback-chip-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: 999px;
+            background: #F8FAFC;
+            border: 1px solid var(--border-light);
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
+
+        .feedback-chip-btn:hover {
+            border-color: #0D9488;
+            background: #F1F5F9;
+            transform: translateY(-1px);
+            color: #172B4D;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+        }
+
+        .feedback-chip-btn:focus-visible {
+            border-color: #0D9488;
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.25);
+        }
+
+        .chip-icon {
+            font-size: 12px;
+            font-weight: 800;
+            opacity: 0.70;
+            transition: all 0.2s ease;
+        }
+
+        /* Selected Chip State */
+        .feedback-chip-btn.is-selected {
+            background: #E6FFFA;
+            border-color: #0D9488;
+            color: #0F766E;
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.15);
+            transform: scale(1.02);
+        }
+
+        .feedback-chip-btn.is-selected .chip-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* ---------------------------------------------------------
+           VALIDATION ALERT BANNER
+           --------------------------------------------------------- */
+        .validation-alert-banner {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: var(--error-bg);
+            border: 1.5px solid rgba(220, 38, 38, 0.25);
+            color: var(--error-red);
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-bottom: 22px;
+            animation: fadeInNotice 0.25s ease;
+        }
+
+        .validation-alert-banner.active {
+            display: flex;
+        }
+
+        .alert-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ---------------------------------------------------------
+           ACTIONS FOOTER: SUBMIT & SKIP
+           --------------------------------------------------------- */
+        .feedback-actions-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
+            margin-top: 16px;
+        }
+
+        .btn-submit-feedback {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 320px;
+            padding: 13px 28px;
+            border-radius: 10px;
+            background: #0D9488;
+            color: #FFFFFF;
+            font-family: var(--font-body);
+            font-size: 14.5px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            outline: none;
+        }
+
+        .btn-submit-feedback:hover:not(:disabled) {
+            background: #0F766E;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(15, 118, 110, 0.35);
+        }
+
+        .btn-submit-feedback:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .btn-submit-feedback:focus-visible {
+            box-shadow: 0 0 0 3.5px rgba(13, 148, 136, 0.25);
+        }
+
+        .btn-submit-feedback:disabled {
+            opacity: 0.85;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-submit-feedback .btn-spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2.5px solid rgba(255, 255, 255, 0.35);
+            border-top-color: #FFFFFF;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        .btn-submit-feedback.is-submitting .btn-spinner {
+            display: inline-block;
+        }
+
+        .btn-submit-feedback.is-submitting .btn-arrow-icon {
+            display: none;
+        }
+
+        .btn-skip-feedback {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--font-body);
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: all 0.18s ease;
+            outline: none;
+        }
+
+        .btn-skip-feedback:hover {
+            color: #172B4D;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .btn-skip-feedback:focus-visible {
+            box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.25);
+        }
+
+        /* ---------------------------------------------------------
+           4. THANK YOU / SUBMISSION SUCCESS STATE
+           --------------------------------------------------------- */
+        .feedback-success-card {
+            display: none;
+            padding: 56px 36px;
+            text-align: center;
+            animation: cardFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feedback-success-card.active {
+            display: block;
+        }
+
+        .success-icon-wrapper {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: #10B981;
+            color: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            font-weight: 900;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+            animation: successBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .success-heading {
+            font-family: var(--font-heading);
+            font-size: clamp(30px, 4vw, 38px);
+            font-weight: 800;
+            color: #172B4D;
+            margin-bottom: 10px;
+        }
+
+        .success-subtext {
+            font-size: 16px;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 12px;
+        }
+
+        .success-supporting-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 32px auto;
+            line-height: 1.6;
+        }
+
+        .btn-finish-survey {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 200px;
+            padding: 12px 32px;
+            border-radius: 10px;
+            background: #0D9488;
+            color: #FFFFFF;
+            font-family: var(--font-body);
+            font-size: 14.5px;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-finish-survey:hover {
+            background: #0F766E;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(15, 118, 110, 0.35);
+        }
+
+        /* ---------------------------------------------------------
+           5. KEYFRAME ANIMATIONS
+           --------------------------------------------------------- */
+        @keyframes heroSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(18px) scale(0.99);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.2);
+                opacity: 0;
+            }
+            70% {
+                transform: scale(1.15);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes successBounce {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.12);
+            }
+            80% {
+                transform: scale(0.95);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes gentleShake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-4px); }
+            40%, 80% { transform: translateX(4px); }
+        }
+
+        @keyframes fadeInNotice {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ---------------------------------------------------------
+           6. RESPONSIVE DESIGN (DESKTOP 1440x900 & MOBILE)
+           --------------------------------------------------------- */
+        @media (max-width: 860px) {
+            .feedback-header-inner {
+                padding: 0 16px;
+            }
+
+            .brand-corporate-sub {
+                display: none;
+            }
+
+            .feedback-main {
+                padding: 24px 16px 48px 16px;
+            }
+
+            .feedback-card-body {
+                padding: 24px 20px;
+            }
+
+            .card-top-strip {
+                padding: 14px 20px;
+            }
+
+            .rating-cards-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 8px;
+            }
+
+            .rating-option-btn {
+                padding: 12px 4px;
+            }
+
+            .rating-emoji {
+                font-size: 24px;
+                margin-bottom: 6px;
+            }
+
+            .rating-label {
+                font-size: 11.5px;
+            }
+
+            .choice-cards-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .rating-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .rating-cards-grid .rating-option-btn:nth-child(4),
+            .rating-cards-grid .rating-option-btn:nth-child(5) {
+                grid-column: span 1;
+            }
+
+            .brand-divider,
+            .brand-product-badge {
+                display: none;
+            }
+
+            .question-text {
+                font-size: 15px;
+            }
+
+            .question-helper-text {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="feedback-body">
+
+    <!-- =====================================================
+         1. TOP BRANDED HEADER
+    ====================================================== -->
+    <header class="feedback-header" role="banner">
+        <div class="feedback-header-inner">
+            <!-- Brand Left -->
+            <a href="welcome.html" class="brand-link" aria-label="People & Process Excellence Home">
+                <img src="/assets/visteria-logo.png" alt="Visteria Logo" class="brand-logo-img">
+                <div class="brand-text-block">
+                    <span class="brand-company-line">VISTERIA</span>
+                    <span class="brand-corporate-sub">CONSULTING SERVICES PRIVATE LIMITED</span>
+                </div>
+                <div class="brand-divider" aria-hidden="true"></div>
+                <span class="brand-product-badge">PEOPLE &amp; PROCESS EXCELLENCE</span>
+            </a>
+
+            <!-- Language Selector & Status Badge Right -->
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <div id="feedbackLangSelectorSlot"></div>
+                <div class="header-meta-badge" title="Survey completed successfully">
+                    <span class="check-circle" aria-hidden="true">✓</span>
+                    <span data-i18n="feedback.completed">SURVEY COMPLETED</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================
+         2. MAIN CONTAINER: HERO & FEEDBACK CARD
+    ====================================================== -->
+    <main class="feedback-main" role="main">
+
+        <!-- Hero Header Block -->
+        <section class="feedback-hero-block" id="heroBlock">
+            <div class="hero-completion-pill">
+                <span>✓</span>
+                <span>SURVEY COMPLETED</span>
+            </div>
+            <h1 class="hero-title">Your Voice Matters.</h1>
+            <p class="hero-subtitle">Help us improve your survey experience.</p>
+            <p class="hero-description">
+                Your survey has been submitted successfully. Before you finish, please share a few thoughts
+                about your experience with this survey.
+            </p>
+        </section>
+
+        <!-- =====================================================
+             3. SINGLE CLEAN PREMIUM FEEDBACK CARD
+        ====================================================== -->
+        <div class="feedback-card-container" id="feedbackCardContainer">
+
+            <!-- Card Top Branded Strip -->
+            <div class="card-top-strip">
+                <div class="card-top-left">
+                    <span class="card-completed-badge">
+                        <span>✓</span>
+                        <span>SURVEY COMPLETED</span>
+                    </span>
+                    <span class="card-top-text">— Thank you for sharing your insights.</span>
+                </div>
+                <div class="card-confidential-pill">
+                    <span>🔒</span>
+                    <span>Experience Feedback</span>
+                </div>
+            </div>
+
+            <!-- Feedback Form Body -->
+            <form id="feedbackForm" class="feedback-card-body" novalidate>
+
+                <!-- Validation Alert Banner -->
+                <div class="validation-alert-banner" id="validationAlertBanner" role="alert" aria-live="assertive">
+                    <span class="alert-icon">⚠️</span>
+                    <span id="validationAlertText">Please answer the required questions before submitting.</span>
+                </div>
+
+                <!-- -------------------------------------------------
+                     QUESTION 1 (REQUIRED)
+                     "How was your overall experience completing this survey?"
+                     ------------------------------------------------- -->
+                <section class="feedback-section" id="sectionQ1" data-question="1">
+                    <div class="question-header-row">
+                        <div class="question-title-group">
+                            <span class="question-number-badge" aria-hidden="true">1</span>
+                            <h2 class="question-text" id="q1Label">
+                                How was your overall experience completing this survey?
+                            </h2>
+                        </div>
+                    </div>
+
+                    <!-- 5 Rating Cards: Poor, Fair, Good, Very Good, Excellent -->
+                    <div class="rating-cards-grid" role="radiogroup" aria-labelledby="q1Label">
+                        <button type="button" class="rating-option-btn" role="radio" aria-checked="false"
+                            data-value="Poor" id="q1-opt-poor">
+                            <span class="rating-check-indicator" aria-hidden="true">✓</span>
+                            <span class="rating-emoji" aria-hidden="true">😞</span>
+                            <span class="rating-label">Poor</span>
+                        </button>
+
+                        <button type="button" class="rating-option-btn" role="radio" aria-checked="false"
+                            data-value="Fair" id="q1-opt-fair">
+                            <span class="rating-check-indicator" aria-hidden="true">✓</span>
+                            <span class="rating-emoji" aria-hidden="true">😕</span>
+                            <span class="rating-label">Fair</span>
+                        </button>
+
+                        <button type="button" class="rating-option-btn" role="radio" aria-checked="false"
+                            data-value="Good" id="q1-opt-good">
+                            <span class="rating-check-indicator" aria-hidden="true">✓</span>
+                            <span class="rating-emoji" aria-hidden="true">😐</span>
+                            <span class="rating-label">Good</span>
+                        </button>
+
+                        <button type="button" class="rating-option-btn" role="radio" aria-checked="false"
+                            data-value="Very Good" id="q1-opt-very-good">
+                            <span class="rating-check-indicator" aria-hidden="true">✓</span>
+                            <span class="rating-emoji" aria-hidden="true">🙂</span>
+                            <span class="rating-label">Very Good</span>
+                        </button>
+
+                        <button type="button" class="rating-option-btn" role="radio" aria-checked="false"
+                            data-value="Excellent" id="q1-opt-excellent">
+                            <span class="rating-check-indicator" aria-hidden="true">✓</span>
+                            <span class="rating-emoji" aria-hidden="true">😍</span>
+                            <span class="rating-label">Excellent</span>
+                        </button>
+                    </div>
+
+                    <div class="section-error-msg" id="q1ErrorMsg">
+                        <span>●</span>
+                        <span>Please select an option for question 1.</span>
+                    </div>
+                </section>
+
+                <!-- -------------------------------------------------
+                     QUESTION 2 (REQUIRED)
+                     "Were the survey questions easy to understand?"
+                     ------------------------------------------------- -->
+                <section class="feedback-section" id="sectionQ2" data-question="2">
+                    <div class="question-header-row">
+                        <div class="question-title-group">
+                            <span class="question-number-badge" aria-hidden="true">2</span>
+                            <h2 class="question-text" id="q2Label">
+                                Were the survey questions easy to understand?
+                            </h2>
+                        </div>
+                    </div>
+                    <p class="question-helper-text">Choose the option that best describes your experience.</p>
+
+                    <!-- 3 Options: Yes, Mostly, No -->
+                    <div class="choice-cards-row" role="radiogroup" aria-labelledby="q2Label">
+                        <button type="button" class="choice-option-btn" role="radio" aria-checked="false"
+                            data-value="Yes" id="q2-opt-yes">
+                            <span class="choice-radio-circle" aria-hidden="true">
+                                <span class="choice-radio-dot"></span>
+                            </span>
+                            <span class="choice-label-text">Yes</span>
+                        </button>
+
+                        <button type="button" class="choice-option-btn" role="radio" aria-checked="false"
+                            data-value="Mostly" id="q2-opt-mostly">
+                            <span class="choice-radio-circle" aria-hidden="true">
+                                <span class="choice-radio-dot"></span>
+                            </span>
+                            <span class="choice-label-text">Mostly</span>
+                        </button>
+
+                        <button type="button" class="choice-option-btn" role="radio" aria-checked="false"
+                            data-value="No" id="q2-opt-no">
+                            <span class="choice-radio-circle" aria-hidden="true">
+                                <span class="choice-radio-dot"></span>
+                            </span>
+                            <span class="choice-label-text">No</span>
+                        </button>
+                    </div>
+
+                    <div class="section-error-msg" id="q2ErrorMsg">
+                        <span>●</span>
+                        <span>Please select an option for question 2.</span>
+                    </div>
+                </section>
+
+                <!-- -------------------------------------------------
+                     QUESTION 3 (REQUIRED)
+                     "Was the survey easy to complete?"
+                     ------------------------------------------------- -->
+                <section class="feedback-section" id="sectionQ3" data-question="3">
+                    <div class="question-header-row">
+                        <div class="question-title-group">
+                            <span class="question-number-badge" aria-hidden="true">3</span>
+                            <h2 class="question-text" id="q3Label">
+                                Was the survey easy to complete?
+                            </h2>
+                        </div>
+                    </div>
+
+                    <!-- 3 Options: Yes, Mostly, No -->
+                    <div class="choice-cards-row" role="radiogroup" aria-labelledby="q3Label">
+                        <button type="button" class="choice-option-btn" role="radio" aria-checked="false"
+                            data-value="Yes" id="q3-opt-yes">
+                            <span class="choice-radio-circle" aria-hidden="true">
+                                <span class="choice-radio-dot"></span>
+                            </span>
+                            <span class="choice-label-text">Yes</span>
+                        </button>
+
+                        <button type="button" class="choice-option-btn" role="radio" aria-checked="false"
+                            data-value="Mostly" id="q3-opt-mostly">
+                            <span class="choice-radio-circle" aria-hidden="true">
+                                <span class="choice-radio-dot"></span>
+                            </span>
+                            <span class="choice-label-text">Mostly</span>
+                        </button>
+
+                        <button type="button" class="choice-option-btn" role="radio" aria-checked="false"
+                            data-value="No" id="q3-opt-no">
+                            <span class="choice-radio-circle" aria-hidden="true">
+                                <span class="choice-radio-dot"></span>
+                            </span>
+                            <span class="choice-label-text">No</span>
+                        </button>
+                    </div>
+
+                    <div class="section-error-msg" id="q3ErrorMsg">
+                        <span>●</span>
+                        <span>Please select an option for question 3.</span>
+                    </div>
+                </section>
+
+                <!-- -------------------------------------------------
+                     QUESTION 4 — OPTIONAL
+                     "What could we improve in this survey?"
+                     ------------------------------------------------- -->
+                <section class="feedback-section" id="sectionQ4">
+                    <div class="question-header-row">
+                        <div class="question-title-group">
+                            <span class="question-number-badge" aria-hidden="true">4</span>
+                            <h2 class="question-text" id="q4Label">
+                                What could we improve in this survey?
+                            </h2>
+                        </div>
+                        <span class="optional-badge">Optional</span>
+                    </div>
+
+                    <div class="textarea-container">
+                        <textarea id="feedbackImprovementText" class="feedback-textarea" maxlength="500"
+                            placeholder="Tell us what we can improve or what was difficult for you."
+                            aria-labelledby="q4Label"></textarea>
+                        <div class="counter-row">
+                            <span class="textarea-tip">Your ideas directly shape future survey experiences</span>
+                            <span class="character-counter" id="charCounter">0 / 500</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- -------------------------------------------------
+                     OPTIONAL QUICK FEEDBACK CHIPS
+                     "What did you like about this survey?"
+                     ------------------------------------------------- -->
+                <section class="feedback-section" id="sectionQuickLikes">
+                    <div class="question-header-row">
+                        <div class="question-title-group">
+                            <h2 class="question-text" id="likesLabel">
+                                What did you like about this survey?
+                            </h2>
+                        </div>
+                        <span class="optional-badge">Optional</span>
+                    </div>
+
+                    <div class="quick-feedback-chips" role="group" aria-labelledby="likesLabel">
+                        <button type="button" class="feedback-chip-btn" data-liked="Easy to complete"
+                            id="chip-easy-to-complete" aria-pressed="false">
+                            <span class="chip-icon">✓</span>
+                            <span>Easy to complete</span>
+                        </button>
+
+                        <button type="button" class="feedback-chip-btn" data-liked="Questions were clear"
+                            id="chip-questions-clear" aria-pressed="false">
+                            <span class="chip-icon">✓</span>
+                            <span>Questions were clear</span>
+                        </button>
+
+                        <button type="button" class="feedback-chip-btn" data-liked="Questions were relevant"
+                            id="chip-questions-relevant" aria-pressed="false">
+                            <span class="chip-icon">✓</span>
+                            <span>Questions were relevant</span>
+                        </button>
+
+                        <button type="button" class="feedback-chip-btn" data-liked="Survey was quick"
+                            id="chip-survey-quick" aria-pressed="false">
+                            <span class="chip-icon">✓</span>
+                            <span>Survey was quick</span>
+                        </button>
+
+                        <button type="button" class="feedback-chip-btn" data-liked="Interface was easy to use"
+                            id="chip-interface-easy" aria-pressed="false">
+                            <span class="chip-icon">✓</span>
+                            <span>Interface was easy to use</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- -------------------------------------------------
+                     ACTION BUTTONS: SUBMIT FEEDBACK & SKIP
+                     ------------------------------------------------- -->
+                <div class="feedback-actions-footer">
+                    <button type="submit" class="btn-submit-feedback" id="btnSubmitFeedback">
+                        <span class="btn-spinner" aria-hidden="true"></span>
+                        <span class="btn-text" id="btnSubmitText">Submit Feedback</span>
+                        <span class="btn-arrow-icon" aria-hidden="true">→</span>
+                    </button>
+
+                    <button type="button" class="btn-skip-feedback" id="btnSkipFeedback">
+                        Skip for now
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- =====================================================
+                 4. THANK YOU / SUBMISSION SUCCESS STATE
+            ====================================================== -->
+            <div class="feedback-success-card" id="feedbackSuccessCard" role="region" aria-live="polite">
+                <div class="success-icon-wrapper" aria-hidden="true">
+                    ✓
+                </div>
+                <h2 class="success-heading" id="successHeading">Thank You!</h2>
+                <p class="success-subtext" id="successSubtext">Your feedback has been submitted successfully.</p>
+                <p class="success-supporting-text" id="successDesc">
+                    Thank you for helping us improve the survey experience.
+                </p>
+                <button type="button" class="btn-finish-survey" id="btnFinishSurvey">
+                    <span>Finish</span>
+                    <span aria-hidden="true">✓</span>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Enterprise Footer -->
+    <footer class="ppe-footer" role="contentinfo">
+        <div class="ppe-footer-inner">
+            <div class="ppe-footer-left">
+                <strong>PEOPLE & PROCESS EXCELLENCE</strong>
+                <span>•</span>
+                <span>Visteria Consulting Services Private Limited</span>
+                <span>•</span>
+                <span class="ppe-footer-tagline">Vision Changes Everything.</span>
+            </div>
+            <div class="ppe-footer-right">
+                <span>Enterprise Assessment Platform</span>
+                <span>•</span>
+                <span>Encrypted & Confidential</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================
+         CONTROLLER SCRIPT
+    ====================================================== -->
+    <script src="js/api-client.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // Mount Language Selector
+            if (window.I18n) {
+                if (window.VisteriaAPI?.employee?.getProfile) {
+                    window.VisteriaAPI.employee.getProfile().then(res => {
+                        if (res && res.data && res.data.company) {
+                            const comp = res.data.company;
+                            window.I18n.setAllowedLanguages(comp.supported_languages || ['en'], comp.default_language || 'en');
+                        }
+                        window.I18n.mountLanguageSelector('feedbackLangSelectorSlot');
+                    }).catch(() => {
+                        window.I18n.mountLanguageSelector('feedbackLangSelectorSlot');
+                    });
+                } else {
+                    window.I18n.mountLanguageSelector('feedbackLangSelectorSlot');
+                }
+            }
+
+            /* -----------------------------------------------------
+               1. AMBIENT NEURAL NETWORK CANVAS
+               ----------------------------------------------------- */
+            const canvas = document.getElementById("neuralCanvas");
+            if (canvas) {
+                const ctx = canvas.getContext("2d");
+                let width = (canvas.width = window.innerWidth);
+                let height = (canvas.height = window.innerHeight);
+
+                window.addEventListener("resize", () => {
+                    width = canvas.width = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                    initNodes();
+                });
+
+                const nodeCount = Math.min(Math.floor(width / 38), 40);
+                let nodes = [];
+
+                function initNodes() {
+                    nodes = [];
+                    for (let i = 0; i < nodeCount; i++) {
+                        nodes.push({
+                            x: Math.random() * width,
+                            y: Math.random() * height,
+                            vx: (Math.random() - 0.5) * 0.4,
+                            vy: (Math.random() - 0.5) * 0.4,
+                            radius: Math.random() * 2 + 1.2,
+                            alpha: Math.random() * 0.4 + 0.15
+                        });
+                    }
+                }
+                initNodes();
+
+                function drawNeuralCanvas() {
+                    ctx.clearRect(0, 0, width, height);
+                    const maxDistance = 140;
+
+                    for (let i = 0; i < nodes.length; i++) {
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            const dx = nodes[i].x - nodes[j].x;
+                            const dy = nodes[i].y - nodes[j].y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+
+                            if (dist < maxDistance) {
+                                const lineAlpha = (1 - dist / maxDistance) * 0.20;
+                                ctx.beginPath();
+                                ctx.moveTo(nodes[i].x, nodes[i].y);
+                                ctx.lineTo(nodes[j].x, nodes[j].y);
+                                ctx.strokeStyle = `rgba(23, 105, 213, ${lineAlpha})`;
+                                ctx.lineWidth = 0.8;
+                                ctx.stroke();
+                            }
+                        }
+                    }
+
+                    for (let i = 0; i < nodes.length; i++) {
+                        const node = nodes[i];
+                        node.x += node.vx;
+                        node.y += node.vy;
+
+                        if (node.x < 0 || node.x > width) node.vx *= -1;
+                        if (node.y < 0 || node.y > height) node.vy *= -1;
+
+                        ctx.beginPath();
+                        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(37, 125, 235, ${node.alpha})`;
+                        ctx.fill();
+                    }
+
+                    requestAnimationFrame(drawNeuralCanvas);
+                }
+                drawNeuralCanvas();
+            }
+
+            /* -----------------------------------------------------
+               2. FORM STATE MANAGEMENT
+               ----------------------------------------------------- */
+            const feedbackForm = document.getElementById("feedbackForm");
+            const feedbackCardContainer = document.getElementById("feedbackCardContainer");
+            const feedbackSuccessCard = document.getElementById("feedbackSuccessCard");
+            const heroBlock = document.getElementById("heroBlock");
+
+            const validationAlertBanner = document.getElementById("validationAlertBanner");
+            const validationAlertText = document.getElementById("validationAlertText");
+
+            const sectionQ1 = document.getElementById("sectionQ1");
+            const sectionQ2 = document.getElementById("sectionQ2");
+            const sectionQ3 = document.getElementById("sectionQ3");
+
+            const btnSubmit = document.getElementById("btnSubmitFeedback");
+            const btnSubmitText = document.getElementById("btnSubmitText");
+            const btnSkip = document.getElementById("btnSkipFeedback");
+            const btnFinish = document.getElementById("btnFinishSurvey");
+
+            const successHeading = document.getElementById("successHeading");
+            const successSubtext = document.getElementById("successSubtext");
+            const successDesc = document.getElementById("successDesc");
+
+            // Selected answers
+            const feedbackData = {
+                q1Overall: null,
+                q2Understandable: null,
+                q3Easy: null,
+                q4Improvements: "",
+                likes: []
+            };
+
+            /* -----------------------------------------------------
+               3. QUESTION 1: SINGLE-CHOICE RATING CARDS
+               ----------------------------------------------------- */
+            const q1Buttons = document.querySelectorAll("#sectionQ1 .rating-option-btn");
+            q1Buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    q1Buttons.forEach(b => {
+                        b.classList.remove("is-selected");
+                        b.setAttribute("aria-checked", "false");
+                    });
+                    btn.classList.add("is-selected");
+                    btn.setAttribute("aria-checked", "true");
+                    feedbackData.q1Overall = btn.dataset.value;
+                    clearError(sectionQ1);
+                });
+            });
+
+            /* -----------------------------------------------------
+               4. QUESTION 2: SINGLE-CHOICE OPTIONS
+               ----------------------------------------------------- */
+            const q2Buttons = document.querySelectorAll("#sectionQ2 .choice-option-btn");
+            q2Buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    q2Buttons.forEach(b => {
+                        b.classList.remove("is-selected");
+                        b.setAttribute("aria-checked", "false");
+                    });
+                    btn.classList.add("is-selected");
+                    btn.setAttribute("aria-checked", "true");
+                    feedbackData.q2Understandable = btn.dataset.value;
+                    clearError(sectionQ2);
+                });
+            });
+
+            /* -----------------------------------------------------
+               5. QUESTION 3: SINGLE-CHOICE OPTIONS
+               ----------------------------------------------------- */
+            const q3Buttons = document.querySelectorAll("#sectionQ3 .choice-option-btn");
+            q3Buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    q3Buttons.forEach(b => {
+                        b.classList.remove("is-selected");
+                        b.setAttribute("aria-checked", "false");
+                    });
+                    btn.classList.add("is-selected");
+                    btn.setAttribute("aria-checked", "true");
+                    feedbackData.q3Easy = btn.dataset.value;
+                    clearError(sectionQ3);
+                });
+            });
+
+            /* -----------------------------------------------------
+               6. QUESTION 4: LIVE CHARACTER COUNTER
+               ----------------------------------------------------- */
+            const textarea = document.getElementById("feedbackImprovementText");
+            const charCounter = document.getElementById("charCounter");
+
+            if (textarea && charCounter) {
+                textarea.addEventListener("input", () => {
+                    const length = textarea.value.length;
+                    charCounter.textContent = `${length} / 500`;
+                    feedbackData.q4Improvements = textarea.value;
+
+                    if (length >= 450) {
+                        charCounter.classList.add("near-limit");
+                    } else {
+                        charCounter.classList.remove("near-limit");
+                    }
+                });
+            }
+
+            /* -----------------------------------------------------
+               7. QUICK FEEDBACK: MULTI-SELECT CHIPS
+               ----------------------------------------------------- */
+            const chipButtons = document.querySelectorAll("#sectionQuickLikes .feedback-chip-btn");
+            chipButtons.forEach(chip => {
+                chip.addEventListener("click", () => {
+                    const likedValue = chip.dataset.liked;
+                    const isSelected = chip.classList.toggle("is-selected");
+                    chip.setAttribute("aria-pressed", isSelected ? "true" : "false");
+
+                    if (isSelected) {
+                        if (!feedbackData.likes.includes(likedValue)) {
+                            feedbackData.likes.push(likedValue);
+                        }
+                    } else {
+                        feedbackData.likes = feedbackData.likes.filter(v => v !== likedValue);
+                    }
+                });
+            });
+
+            /* -----------------------------------------------------
+               8. VALIDATION HELPERS
+               ----------------------------------------------------- */
+            function clearError(sectionEl) {
+                if (sectionEl) {
+                    sectionEl.classList.remove("has-error");
+                }
+                // If all required are answered, hide top alert banner
+                if (feedbackData.q1Overall && feedbackData.q2Understandable && feedbackData.q3Easy) {
+                    if (validationAlertBanner) {
+                        validationAlertBanner.classList.remove("active");
+                    }
+                }
+            }
+
+            function highlightError(sectionEl) {
+                if (sectionEl) {
+                    sectionEl.classList.add("has-error");
+                }
+            }
+
+            /* -----------------------------------------------------
+               9. SUBMIT FEEDBACK HANDLER
+               ----------------------------------------------------- */
+            feedbackForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                let hasError = false;
+                let firstErrorEl = null;
+
+                // Validate Q1
+                if (!feedbackData.q1Overall) {
+                    hasError = true;
+                    highlightError(sectionQ1);
+                    if (!firstErrorEl) firstErrorEl = sectionQ1;
+                } else {
+                    clearError(sectionQ1);
+                }
+
+                // Validate Q2
+                if (!feedbackData.q2Understandable) {
+                    hasError = true;
+                    highlightError(sectionQ2);
+                    if (!firstErrorEl) firstErrorEl = sectionQ2;
+                } else {
+                    clearError(sectionQ2);
+                }
+
+                // Validate Q3
+                if (!feedbackData.q3Easy) {
+                    hasError = true;
+                    highlightError(sectionQ3);
+                    if (!firstErrorEl) firstErrorEl = sectionQ3;
+                } else {
+                    clearError(sectionQ3);
+                }
+
+                // Show validation message
+                if (hasError) {
+                    validationAlertBanner.classList.add("active");
+                    validationAlertText.textContent = "Please answer the required questions before submitting.";
+                    if (firstErrorEl) {
+                        firstErrorEl.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }
+                    return;
+                }
+
+                // If Valid -> Initiate subtle loading animation
+                validationAlertBanner.classList.remove("active");
+                btnSubmit.disabled = true;
+                btnSubmit.classList.add("is-submitting");
+                btnSubmitText.textContent = "Submitting your feedback...";
+                btnSkip.style.pointerEvents = "none";
+                btnSkip.style.opacity = "0.5";
+
+                // Save feedback to storage
+                const feedbackRecord = {
+                    submittedAt: new Date().toISOString(),
+                    overallExperience: feedbackData.q1Overall,
+                    questionsUnderstandable: feedbackData.q2Understandable,
+                    easyToComplete: feedbackData.q3Easy,
+                    improvements: feedbackData.q4Improvements,
+                    likedAspects: feedbackData.likes,
+                    skipped: false
+                };
+
+                try {
+                    localStorage.setItem("visteria_survey_feedback", JSON.stringify(feedbackRecord));
+                } catch (err) {
+                    console.warn("Storage write error:", err);
+                }
+
+                // Transition to Thank You state after subtle delay
+                setTimeout(() => {
+                    revealSuccessState({
+                        heading: "Thank You!",
+                        subtext: "Your feedback has been submitted successfully.",
+                        desc: "Thank you for helping us improve the survey experience."
+                    });
+                }, 750);
+            });
+
+            /* -----------------------------------------------------
+               10. SKIP FOR NOW HANDLER
+               ----------------------------------------------------- */
+            btnSkip.addEventListener("click", () => {
+                const skipRecord = {
+                    submittedAt: new Date().toISOString(),
+                    skipped: true
+                };
+
+                try {
+                    localStorage.setItem("visteria_survey_feedback", JSON.stringify(skipRecord));
+                } catch (err) {
+                    console.warn("Storage write error:", err);
+                }
+
+                revealSuccessState({
+                    heading: "Thank You!",
+                    subtext: "Your survey has been submitted successfully.",
+                    desc: "Thank you for helping us improve the survey experience."
+                });
+            });
+
+            /* -----------------------------------------------------
+               11. REVEAL SUCCESS STATE
+               ----------------------------------------------------- */
+            function revealSuccessState({ heading, subtext, desc }) {
+                feedbackForm.style.display = "none";
+                feedbackSuccessCard.classList.add("active");
+
+                if (successHeading) successHeading.textContent = heading;
+                if (successSubtext) successSubtext.textContent = subtext;
+                if (successDesc) successDesc.textContent = desc;
+
+                // Smooth scroll up to card
+                feedbackCardContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+
+            /* -----------------------------------------------------
+               12. FINISH BUTTON ACTION
+               ----------------------------------------------------- */
+            btnFinish.addEventListener("click", () => {
+                window.location.href = "welcome.html";
+            });
+        });
+    </script>
+
+    <script src="js/employee.js" defer></script>
+</body>
+
+</html>

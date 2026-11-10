@@ -1,0 +1,512 @@
+/**
+ * Visteria InsightPulse AI — Enterprise Multilingual & RTL Stylesheet
+ * Handles bidirectional layout flipping (LTR/RTL), language selector UI,
+ * proper font rendering, and seamless mirroring of components.
+ */
+
+/* =========================================================
+   1. GLOBAL FONT FAMILIES FOR MULTILINGUAL SUPPORT
+========================================================= */
+:root {
+    --font-ar: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+    --font-ta: 'Noto Sans Tamil', 'Latha', 'Tamil Sangam MN', sans-serif;
+    --font-hi: 'Noto Sans Devanagari', 'Mangal', 'Kohinoor Devanagari', sans-serif;
+    --font-cjk: 'Noto Sans SC', 'Noto Sans JP', 'PingFang SC', 'Hiragino Sans', sans-serif;
+}
+
+[lang="ar"], [dir="rtl"] {
+    font-family: var(--font-ar), var(--font-sans, 'Inter', sans-serif);
+}
+
+[lang="ta"] {
+    font-family: var(--font-ta), var(--font-sans, 'Inter', sans-serif);
+}
+
+[lang="hi"] {
+    font-family: var(--font-hi), var(--font-sans, 'Inter', sans-serif);
+}
+
+[lang="zh"], [lang="ja"] {
+    font-family: var(--font-cjk), var(--font-sans, 'Inter', sans-serif);
+}
+
+/* =========================================================
+   2. LANGUAGE SELECTOR WIDGET
+========================================================= */
+.visteria-lang-widget {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    z-index: 100;
+}
+
+.lang-trigger-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 12px;
+    background: #FFFFFF;
+    border: 1px solid #D7E1EA;
+    border-radius: 999px;
+    color: #172B4D;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+    transition: all 0.18s ease;
+}
+
+.lang-trigger-btn:hover,
+.lang-trigger-btn[aria-expanded="true"] {
+    background: #F8FAFC;
+    border-color: #0D9488;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+.lang-trigger-btn:focus-visible {
+    outline: 2px solid #0D9488;
+    outline-offset: 2px;
+}
+
+.lang-flag {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.lang-code-label {
+    letter-spacing: 0.2px;
+}
+
+.lang-chevron {
+    font-size: 10px;
+    color: #64748B;
+    transition: transform 0.2s ease;
+}
+
+.lang-trigger-btn[aria-expanded="true"] .lang-chevron {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.lang-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 200px;
+    background: #FFFFFF;
+    border: 1px solid #D7E1EA;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.06);
+    padding: 6px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    animation: langFadeIn 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[dir="rtl"] .lang-dropdown-menu {
+    right: auto;
+    left: 0;
+}
+
+.lang-dropdown-menu.show {
+    display: flex;
+}
+
+@keyframes langFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lang-dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px 6px;
+    border-bottom: 1px solid #D7E1EA;
+    margin-bottom: 4px;
+}
+
+.lang-dropdown-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748B;
+}
+
+.lang-count-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    background: #F1F5F9;
+    color: #0D9488;
+    padding: 2px 6px;
+    border-radius: 999px;
+    border: 1px solid #D7E1EA;
+}
+
+.lang-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.lang-option-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background 0.14s ease;
+}
+
+[dir="rtl"] .lang-option-item {
+    text-align: right;
+}
+
+.lang-option-item:hover {
+    background: #F8FAFC;
+}
+
+.lang-option-item.active {
+    background: #E6FFFA;
+}
+
+.option-flag {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.option-names {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.option-native {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #172B4D;
+    line-height: 1.25;
+}
+
+.option-english {
+    font-size: 11px;
+    color: #64748B;
+    line-height: 1.2;
+}
+
+.option-check {
+    color: #0D9488;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   3. RTL BIDIRECTIONAL LAYOUT ADAPTATIONS (ARABIC, ETC.)
+========================================================= */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] body {
+    direction: rtl;
+}
+
+/* Flip arrows and chevrons */
+[dir="rtl"] .btn-arrow,
+[dir="rtl"] .nav-admin-btn .lock-icon,
+[dir="rtl"] .arrow-icon,
+[dir="rtl"] .category-btn-start span:last-child {
+    transform: scaleX(-1);
+    display: inline-block;
+}
+
+/* Header Adjustments */
+[dir="rtl"] .header-inner {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .brand-link {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .brand-text-block {
+    text-align: right;
+}
+
+[dir="rtl"] .nav-list {
+    flex-direction: row-reverse;
+}
+
+/* Auth Cards & Forms */
+[dir="rtl"] .form-input {
+    text-align: right;
+}
+
+[dir="rtl"] .input-wrapper .input-icon {
+    left: auto;
+    right: 14px;
+}
+
+[dir="rtl"] .input-wrapper input {
+    padding-left: 14px;
+    padding-right: 42px;
+}
+
+[dir="rtl"] .input-wrapper .pw-toggle-btn {
+    right: auto;
+    left: 10px;
+}
+
+[dir="rtl"] .auth-tabs {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .tab-btn {
+    text-align: center;
+}
+
+[dir="rtl"] .auth-remember-row {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .field-header-row {
+    flex-direction: row-reverse;
+}
+
+/* Hero Section (welcome.html) */
+[dir="rtl"] .welcome-viewport-fixed .hero-container {
+    direction: rtl;
+}
+
+[dir="rtl"] .hero-content {
+    text-align: right;
+}
+
+[dir="rtl"] .hero-title {
+    text-align: right;
+}
+
+[dir="rtl"] .hero-description {
+    text-align: right;
+}
+
+[dir="rtl"] .company-branding-banner {
+    text-align: right;
+}
+
+[dir="rtl"] .company-branding-content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .company-info-block {
+    text-align: right;
+}
+
+[dir="rtl"] .category-card-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .category-info {
+    text-align: right;
+}
+
+/* Survey Questions Page (survey.html) */
+[dir="rtl"] .survey-layout-grid,
+[dir="rtl"] .survey-split-layout {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .dept-org-emp-card {
+    text-align: right;
+}
+
+[dir="rtl"] .side-comp-header {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .side-emp-row {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .side-emp-label {
+    text-align: right;
+}
+
+[dir="rtl"] .side-emp-val {
+    text-align: right;
+}
+
+[dir="rtl"] .dept-panel-header {
+    text-align: right;
+}
+
+[dir="rtl"] .dept-tags-wrap {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .survey-card-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .survey-progress-head {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .q-card-head {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .active-q-title,
+[dir="rtl"] .question-text-title {
+    text-align: right;
+}
+
+[dir="rtl"] .active-q-hint,
+[dir="rtl"] .question-hint-text {
+    text-align: right;
+}
+
+[dir="rtl"] .option-select-card {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .option-card-label {
+    text-align: right;
+}
+
+[dir="rtl"] .survey-actions-bottom,
+[dir="rtl"] .survey-nav-footer {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn-survey-prev {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn-survey-next {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .open-ended-textarea {
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="rtl"] .open-ended-counter {
+    text-align: left;
+}
+
+/* Confirmation Page (confirmation.html) */
+[dir="rtl"] .confirmation-card {
+    text-align: center;
+}
+
+/* Eagle Assistant Chat Box */
+[dir="rtl"] .eagle-chat-box {
+    left: 24px;
+    right: auto;
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="rtl"] .chat-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .chat-title-group {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .chat-bubble.user-bubble {
+    align-self: flex-start;
+    text-align: right;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 14px;
+}
+
+[dir="rtl"] .chat-bubble.eagle-bubble {
+    align-self: flex-end;
+    text-align: right;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 14px;
+}
+
+[dir="rtl"] .eagle-input-group {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .eagle-chat-input {
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="rtl"] .quick-chips-row {
+    flex-direction: row-reverse;
+}
+
+/* =========================================================
+   4. RESPONSIVE BREAKPOINTS (DESKTOP, TABLET, MOBILE)
+========================================================= */
+@media (max-width: 991px) {
+    .survey-split-layout {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    .survey-dept-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .survey-active-panel {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .survey-main-wrapper {
+        padding: 12px 10px 24px 10px !important;
+    }
+    .survey-question-panel {
+        padding: 18px 14px !important;
+    }
+    .active-q-title {
+        font-size: 17px !important;
+        line-height: 1.4 !important;
+    }
+    .option-select-card {
+        padding: 14px 16px !important;
+        min-height: 48px !important;
+    }
+    .eagle-chat-box {
+        bottom: 12px !important;
+        right: 12px !important;
+        left: 12px !important;
+        width: auto !important;
+        max-width: none !important;
+        height: 72vh !important;
+        max-height: 520px !important;
+        border-radius: 16px !important;
+    }
+    [dir="rtl"] .eagle-chat-box {
+        left: 12px !important;
+        right: 12px !important;
+    }
+}
